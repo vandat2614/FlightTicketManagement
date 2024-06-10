@@ -1,0 +1,11 @@
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\bin\Debug\FlightTicketManagement.exe.config
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\bin\Debug\FlightTicketManagement.exe
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\bin\Debug\FlightTicketManagement.pdb
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.AssemblyReference.cache
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.SuggestedBindingRedirects.cache
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\obj\Debug\FlightTicketManagement.Login.resources
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\obj\Debug\FlightTicketManagement.Properties.Resources.resources
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.GenerateResource.cache
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.CoreCompileInputs.cache
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\obj\Debug\FlightTicketManagement.exe
+D:\Learn\K4\SE\Final\FlightTicketManagement\FlightTicketManagement\obj\Debug\FlightTicketManagement.pdb
