@@ -21,5 +21,20 @@ namespace FlightTicketManagement
         {
 
         }
+
+        public void LoadForm(object form)
+        {
+            Form f = form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.MainPanel.Controls.Add(f);
+            this.MainPanel.Tag = f;
+            f.Show();
+        }
+
+        private void AirportBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new Airport());
+        }
     }
 }

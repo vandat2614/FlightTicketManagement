@@ -25,6 +25,7 @@ namespace FlightTicketManagement
             PassTb.Text = string.Empty;
         }
 
+
         private void LoginBtn_Click(object sender, EventArgs e)
         {
             string email = EmailTb.Text;
@@ -32,7 +33,6 @@ namespace FlightTicketManagement
 
             var result = LoginAccount.Instance.login(email, password);
             bool is_valid = result.Item1;
-            string account_type = result.Item2.ToString();
 
             if (!is_valid)
             {
@@ -40,7 +40,8 @@ namespace FlightTicketManagement
                 clear();
             } else
             {
-                if(account_type == "0")
+                string account_type = result.Item2.ToString();
+                if (account_type == "0")
                 {
                     this.Hide();
                     AdminDashBoard dashboard = new AdminDashBoard();

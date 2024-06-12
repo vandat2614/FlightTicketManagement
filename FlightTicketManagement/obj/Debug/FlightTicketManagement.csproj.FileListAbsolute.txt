@@ -34,3 +34,4 @@ D:\Learn\K4\SE\Final\Clone\FlightTicketManagement\obj\Debug\FlightTicketManageme
 D:\Learn\K4\SE\Final\Clone\FlightTicketManagement\obj\Debug\FlightTicketManagement.Register.resources
 D:\Learn\K4\SE\Final\Git\FlightTicketManagement\obj\Debug\FlightTicketManagement.Register.resources
 D:\Learn\K4\SE\Final\Clone\FlightTicketManagement\obj\Debug\FlightTicketManagement.AdminDashBoard.resources
+D:\Learn\K4\SE\Final\Clone\FlightTicketManagement\obj\Debug\FlightTicketManagement.Airport.resources

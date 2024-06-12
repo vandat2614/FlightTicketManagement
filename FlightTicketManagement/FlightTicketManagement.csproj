@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="Form\Airport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Airport.Designer.cs">
+      <DependentUpon>Airport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     <Compile Include="RegisterAccount.cs" />
     <EmbeddedResource Include="Form\AdminDashBoard.resx">
       <DependentUpon>AdminDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Airport.resx">
+      <DependentUpon>Airport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
