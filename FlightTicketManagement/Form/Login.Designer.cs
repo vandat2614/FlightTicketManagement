@@ -36,13 +36,13 @@
             this.RegisterBtn = new System.Windows.Forms.Button();
             this.HidePassLb = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -143,6 +143,37 @@
             this.panel1.Size = new System.Drawing.Size(336, 484);
             this.panel1.TabIndex = 7;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(12, 174);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(306, 27);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Flight Ticket Management ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FlightTicketManagement.Properties.Resources.icons8_airplane_take_off_96;
+            this.pictureBox1.Location = new System.Drawing.Point(108, 57);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(80, 400);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(174, 21);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Create an account";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -174,17 +205,6 @@
             this.checkBox1.Text = "Show Password";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(80, 400);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(174, 21);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Create an account";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -194,25 +214,6 @@
             this.label6.Size = new System.Drawing.Size(22, 23);
             this.label6.TabIndex = 11;
             this.label6.Text = "X";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(104, 57);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(12, 174);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(306, 27);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Flight Ticket Management ";
             // 
             // Login
             // 
