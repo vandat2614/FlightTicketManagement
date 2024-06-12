@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -17,11 +18,18 @@ namespace FlightTicketManagement
         }
         private LoginAccount() { }
 
-        public bool login(string Email, string Password)
+        public (bool, object) login(string Email, string Password)
         {
             string query = "account_login @email , @password";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {Email, Password});
-            return result.Rows.Count == 1;
+
+            object type;
+            if (result.Rows.Count == 0)
+                type = null;
+            else 
+                type = result.Rows[0]["Type"];
+
+            return (result.Rows.Count == 1, type);
         }
     }
 }

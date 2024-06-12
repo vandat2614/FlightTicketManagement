@@ -53,11 +53,11 @@
     <Compile Include="Form\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\DashBoard.cs">
+    <Compile Include="Form\AdminDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\DashBoard.Designer.cs">
-      <DependentUpon>DashBoard.cs</DependentUpon>
+    <Compile Include="Form\AdminDashBoard.Designer.cs">
+      <DependentUpon>AdminDashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>

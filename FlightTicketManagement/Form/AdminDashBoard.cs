@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FlightTicketManagement
 {
-    public partial class DashBoard : Form
+    public partial class AdminDashBoard : Form
     {
-        public DashBoard()
+        public AdminDashBoard()
         {
             InitializeComponent();
         }

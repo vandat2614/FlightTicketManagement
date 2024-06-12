@@ -29,15 +29,28 @@ namespace FlightTicketManagement
         {
             string email = EmailTb.Text;
             string password = PassTb.Text;
-            if(LoginAccount.Instance.login(email, password))
-            {
-                this.Hide();
-                DashBoard dashboard = new DashBoard();
-                dashboard.ShowDialog();
-            } else
+
+            var result = LoginAccount.Instance.login(email, password);
+            bool is_valid = result.Item1;
+            string account_type = result.Item2.ToString();
+
+            if (!is_valid)
             {
                 MessageBox.Show("Địa chỉ email hoặc mật khẩu không hợp lệ");
                 clear();
+            } else
+            {
+                if(account_type == "0")
+                {
+                    this.Hide();
+                    AdminDashBoard dashboard = new AdminDashBoard();
+                    dashboard.ShowDialog();
+                    this.Show();
+                } else
+                {
+                    MessageBox.Show("Các type khác ddowijd di :v");
+                }
+
             }
         }
 
@@ -60,6 +73,7 @@ namespace FlightTicketManagement
             this.Hide();
             Register register = new Register();
             register.ShowDialog();
+            this.Show();
         }
 
         private void PassTb_TextChanged(object sender, EventArgs e)
