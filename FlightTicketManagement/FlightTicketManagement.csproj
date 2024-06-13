@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="Form\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\Airport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,11 +65,11 @@
     <Compile Include="Form\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\AdminDashBoard.cs">
+    <Compile Include="Form\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\AdminDashBoard.Designer.cs">
-      <DependentUpon>AdminDashBoard.cs</DependentUpon>
+    <Compile Include="Form\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Login.cs">
       <SubType>Form</SubType>
@@ -75,8 +81,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterAccount.cs" />
-    <EmbeddedResource Include="Form\AdminDashBoard.resx">
-      <DependentUpon>AdminDashBoard.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Airport.resx">
       <DependentUpon>Airport.cs</DependentUpon>
