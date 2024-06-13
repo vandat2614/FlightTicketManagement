@@ -34,15 +34,14 @@
             this.PassTb = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
             this.RegisterBtn = new System.Windows.Forms.Button();
-            this.HidePassLb = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.ShowPassCb = new System.Windows.Forms.CheckBox();
+            this.ExitBtn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,12 +92,13 @@
             // LoginBtn
             // 
             this.LoginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.LoginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LoginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoginBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginBtn.ForeColor = System.Drawing.Color.White;
             this.LoginBtn.Location = new System.Drawing.Point(379, 338);
             this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(137, 40);
+            this.LoginBtn.Size = new System.Drawing.Size(145, 40);
             this.LoginBtn.TabIndex = 4;
             this.LoginBtn.Text = "LOGIN";
             this.LoginBtn.UseVisualStyleBackColor = false;
@@ -107,28 +107,17 @@
             // RegisterBtn
             // 
             this.RegisterBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.RegisterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegisterBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.RegisterBtn.ForeColor = System.Drawing.Color.White;
-            this.RegisterBtn.Location = new System.Drawing.Point(47, 424);
+            this.RegisterBtn.Location = new System.Drawing.Point(17, 424);
             this.RegisterBtn.Name = "RegisterBtn";
-            this.RegisterBtn.Size = new System.Drawing.Size(236, 45);
+            this.RegisterBtn.Size = new System.Drawing.Size(301, 45);
             this.RegisterBtn.TabIndex = 5;
             this.RegisterBtn.Text = "REGISTER";
             this.RegisterBtn.UseVisualStyleBackColor = false;
             this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
-            // 
-            // HidePassLb
-            // 
-            this.HidePassLb.AutoSize = true;
-            this.HidePassLb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HidePassLb.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HidePassLb.Location = new System.Drawing.Point(476, 439);
-            this.HidePassLb.Name = "HidePassLb";
-            this.HidePassLb.Size = new System.Drawing.Size(128, 19);
-            this.HidePassLb.TabIndex = 6;
-            this.HidePassLb.Text = "Hiển thị mật khẩu";
-            this.HidePassLb.Click += new System.EventHandler(this.HidePassLb_Click);
             // 
             // panel1
             // 
@@ -159,7 +148,8 @@
             this.pictureBox1.Image = global::FlightTicketManagement.Properties.Resources.icons8_airplane_take_off_96;
             this.pictureBox1.Location = new System.Drawing.Point(108, 57);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(96, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -194,26 +184,30 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "SIGN IN";
             // 
-            // checkBox1
+            // ShowPassCb
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F);
-            this.checkBox1.Location = new System.Drawing.Point(379, 288);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(174, 25);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Show Password";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ShowPassCb.AutoSize = true;
+            this.ShowPassCb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowPassCb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F);
+            this.ShowPassCb.Location = new System.Drawing.Point(379, 288);
+            this.ShowPassCb.Name = "ShowPassCb";
+            this.ShowPassCb.Size = new System.Drawing.Size(174, 25);
+            this.ShowPassCb.TabIndex = 10;
+            this.ShowPassCb.Text = "Show Password";
+            this.ShowPassCb.UseVisualStyleBackColor = true;
+            this.ShowPassCb.CheckedChanged += new System.EventHandler(this.ShowPassCb_CheckedChanged);
             // 
-            // label6
+            // ExitBtn
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(651, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 23);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "X";
+            this.ExitBtn.AutoSize = true;
+            this.ExitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitBtn.Location = new System.Drawing.Point(651, 9);
+            this.ExitBtn.Name = "ExitBtn";
+            this.ExitBtn.Size = new System.Drawing.Size(22, 23);
+            this.ExitBtn.TabIndex = 11;
+            this.ExitBtn.Text = "X";
+            this.ExitBtn.Click += new System.EventHandler(this.label6_Click);
             // 
             // Login
             // 
@@ -221,13 +215,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(685, 484);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.ExitBtn);
+            this.Controls.Add(this.ShowPassCb);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.HidePassLb);
             this.Controls.Add(this.PassTb);
             this.Controls.Add(this.EmailTb);
             this.Controls.Add(this.label2);
@@ -252,13 +245,12 @@
         private System.Windows.Forms.TextBox PassTb;
         private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.Button RegisterBtn;
-        private System.Windows.Forms.Label HidePassLb;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ShowPassCb;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label ExitBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

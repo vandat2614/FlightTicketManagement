@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FlightTicketManagement
 {
@@ -18,18 +19,19 @@ namespace FlightTicketManagement
         }
         private LoginAccount() { }
 
-        public (bool, object) login(string Email, string Password)
+        public bool login(string Email, string Password)
         {
             string query = "account_login @email , @password";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {Email, Password});
+            return result.Rows.Count == 1;
+        }
 
-            object type;
-            if (result.Rows.Count == 0)
-                type = null;
-            else 
-                type = result.Rows[0]["Type"];
+        public object getType(string email)
+        {
+            string query = "exec check_email @email";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { email });
 
-            return (result.Rows.Count == 1, type);
+            return result.Rows[0]["Type"];
         }
     }
 }

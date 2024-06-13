@@ -17,66 +17,32 @@ namespace FlightTicketManagement
             InitializeComponent();
         }
 
-        private bool isHidePass = true;
-
-        private void clear()
+        public bool checkEmpty()
         {
-            EmailTb.Text = string.Empty;
-            PassTb.Text = string.Empty;
-            PassAgainTb.Text = string.Empty;
+            if (EmailTb.Text == "" || PassTb.Text == "" || PassAgainTb.Text == "")
+                return true;
+            else return false;
         }
 
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
-            string email = EmailTb.Text;
-            string pass = PassTb.Text;
-            string check_pass = PassAgainTb.Text;
-            if(email == "")
-            {
-                MessageBox.Show("Địa chỉ email không được trống");
-            } else if(pass == "")
-            {
-                MessageBox.Show("Mật khẩu không được trống");
-            } else if(check_pass == "")
-            {
-                MessageBox.Show("Vui lòng xác nhận mật khẩu");
-            } else if (RegisterAccount.Instance.check_email(email))
-            {
-                MessageBox.Show("Địa chỉ email đã được sử dụng");
-            } else if(pass != check_pass)
-            {
-                MessageBox.Show("Mật khẩu không trùng khớp");
-            } else
-            {
-                bool result = RegisterAccount.Instance.add_account(email, pass);
-                if (result)
-                {
-                    MessageBox.Show("Đăng ký tài khoản thành công");
-                    clear();
-                }
-                else
-                {
-                    MessageBox.Show("Đăng ký tài khoản không thành công");
-                }
-            }
-
-        }
-
-        private void HidePassLb_Click(object sender, EventArgs e)
-        {
-            if (isHidePass)
-            {
-                PassTb.PasswordChar = '\0';
-                PassAgainTb.PasswordChar = '\0';
-                HidePassLb.Text = "Ẩn mật khẩu";
-            }
+            if (checkEmpty())
+                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                PassTb.PasswordChar = '•';
-                PassAgainTb.PasswordChar = '•';
-                HidePassLb.Text = "Hiển thị mật khẩu";
+                if (RegisterAccount.Instance.check_email(EmailTb.Text))
+                    MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (PassTb.Text != PassAgainTb.Text)
+                    MessageBox.Show("Password does not match", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    RegisterAccount.Instance.add_account(EmailTb.Text, PassTb.Text);
+                    MessageBox.Show("Registered successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Hide();
+                    new Login().Show();
+                }
             }
-            isHidePass = !isHidePass;
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -84,11 +50,22 @@ namespace FlightTicketManagement
 
         }
 
-        private void BackToLoginLb_Click(object sender, EventArgs e)
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Login login = new Login();
-            login.ShowDialog();
+            Login loginForm = new Login();
+            loginForm.ShowDialog();
+        }
+
+        private void ShowPassCb_CheckedChanged(object sender, EventArgs e)
+        {
+            PassTb.PasswordChar = ShowPassCb.Checked ? '\0' : '•';
+            PassAgainTb.PasswordChar = ShowPassCb.Checked ? '\0' : '•';
         }
     }
 }

@@ -17,64 +17,36 @@ namespace FlightTicketManagement
             InitializeComponent();
         }
 
-        private bool isHidePass = true;
-
-        private void clear()
+        public bool checkEmpty()
         {
-            EmailTb.Text = string.Empty;
-            PassTb.Text = string.Empty;
+            if (EmailTb.Text == "" || PassTb.Text == "")
+                return true;
+            else return false;
         }
-
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            string email = EmailTb.Text;
-            string password = PassTb.Text;
 
-            var result = LoginAccount.Instance.login(email, password);
-            bool is_valid = result.Item1;
-
-            if (!is_valid)
+            if(checkEmpty())
+                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(!LoginAccount.Instance.login(EmailTb.Text, PassTb.Text))
+                MessageBox.Show("Incorrect Username/Password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                MessageBox.Show("Địa chỉ email hoặc mật khẩu không hợp lệ");
-                clear();
-            } else
-            {
-                string account_type = result.Item2.ToString();
-                if (account_type == "0")
-                {
-                    this.Hide();
-                    AdminDashBoard dashboard = new AdminDashBoard();
-                    dashboard.ShowDialog();
-                    this.Show();
-                } else
-                {
-                    MessageBox.Show("Các type khác ddowijd di :v");
-                }
-
+                MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string type = LoginAccount.Instance.getType(EmailTb.Text).ToString();
+                if (type == "0")
+                    new AdminDashBoard().Show();
+                this.Hide();
             }
-        }
 
-        private void HidePassLb_Click(object sender, EventArgs e)
-        {
-            if (isHidePass)
-            {
-                PassTb.PasswordChar = '\0';
-                HidePassLb.Text = "Ẩn mật khẩu";
-            } else
-            {
-                PassTb.PasswordChar = '•';
-                HidePassLb.Text = "Hiển thị mật khẩu";
-            }
-            isHidePass = !isHidePass;
         }
 
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Register register = new Register();
-            register.ShowDialog();
-            this.Show();
+            Register registerForm = new Register();
+            registerForm.ShowDialog();
         }
 
         private void PassTb_TextChanged(object sender, EventArgs e)
@@ -95,6 +67,16 @@ namespace FlightTicketManagement
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ShowPassCb_CheckedChanged(object sender, EventArgs e)
+        {
+            PassTb.PasswordChar = ShowPassCb.Checked ? '\0' : '•';
         }
     }
 }
