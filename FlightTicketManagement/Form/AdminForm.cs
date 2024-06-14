@@ -41,5 +41,10 @@ namespace FlightTicketManagement
         {
             Application.Exit();
         }
+
+        private void LogoutBtn_Click(object sender, EventArgs e)
+        {
+            new AdminUsers().ShowDialog();
+        }
     }
 }
