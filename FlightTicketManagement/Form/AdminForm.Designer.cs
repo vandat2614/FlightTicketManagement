@@ -33,11 +33,12 @@
             this.ExitBtn = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AirportBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.AccountBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,8 +80,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.panel2.Controls.Add(this.AccountBtn);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.AirportBtn);
             this.panel2.Controls.Add(this.LogoutBtn);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.pictureBox1);
@@ -104,19 +106,20 @@
             this.button2.Text = "Add Filght";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // AirportBtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 404);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(248, 45);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Airports";
-            this.button1.UseVisualStyleBackColor = false;
+            this.AirportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.AirportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AirportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AirportBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.AirportBtn.ForeColor = System.Drawing.Color.White;
+            this.AirportBtn.Location = new System.Drawing.Point(12, 404);
+            this.AirportBtn.Name = "AirportBtn";
+            this.AirportBtn.Size = new System.Drawing.Size(248, 45);
+            this.AirportBtn.TabIndex = 16;
+            this.AirportBtn.Text = "Airports";
+            this.AirportBtn.UseVisualStyleBackColor = false;
+            this.AirportBtn.Click += new System.EventHandler(this.AirportBtn_Click_1);
             // 
             // LogoutBtn
             // 
@@ -154,21 +157,36 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // panel3
+            // MainPanel
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(272, 45);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 583);
-            this.panel3.TabIndex = 3;
+            this.MainPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(272, 45);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1000, 583);
+            this.MainPanel.TabIndex = 3;
+            // 
+            // AccountBtn
+            // 
+            this.AccountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.AccountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AccountBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.AccountBtn.ForeColor = System.Drawing.Color.White;
+            this.AccountBtn.Location = new System.Drawing.Point(12, 276);
+            this.AccountBtn.Name = "AccountBtn";
+            this.AccountBtn.Size = new System.Drawing.Size(248, 45);
+            this.AccountBtn.TabIndex = 18;
+            this.AccountBtn.Text = "User Data";
+            this.AccountBtn.UseVisualStyleBackColor = false;
+            this.AccountBtn.Click += new System.EventHandler(this.AccountBtn_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 628);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -190,9 +208,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AirportBtn;
         private System.Windows.Forms.Button LogoutBtn;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel MainPanel;
+        private System.Windows.Forms.Button AccountBtn;
     }
 }

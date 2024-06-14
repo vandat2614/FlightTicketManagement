@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FlightTicketManagement
 {
-    public partial class Airport : Form
+    public partial class AirportForm : Form
     {
-        public Airport()
+        public AirportForm()
         {
             InitializeComponent();
         }

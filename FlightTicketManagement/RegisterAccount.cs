@@ -32,5 +32,25 @@ namespace FlightTicketManagement
             return result == 1;
         }
 
+        public bool add_acoount_full(string Email, string Password, string name, string role, string phone)
+        {
+            string query = "exec add_account_full @email , @password , @name , @type , @phone";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password , name, role, phone});
+            return result == 1;
+        }
+
+        public bool update_account(string id, string Email, string Password, string name, string role, string phone)
+        {
+            string query = "exec update_account @id , @email , @password , @name , @type , @phone";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, Email, Password, name, role, phone });
+            return result == 1;
+        }
+
+        public bool delete_account(string id)
+        {
+            string query = "exec delete_account @id";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id});
+            return result == 1;
+        }
     }
 }

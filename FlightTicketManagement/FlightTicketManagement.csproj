@@ -59,11 +59,11 @@
     <Compile Include="Form\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Airport.cs">
+    <Compile Include="Form\AirportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Airport.Designer.cs">
-      <DependentUpon>Airport.cs</DependentUpon>
+    <Compile Include="Form\AirportForm.Designer.cs">
+      <DependentUpon>AirportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Register.cs">
       <SubType>Form</SubType>
@@ -98,8 +98,8 @@
     <EmbeddedResource Include="Form\AdminUsers.resx">
       <DependentUpon>AdminUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Airport.resx">
-      <DependentUpon>Airport.cs</DependentUpon>
+    <EmbeddedResource Include="Form\AirportForm.resx">
+      <DependentUpon>AirportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

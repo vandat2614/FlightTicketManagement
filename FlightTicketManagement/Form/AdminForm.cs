@@ -22,29 +22,50 @@ namespace FlightTicketManagement
 
         }
 
-        public void LoadForm(object form)
-        {
-/*            Form f = form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.MainPanel.Controls.Add(f);
-            this.MainPanel.Tag = f;
-            f.Show();*/
-        }
 
         private void AirportBtn_Click(object sender, EventArgs e)
         {
-            LoadForm(new Airport());
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult check = MessageBox.Show("Are you sure you want to Sign out?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                this.Hide();
+                new Login().ShowDialog();
+            }
         }
 
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
-            new AdminUsers().ShowDialog();
+            DialogResult check = MessageBox.Show("Are you sure you want to Sign out?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (check == DialogResult.Yes)
+            {
+                this.Hide();
+                new Login().ShowDialog();
+            }
+        }
+
+        public void LoadForm(object Form)
+        {
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.MainPanel.Controls.Add(f);
+            this.MainPanel.Tag = f;
+            f.Show();
+
+        }
+
+        private void AirportBtn_Click_1(object sender, EventArgs e)
+        {
+            LoadForm(new AirportForm());
+        }
+
+        private void AccountBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new AdminUsers());
         }
     }
 }

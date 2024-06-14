@@ -1,6 +1,6 @@
 ﻿namespace FlightTicketManagement
 {
-    partial class Airport
+    partial class AirportForm
     {
         /// <summary>
         /// Required designer variable.
