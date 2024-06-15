@@ -17,15 +17,6 @@ namespace FlightTicketManagement
             InitializeComponent();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void AirportBtn_Click(object sender, EventArgs e)
-        {
-        }
 
         private void ExitBtn_Click(object sender, EventArgs e)
         {
@@ -60,12 +51,12 @@ namespace FlightTicketManagement
 
         private void AirportBtn_Click_1(object sender, EventArgs e)
         {
-            LoadForm(new AirportForm());
+            LoadForm(new Admin_AirportForm());
         }
 
         private void AccountBtn_Click(object sender, EventArgs e)
         {
-            LoadForm(new AdminUsers());
+            LoadForm(new Admin_UserForm());
         }
     }
 }

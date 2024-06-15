@@ -30,24 +30,19 @@ namespace FlightTicketManagement
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                if (RegisterAccount.Instance.check_email(EmailTb.Text))
+                if (Account.Instance.check_email(EmailTb.Text))
                     MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else if (PassTb.Text != PassAgainTb.Text)
                     MessageBox.Show("Password does not match", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    RegisterAccount.Instance.add_account(EmailTb.Text, PassTb.Text);
+                    Account.Instance.add_account(EmailTb.Text, PassTb.Text);
                     MessageBox.Show("Registered successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Hide();
                     new Login().Show();
                 }
             }
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

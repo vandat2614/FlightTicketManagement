@@ -29,12 +29,12 @@ namespace FlightTicketManagement
 
             if(checkEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(!LoginAccount.Instance.login(EmailTb.Text, PassTb.Text))
+            else if(!Account.Instance.login(EmailTb.Text, PassTb.Text))
                 MessageBox.Show("Incorrect Username/Password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                string type = LoginAccount.Instance.getType(EmailTb.Text).ToString();
+                string type = Account.Instance.getType(EmailTb.Text).ToString();
                 if (type == "admin")
                     new AdminForm().Show();
                 this.Hide();
@@ -49,34 +49,15 @@ namespace FlightTicketManagement
             registerForm.ShowDialog();
         }
 
-        private void PassTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EmailTb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void ShowPassCb_CheckedChanged(object sender, EventArgs e)
         {
             PassTb.PasswordChar = ShowPassCb.Checked ? '\0' : '•';
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
         }
     }
 }

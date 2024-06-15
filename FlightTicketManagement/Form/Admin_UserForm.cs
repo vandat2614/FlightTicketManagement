@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace FlightTicketManagement
 {
-    public partial class AdminUsers : Form
+    public partial class Admin_UserForm : Form
     {
-        public AdminUsers()
+        public Admin_UserForm()
         {
             InitializeComponent();
         }
 
         private void AdminUsers_Load(object sender, EventArgs e)
         {
-            LoadUserList();
+            LoadListAccount();
         }
 
-        public void LoadUserList()
+        public void LoadListAccount()
         {
-            List<UserInfo> users = UserData.Instance.GetUserData();
+            List<UserInfo> users = Account.Instance.GetListAccount();
             ListUserGv.DataSource = users;
         }
 
@@ -38,13 +38,13 @@ namespace FlightTicketManagement
         {
             if(CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(RegisterAccount.Instance.check_email(EmailTb.Text))
+            else if(Account.Instance.check_email(EmailTb.Text))
                 MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                RegisterAccount.Instance.add_acoount_full(EmailTb.Text, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
+                Account.Instance.add_acoount_full(EmailTb.Text, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadUserList();
+                LoadListAccount();
             }
         }
 
@@ -69,9 +69,9 @@ namespace FlightTicketManagement
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(result == DialogResult.Yes)
                 {
-                    RegisterAccount.Instance.update_account(id_account_update, EmailTb.Text, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
+                    Account.Instance.update_account(id_account_update, EmailTb.Text, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
                     MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadUserList() ;
+                    LoadListAccount() ;
                 }
             }
         }
@@ -94,9 +94,9 @@ namespace FlightTicketManagement
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                RegisterAccount.Instance.delete_account(id_account_update);
+                Account.Instance.delete_account(id_account_update);
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadUserList();
+                LoadListAccount();
             }
         }
     }

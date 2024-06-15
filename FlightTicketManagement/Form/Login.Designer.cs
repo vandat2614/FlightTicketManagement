@@ -55,7 +55,6 @@
             this.label1.Size = new System.Drawing.Size(65, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Email:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -66,7 +65,6 @@
             this.label2.Size = new System.Drawing.Size(104, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "Password:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // EmailTb
             // 
@@ -76,7 +74,6 @@
             this.EmailTb.Name = "EmailTb";
             this.EmailTb.Size = new System.Drawing.Size(278, 30);
             this.EmailTb.TabIndex = 2;
-            this.EmailTb.TextChanged += new System.EventHandler(this.EmailTb_TextChanged);
             // 
             // PassTb
             // 
@@ -87,7 +84,6 @@
             this.PassTb.PasswordChar = '•';
             this.PassTb.Size = new System.Drawing.Size(278, 30);
             this.PassTb.TabIndex = 3;
-            this.PassTb.TextChanged += new System.EventHandler(this.PassTb_TextChanged);
             // 
             // LoginBtn
             // 
@@ -207,7 +203,7 @@
             this.ExitBtn.Size = new System.Drawing.Size(22, 23);
             this.ExitBtn.TabIndex = 11;
             this.ExitBtn.Text = "X";
-            this.ExitBtn.Click += new System.EventHandler(this.label6_Click);
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // Login
             // 

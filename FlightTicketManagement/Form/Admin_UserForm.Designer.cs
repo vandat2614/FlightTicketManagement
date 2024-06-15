@@ -1,6 +1,6 @@
 ﻿namespace FlightTicketManagement
 {
-    partial class AdminUsers
+    partial class Admin_UserForm
     {
         /// <summary>
         /// Required designer variable.
