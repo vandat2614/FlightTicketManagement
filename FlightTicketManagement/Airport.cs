@@ -19,17 +19,17 @@ namespace FlightTicketManagement
         }
         private Airport() { }
 
-        public bool add_airport(string name, string city)
+        public bool add_airport(string code, string name, string city)
         {
-            string query = "exec add_airport @name , @city";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { name, city });
+            string query = "exec add_airport @code , @name , @city";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code, name, city });
             return result == 1;
         }
 
-        public bool update_airport(string id, string name, string city)
+        public bool update_airport(string id, string code, string name, string city)
         {
-            string query = "exec update_airport @id , @name , @city";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, name, city});
+            string query = "exec update_airport @id , @code , @name , @city";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, code, name, city});
             return result == 1;
         }
 
@@ -38,6 +38,13 @@ namespace FlightTicketManagement
             string query = "exec delete_airport @id";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
             return result == 1;
+        }
+
+        public bool check_aiport_code(string code)
+        {
+            string query = "exec check_airport @code";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { code });
+            return result.Rows.Count > 0;
         }
 
         public List<AirportInfo> GetListAirport()

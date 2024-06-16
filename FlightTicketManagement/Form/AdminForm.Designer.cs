@@ -32,13 +32,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AccountBtn = new System.Windows.Forms.Button();
+            this.FightBtn = new System.Windows.Forms.Button();
             this.AirportBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.AccountBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,7 +81,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.panel2.Controls.Add(this.AccountBtn);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.FightBtn);
             this.panel2.Controls.Add(this.AirportBtn);
             this.panel2.Controls.Add(this.LogoutBtn);
             this.panel2.Controls.Add(this.label7);
@@ -92,19 +92,35 @@
             this.panel2.Size = new System.Drawing.Size(272, 583);
             this.panel2.TabIndex = 2;
             // 
-            // button2
+            // AccountBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12, 343);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(248, 45);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Add Filght";
-            this.button2.UseVisualStyleBackColor = false;
+            this.AccountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.AccountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AccountBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.AccountBtn.ForeColor = System.Drawing.Color.White;
+            this.AccountBtn.Location = new System.Drawing.Point(12, 276);
+            this.AccountBtn.Name = "AccountBtn";
+            this.AccountBtn.Size = new System.Drawing.Size(248, 45);
+            this.AccountBtn.TabIndex = 18;
+            this.AccountBtn.Text = "User Data";
+            this.AccountBtn.UseVisualStyleBackColor = false;
+            this.AccountBtn.Click += new System.EventHandler(this.AccountBtn_Click);
+            // 
+            // FightBtn
+            // 
+            this.FightBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.FightBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FightBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.FightBtn.ForeColor = System.Drawing.Color.White;
+            this.FightBtn.Location = new System.Drawing.Point(12, 343);
+            this.FightBtn.Name = "FightBtn";
+            this.FightBtn.Size = new System.Drawing.Size(248, 45);
+            this.FightBtn.TabIndex = 17;
+            this.FightBtn.Text = "Add Filght";
+            this.FightBtn.UseVisualStyleBackColor = false;
+            this.FightBtn.Click += new System.EventHandler(this.FightBtn_Click);
             // 
             // AirportBtn
             // 
@@ -166,21 +182,6 @@
             this.MainPanel.Size = new System.Drawing.Size(1000, 583);
             this.MainPanel.TabIndex = 3;
             // 
-            // AccountBtn
-            // 
-            this.AccountBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.AccountBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AccountBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.AccountBtn.ForeColor = System.Drawing.Color.White;
-            this.AccountBtn.Location = new System.Drawing.Point(12, 276);
-            this.AccountBtn.Name = "AccountBtn";
-            this.AccountBtn.Size = new System.Drawing.Size(248, 45);
-            this.AccountBtn.TabIndex = 18;
-            this.AccountBtn.Text = "User Data";
-            this.AccountBtn.UseVisualStyleBackColor = false;
-            this.AccountBtn.Click += new System.EventHandler(this.AccountBtn_Click);
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -210,7 +211,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button AirportBtn;
         private System.Windows.Forms.Button LogoutBtn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button FightBtn;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button AccountBtn;
     }

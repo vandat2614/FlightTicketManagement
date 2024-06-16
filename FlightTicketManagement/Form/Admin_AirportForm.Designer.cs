@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AirportCityCbb = new System.Windows.Forms.ComboBox();
             this.ClearBtn = new System.Windows.Forms.Button();
@@ -41,6 +41,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ListAirportGv = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.AirportCodeTb = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListAirportGv)).BeginInit();
@@ -49,6 +51,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.AirportCodeTb);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.AirportCityCbb);
             this.panel1.Controls.Add(this.ClearBtn);
             this.panel1.Controls.Add(this.DeleteBtn);
@@ -181,14 +185,14 @@
             this.ListAirportGv.AllowUserToDeleteRows = false;
             this.ListAirportGv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListAirportGv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListAirportGv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ListAirportGv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.ListAirportGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListAirportGv.EnableHeadersVisualStyles = false;
             this.ListAirportGv.Location = new System.Drawing.Point(34, 73);
@@ -211,6 +215,25 @@
             this.label7.Size = new System.Drawing.Size(103, 27);
             this.label7.TabIndex = 16;
             this.label7.Text = "Airports";
+            // 
+            // AirportCodeTb
+            // 
+            this.AirportCodeTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AirportCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AirportCodeTb.Location = new System.Drawing.Point(123, 22);
+            this.AirportCodeTb.Name = "AirportCodeTb";
+            this.AirportCodeTb.Size = new System.Drawing.Size(212, 30);
+            this.AirportCodeTb.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 21);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Code:";
             // 
             // Admin_AirportForm
             // 
@@ -246,5 +269,7 @@
         private System.Windows.Forms.Button AddBtn;
         private System.Windows.Forms.ComboBox AirportCityCbb;
         private System.Windows.Forms.DataGridView ListAirportGv;
+        private System.Windows.Forms.TextBox AirportCodeTb;
+        private System.Windows.Forms.Label label3;
     }
 }

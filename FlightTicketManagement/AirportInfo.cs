@@ -12,10 +12,12 @@ namespace FlightTicketManagement
         public AirportInfo(DataRow row)
         {
             this.id = row["id"].ToString();
+            this.code = row["code"].ToString();
             this.name = row["name"].ToString();
             this.city = row["city"].ToString();
         }
         public string id { get; set; }
+        public string code { get; set; }
         public string name {  get; set; }
         public string city { get; set; }
     }

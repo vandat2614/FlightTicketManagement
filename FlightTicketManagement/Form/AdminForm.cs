@@ -58,5 +58,11 @@ namespace FlightTicketManagement
         {
             LoadForm(new Admin_UserForm());
         }
+
+        private void FightBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new Admin_FlightForm());
+
+        }
     }
 }
