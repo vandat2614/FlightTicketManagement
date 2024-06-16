@@ -40,6 +40,8 @@ namespace FlightTicketManagement
 
         public void LoadForm(object Form)
         {
+            if (this.MainPanel.Controls.Count > 0)
+                this.MainPanel.Controls.RemoveAt(0);
             Form f = Form as Form;
             f.TopLevel = false;
             f.Dock = DockStyle.Fill;

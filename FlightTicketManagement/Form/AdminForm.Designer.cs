@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1272, 45);
+            this.panel1.Size = new System.Drawing.Size(1471, 45);
             this.panel1.TabIndex = 1;
             // 
             // label4
@@ -70,7 +70,7 @@
             this.ExitBtn.AutoSize = true;
             this.ExitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExitBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.Location = new System.Drawing.Point(1238, 9);
+            this.ExitBtn.Location = new System.Drawing.Point(1437, 9);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(22, 23);
             this.ExitBtn.TabIndex = 12;
@@ -89,7 +89,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(272, 583);
+            this.panel2.Size = new System.Drawing.Size(272, 701);
             this.panel2.TabIndex = 2;
             // 
             // AccountBtn
@@ -176,17 +176,16 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(272, 45);
+            this.MainPanel.Location = new System.Drawing.Point(269, 45);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1000, 583);
+            this.MainPanel.Size = new System.Drawing.Size(1200, 700);
             this.MainPanel.TabIndex = 3;
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 628);
+            this.ClientSize = new System.Drawing.Size(1471, 746);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

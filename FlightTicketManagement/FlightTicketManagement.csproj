@@ -50,6 +50,8 @@
     <Compile Include="Airport.cs" />
     <Compile Include="AirportInfo.cs" />
     <Compile Include="DataProvider.cs" />
+    <Compile Include="Flight.cs" />
+    <Compile Include="FlightInfo.cs" />
     <Compile Include="Form\Admin_FlightForm.cs">
       <SubType>Form</SubType>
     </Compile>
