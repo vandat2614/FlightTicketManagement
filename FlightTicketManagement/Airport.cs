@@ -26,17 +26,17 @@ namespace FlightTicketManagement
             return result == 1;
         }
 
-        public bool update_airport(string id, string code, string name, string city)
+        public bool update_airport(string code, string name, string city)
         {
-            string query = "exec update_airport @id , @code , @name , @city";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, code, name, city});
+            string query = "exec update_airport  @code , @name , @city";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code, name, city});
             return result == 1;
         }
 
-        public bool delete_airport(string id)
+        public bool delete_airport(string code)
         {
-            string query = "exec delete_airport @id";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
+            string query = "exec delete_airport @code";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code });
             return result == 1;
         }
 

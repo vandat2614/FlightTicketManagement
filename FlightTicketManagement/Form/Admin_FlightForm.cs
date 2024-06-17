@@ -25,27 +25,35 @@ namespace FlightTicketManagement
 
         private void Admin_FlightForm_Load(object sender, EventArgs e)
         {
-            LoadListFlight();
+            //LoadListFlight();
         }
 
         public bool CheckEmpty()
         {
-            if(CodeTb.Text == "" || PriceTb.Text == "" || StartCbb.Text == "" || DesCbb.Text == "" || Seat1Tb.Text == "" || Seat2Tb.Text == "")
+            if(CodeTb.Text == "" || PriceTb.Text == "" || StartCbb.Text == "" || DesCbb.Text == "" || Seat1Tb.Text == "" || Seat2Tb.Text == "" || FlightDurationTb.Text == "")
                 return true;
             return false;
         }
 
+        public string getDate()
+        {
+            return FlightDatePk.Value.ToString().Split(' ')[0];
+        }
+
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            if (CheckEmpty())
+            if (!CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (Flight.Instance.check_flight_code(CodeTb.Text))
                 MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                Flight.Instance.add_flight(CodeTb.Text, StartCbb.Text, DesCbb.Text, DatePk.Text + DateTimePk.Text, TimeFlightPk.Text, PriceTb.Text, Seat1Tb.Text, Seat2Tb.Text);
+                MessageBox.Show(getDate());
+
+
+                /*Flight.Instance.add_flight(CodeTb.Text, StartCbb.Text, DesCbb.Text, DatePk.Text + DateTimePk.Text, TimeFlightPk.Text, PriceTb.Text, Seat1Tb.Text, Seat2Tb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadListFlight();
+                LoadListFlight();*/
             }
         }
     }

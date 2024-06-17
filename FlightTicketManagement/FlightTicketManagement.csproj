@@ -141,7 +141,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SQL\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-airplane-take-off-96.png" />
   </ItemGroup>

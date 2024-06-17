@@ -49,26 +49,26 @@ namespace FlightTicketManagement
         {
             if (CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (Airport.Instance.check_aiport_code(AirportCodeTb.Text))
+                MessageBox.Show("This airport code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    Airport.Instance.update_airport(id_airport_update, AirportCodeTb.Text, AirportNameTb.Text, AirportCityCbb.Text);
+                    Airport.Instance.update_airport(AirportCodeTb.Text, AirportNameTb.Text, AirportCityCbb.Text);
                     MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadListAirport();
                 }
             }
         }
 
-        public string id_airport_update = null;
         private void ListAirportGv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = ListAirportGv.Rows[e.RowIndex];
-            id_airport_update = row.Cells[0].Value.ToString();
-            AirportCodeTb.Text = row.Cells[1].Value.ToString();
-            AirportNameTb.Text = row.Cells[2].Value.ToString();
-            AirportCityCbb.Text = row.Cells[3].Value.ToString();
+            AirportCodeTb.Text = row.Cells[0].Value.ToString();
+            AirportNameTb.Text = row.Cells[1].Value.ToString();
+            AirportCityCbb.Text = row.Cells[2].Value.ToString();
         }
 
         private void Admin_AirportForm_Load(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace FlightTicketManagement
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Airport.Instance.delete_airport(id_airport_update);
+                Airport.Instance.delete_airport(AirportCodeTb.Text);
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAirport();
             }
