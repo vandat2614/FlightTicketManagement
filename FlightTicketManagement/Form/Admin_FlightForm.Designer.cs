@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ListFlightGv = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DesCbb = new System.Windows.Forms.ComboBox();
+            this.DestCbb = new System.Windows.Forms.ComboBox();
             this.StartCbb = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.FlightTimePk = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.CodeTb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,8 +53,7 @@
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.UpdateBtn = new System.Windows.Forms.Button();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.FlightDurationTb = new System.Windows.Forms.TextBox();
-            this.FlightTimePk = new System.Windows.Forms.DateTimePicker();
+            this.FlightDurationPk = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListFlightGv)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,14 +75,14 @@
             this.ListFlightGv.AllowUserToDeleteRows = false;
             this.ListFlightGv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListFlightGv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListFlightGv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ListFlightGv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.ListFlightGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListFlightGv.EnableHeadersVisualStyles = false;
             this.ListFlightGv.Location = new System.Drawing.Point(25, 55);
@@ -93,6 +93,7 @@
             this.ListFlightGv.RowTemplate.Height = 24;
             this.ListFlightGv.Size = new System.Drawing.Size(783, 248);
             this.ListFlightGv.TabIndex = 17;
+            this.ListFlightGv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListFlightGv_CellClick);
             // 
             // label7
             // 
@@ -108,8 +109,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.FlightDurationTb);
-            this.panel1.Controls.Add(this.DesCbb);
+            this.panel1.Controls.Add(this.FlightDurationPk);
+            this.panel1.Controls.Add(this.DestCbb);
             this.panel1.Controls.Add(this.StartCbb);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.FlightTimePk);
@@ -134,19 +135,19 @@
             this.panel1.Size = new System.Drawing.Size(817, 282);
             this.panel1.TabIndex = 3;
             // 
-            // DesCbb
+            // DestCbb
             // 
-            this.DesCbb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DesCbb.FormattingEnabled = true;
-            this.DesCbb.Items.AddRange(new object[] {
+            this.DestCbb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DestCbb.FormattingEnabled = true;
+            this.DestCbb.Items.AddRange(new object[] {
             "Hồ Chí Minh",
             "Hà Nội",
             "Vinh",
             "Đà Nẵng"});
-            this.DesCbb.Location = new System.Drawing.Point(572, 56);
-            this.DesCbb.Name = "DesCbb";
-            this.DesCbb.Size = new System.Drawing.Size(212, 30);
-            this.DesCbb.TabIndex = 33;
+            this.DestCbb.Location = new System.Drawing.Point(572, 56);
+            this.DestCbb.Name = "DestCbb";
+            this.DestCbb.Size = new System.Drawing.Size(212, 30);
+            this.DestCbb.TabIndex = 33;
             // 
             // StartCbb
             // 
@@ -172,6 +173,18 @@
             this.label9.TabIndex = 30;
             this.label9.Text = "Time:";
             // 
+            // FlightTimePk
+            // 
+            this.FlightTimePk.CustomFormat = "HH:MM";
+            this.FlightTimePk.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F);
+            this.FlightTimePk.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.FlightTimePk.Location = new System.Drawing.Point(278, 104);
+            this.FlightTimePk.Name = "FlightTimePk";
+            this.FlightTimePk.ShowUpDown = true;
+            this.FlightTimePk.Size = new System.Drawing.Size(140, 28);
+            this.FlightTimePk.TabIndex = 29;
+            this.FlightTimePk.Value = new System.DateTime(2024, 6, 17, 8, 54, 0, 0);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -190,6 +203,7 @@
             this.CodeTb.Name = "CodeTb";
             this.CodeTb.Size = new System.Drawing.Size(279, 30);
             this.CodeTb.TabIndex = 27;
+            this.CodeTb.TextChanged += new System.EventHandler(this.CodeTb_TextChanged);
             // 
             // label6
             // 
@@ -210,7 +224,7 @@
             this.FlightDatePk.Name = "FlightDatePk";
             this.FlightDatePk.Size = new System.Drawing.Size(127, 28);
             this.FlightDatePk.TabIndex = 25;
-            this.FlightDatePk.Value = new System.DateTime(2024, 6, 17, 0, 0, 0, 0);
+            this.FlightDatePk.Value = new System.DateTime(2024, 6, 18, 0, 0, 0, 0);
             // 
             // Seat2Tb
             // 
@@ -302,6 +316,7 @@
             this.ClearBtn.TabIndex = 14;
             this.ClearBtn.Text = "CLEAR";
             this.ClearBtn.UseVisualStyleBackColor = false;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -316,6 +331,7 @@
             this.DeleteBtn.TabIndex = 13;
             this.DeleteBtn.Text = "DELETE";
             this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // UpdateBtn
             // 
@@ -330,6 +346,7 @@
             this.UpdateBtn.TabIndex = 12;
             this.UpdateBtn.Text = "UPDATE";
             this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // AddBtn
             // 
@@ -346,26 +363,17 @@
             this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // FlightDurationTb
+            // FlightDurationPk
             // 
-            this.FlightDurationTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlightDurationTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FlightDurationTb.Location = new System.Drawing.Point(572, 111);
-            this.FlightDurationTb.Name = "FlightDurationTb";
-            this.FlightDurationTb.Size = new System.Drawing.Size(212, 30);
-            this.FlightDurationTb.TabIndex = 34;
-            // 
-            // FlightTimePk
-            // 
-            this.FlightTimePk.CustomFormat = "HH:MM";
-            this.FlightTimePk.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F);
-            this.FlightTimePk.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.FlightTimePk.Location = new System.Drawing.Point(278, 104);
-            this.FlightTimePk.Name = "FlightTimePk";
-            this.FlightTimePk.ShowUpDown = true;
-            this.FlightTimePk.Size = new System.Drawing.Size(140, 28);
-            this.FlightTimePk.TabIndex = 29;
-            this.FlightTimePk.Value = new System.DateTime(2024, 6, 17, 8, 54, 0, 0);
+            this.FlightDurationPk.CustomFormat = "HH:mm";
+            this.FlightDurationPk.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F);
+            this.FlightDurationPk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FlightDurationPk.Location = new System.Drawing.Point(572, 111);
+            this.FlightDurationPk.Name = "FlightDurationPk";
+            this.FlightDurationPk.ShowUpDown = true;
+            this.FlightDurationPk.Size = new System.Drawing.Size(212, 28);
+            this.FlightDurationPk.TabIndex = 34;
+            this.FlightDurationPk.Value = new System.DateTime(2024, 6, 17, 8, 54, 0, 0);
             // 
             // Admin_FlightForm
             // 
@@ -411,9 +419,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox DesCbb;
+        private System.Windows.Forms.ComboBox DestCbb;
         private System.Windows.Forms.ComboBox StartCbb;
-        private System.Windows.Forms.TextBox FlightDurationTb;
         private System.Windows.Forms.DateTimePicker FlightTimePk;
+        private System.Windows.Forms.DateTimePicker FlightDurationPk;
     }
 }

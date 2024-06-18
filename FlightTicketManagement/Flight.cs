@@ -26,13 +26,26 @@ namespace FlightTicketManagement
             return result.Rows.Count > 0;
         }
 
-        public bool add_flight(string code, string start, string destination, string datetime, string time, string price, string seat1, string seat2)
+        public bool add_flight(string code, string start, string dest, string date, string time, string duration, string price, string seat1, string seat2)
         {
-            string query = "exec add_flight @code , @start , @destination , @datetime , @time , @price , @seat1 , @seat2";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code, start, destination, datetime, time, price, seat1, seat2 });
+            string query = "exec add_flight @code , @start , @dest , @date , @time , @duration , @price , @seat1 , @seat2";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code, start, dest, date, time, duration, price, seat1, seat2 });
             return result == 1;
         }
 
+        public bool update_flight(string code, string start, string dest, string date, string time, string duration, string price, string seat1, string seat2)
+        {
+            string query = "exec update_flight  @code , @start , @dest , @date , @time , @duration , @price , @seat1 , @seat2";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code, start, dest, date, time, duration, price, seat1, seat2 });
+            return result == 1;
+        }
+
+        public bool delete_flight(string code)
+        {
+            string query = "exec delete_flight @code";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code });
+            return result == 1;
+        }
 
         public List<FlightInfo> GetListFlightt()
         {
