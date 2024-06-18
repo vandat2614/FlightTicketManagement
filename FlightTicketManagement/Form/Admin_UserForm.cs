@@ -42,7 +42,7 @@ namespace FlightTicketManagement
                 MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                Account.Instance.add_acoount_full(EmailTb.Text, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
+                Account.Instance.add_account(EmailTb.Text, PassTb.Text, RoleCbb.Text, NameTb.Text, PhoneTb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAccount();
             }
@@ -52,12 +52,11 @@ namespace FlightTicketManagement
         private void ListUserGv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = ListUserGv.Rows[e.RowIndex];
-            id_account_update = row.Cells[0].Value.ToString();
-            NameTb.Text = row.Cells[1].Value.ToString();
+            EmailTb.Text = row.Cells[0].Value.ToString();
+            PassTb.Text = row.Cells[1].Value.ToString();
             RoleCbb.Text = row.Cells[2].Value.ToString();
-            EmailTb.Text = row.Cells[3].Value.ToString();
-            PassTb.Text = row.Cells[4].Value.ToString();
-            PhoneTb.Text = row.Cells[5].Value.ToString();
+            NameTb.Text = row.Cells[3].Value.ToString();
+            PhoneTb.Text = row.Cells[4].Value.ToString();
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
@@ -94,7 +93,7 @@ namespace FlightTicketManagement
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Account.Instance.delete_account(id_account_update);
+                Account.Instance.delete_account(EmailTb.Text);
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAccount();
             }

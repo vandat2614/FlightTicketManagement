@@ -29,12 +29,12 @@ namespace FlightTicketManagement
 
             if(checkEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(!Account.Instance.login(EmailTb.Text, PassTb.Text))
+            else if(!Account.Instance.check_account(EmailTb.Text, PassTb.Text))
                 MessageBox.Show("Incorrect Username/Password", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                string type = Account.Instance.getType(EmailTb.Text).ToString();
+                string type = Account.Instance.get_account_type(EmailTb.Text).ToString();
                 if (type == "admin")
                     new AdminForm().Show();
                 this.Hide();

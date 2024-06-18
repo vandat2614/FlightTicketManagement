@@ -19,19 +19,19 @@ namespace FlightTicketManagement
         }
         private Account() { }
 
-        public bool login(string Email, string Password)
+        public bool check_account(string Email, string Password)
         {
-            string query = "account_login @email , @password";
+            string query = "exec check_account @email , @pass";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { Email, Password });
             return result.Rows.Count == 1;
         }
 
-        public object getType(string email)
+        public object get_account_type(string email)
         {
             string query = "exec check_email @email";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { email });
 
-            return result.Rows[0]["Type"];
+            return result.Rows[0]["type"];
         }
 
         public bool check_email(string Email)
@@ -41,31 +41,31 @@ namespace FlightTicketManagement
             return result.Rows.Count > 0;
         }
 
-        public bool add_account(string Email, string Password)
+        public bool register_account(string Email, string Password)
         {
-            string query = "exec add_account @email , @password";
+            string query = "exec register_account @email , @pass";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password });
             return result == 1;
         }
 
-        public bool add_acoount_full(string Email, string Password, string name, string role, string phone)
+        public bool add_account(string Email, string Password, string type, string name, string phone)
         {
-            string query = "exec add_account_full @email , @password , @name , @type , @phone";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password, name, role, phone });
+            string query = "exec add_account @email , @pass , @type , @name , @phone";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password, type, name, phone });
             return result == 1;
         }
 
-        public bool update_account(string id, string Email, string Password, string name, string role, string phone)
+        public bool update_account(string NewEmail, string OldEmail, string Password, string name, string type, string phone)
         {
-            string query = "exec update_account @id , @email , @password , @name , @type , @phone";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, Email, Password, name, role, phone });
+            string query = "exec update_account @newemail , @oldemail , @pass , @name , @type , @phone";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { NewEmail, OldEmail, Password, name, type, phone });
             return result == 1;
         }
 
-        public bool delete_account(string id)
+        public bool delete_account(string email)
         {
-            string query = "exec delete_account @id";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
+            string query = "exec delete_account @email";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { email });
             return result == 1;
         }
 

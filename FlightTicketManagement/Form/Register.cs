@@ -36,7 +36,7 @@ namespace FlightTicketManagement
                     MessageBox.Show("Password does not match", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                 {
-                    Account.Instance.add_account(EmailTb.Text, PassTb.Text);
+                    Account.Instance.register_account(EmailTb.Text, PassTb.Text);
                     MessageBox.Show("Registered successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Hide();
@@ -61,6 +61,11 @@ namespace FlightTicketManagement
         {
             PassTb.PasswordChar = ShowPassCb.Checked ? '\0' : '•';
             PassAgainTb.PasswordChar = ShowPassCb.Checked ? '\0' : '•';
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

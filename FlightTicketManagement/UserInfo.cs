@@ -9,19 +9,16 @@ namespace FlightTicketManagement
 {
     public class UserInfo { 
         public UserInfo(DataRow row) { 
-            this.id = row["id"].ToString();
             this.email = row["email"].ToString();
-            this.name = row["fullname"].ToString();
+            this.pass = row["pass"].ToString();
+            this.name = row["name"].ToString();
             this.type = row["type"].ToString();
-            this.password = row["password"].ToString();
-            this.phone = row["phonenumber"].ToString();
+            this.phone = row["phone"].ToString();
         }
-    
-        public string id { get; set; }
-        public string name { get; set; }
-        public string type { get; set; }
         public string email { get; set; }
-        public string password { get; set; }
+        public string pass { get; set; }
+        public string type { get; set; }
+        public string name { get; set; }
         public string phone { get; set; }
     }
 }
