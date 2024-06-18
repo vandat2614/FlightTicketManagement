@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,11 +24,21 @@ namespace FlightTicketManagement
                 return true;
             else return false;
         }
+        public static bool IsValidEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+            Regex regex = new Regex(pattern);
+            return regex.IsMatch(email);
+        }
 
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
             if (checkEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (!IsValidEmail(EmailTb.Text))
+            {
+                MessageBox.Show("Invalid email address.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 if (Account.Instance.check_email(EmailTb.Text))

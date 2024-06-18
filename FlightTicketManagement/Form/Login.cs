@@ -35,7 +35,7 @@ namespace FlightTicketManagement
             {
                 MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 string type = Account.Instance.get_account_type(EmailTb.Text).ToString();
-                if (type == "admin")
+                if (type == "Admin")
                     new AdminForm().Show();
                 this.Hide();
             }

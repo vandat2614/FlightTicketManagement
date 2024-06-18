@@ -48,7 +48,7 @@ namespace FlightTicketManagement
             }
         }
 
-        public string id_account_update = null;
+        public string old_email = null;
         private void ListUserGv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = ListUserGv.Rows[e.RowIndex];
@@ -57,19 +57,23 @@ namespace FlightTicketManagement
             RoleCbb.Text = row.Cells[2].Value.ToString();
             NameTb.Text = row.Cells[3].Value.ToString();
             PhoneTb.Text = row.Cells[4].Value.ToString();
+            old_email = EmailTb.Text;
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
             if(CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(old_email != null && EmailTb.Text != old_email && Account.Instance.check_email(EmailTb.Text))
+                MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(result == DialogResult.Yes)
                 {
-                    Account.Instance.update_account(id_account_update, EmailTb.Text, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
+                    Account.Instance.update_account(EmailTb.Text, old_email, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
                     MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    old_email = null;
                     LoadListAccount() ;
                 }
             }
@@ -97,6 +101,10 @@ namespace FlightTicketManagement
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAccount();
             }
+        }
+
+        private void EmailTb_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }
