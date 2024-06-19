@@ -49,8 +49,6 @@ namespace FlightTicketManagement
         {
             if (CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (Airport.Instance.check_aiport_code(AirportCodeTb.Text))
-                MessageBox.Show("This airport code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

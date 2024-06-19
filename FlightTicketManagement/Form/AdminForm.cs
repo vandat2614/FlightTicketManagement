@@ -66,5 +66,10 @@ namespace FlightTicketManagement
             LoadForm(new Admin_FlightForm());
 
         }
+
+        private void SettingBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new SettingForm());
+        }
     }
 }

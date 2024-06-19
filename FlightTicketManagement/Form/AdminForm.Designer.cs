@@ -39,6 +39,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.SettingBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +81,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.panel2.Controls.Add(this.SettingBtn);
             this.panel2.Controls.Add(this.AccountBtn);
             this.panel2.Controls.Add(this.FightBtn);
             this.panel2.Controls.Add(this.AirportBtn);
@@ -181,6 +183,21 @@
             this.MainPanel.Size = new System.Drawing.Size(1200, 700);
             this.MainPanel.TabIndex = 3;
             // 
+            // SettingBtn
+            // 
+            this.SettingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.SettingBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SettingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SettingBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.SettingBtn.ForeColor = System.Drawing.Color.White;
+            this.SettingBtn.Location = new System.Drawing.Point(12, 465);
+            this.SettingBtn.Name = "SettingBtn";
+            this.SettingBtn.Size = new System.Drawing.Size(248, 45);
+            this.SettingBtn.TabIndex = 19;
+            this.SettingBtn.Text = "Setting";
+            this.SettingBtn.UseVisualStyleBackColor = false;
+            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,5 +230,6 @@
         private System.Windows.Forms.Button FightBtn;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button AccountBtn;
+        private System.Windows.Forms.Button SettingBtn;
     }
 }
