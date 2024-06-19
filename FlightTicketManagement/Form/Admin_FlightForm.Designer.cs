@@ -59,16 +59,16 @@
             this.ListIntermediateAirportGv = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.IntermediateAiportCodeTb = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.IntermediateAirportStopTimeTb = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.IntermediateAirportNoteTb = new System.Windows.Forms.TextBox();
-            this.IntermediateAirportUpdateBtn = new System.Windows.Forms.Button();
-            this.IntermediateAirportDeleteBtn = new System.Windows.Forms.Button();
             this.IntermediateAirportClearBTn = new System.Windows.Forms.Button();
+            this.IntermediateAirportDeleteBtn = new System.Windows.Forms.Button();
+            this.IntermediateAirportUpdateBtn = new System.Windows.Forms.Button();
             this.IntermediateAirportAddBtn = new System.Windows.Forms.Button();
+            this.IntermediateAirportNoteTb = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.IntermediateAirportStopTimeTb = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.IntermediateAiportCodeTb = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListFlightGv)).BeginInit();
             this.panel1.SuspendLayout();
@@ -233,7 +233,6 @@
             this.FlightCodeTb.Name = "FlightCodeTb";
             this.FlightCodeTb.Size = new System.Drawing.Size(217, 30);
             this.FlightCodeTb.TabIndex = 27;
-            this.FlightCodeTb.TextChanged += new System.EventHandler(this.CodeTb_TextChanged);
             // 
             // label6
             // 
@@ -457,77 +456,19 @@
             this.panel4.Size = new System.Drawing.Size(350, 326);
             this.panel4.TabIndex = 5;
             // 
-            // label11
+            // IntermediateAirportClearBTn
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 14);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(196, 21);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Intermediate Airport:";
-            // 
-            // IntermediateAiportCodeTb
-            // 
-            this.IntermediateAiportCodeTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IntermediateAiportCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IntermediateAiportCodeTb.Location = new System.Drawing.Point(205, 10);
-            this.IntermediateAiportCodeTb.Name = "IntermediateAiportCodeTb";
-            this.IntermediateAiportCodeTb.Size = new System.Drawing.Size(119, 30);
-            this.IntermediateAiportCodeTb.TabIndex = 28;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 65);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 21);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Stop Time: ";
-            // 
-            // IntermediateAirportStopTimeTb
-            // 
-            this.IntermediateAirportStopTimeTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IntermediateAirportStopTimeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IntermediateAirportStopTimeTb.Location = new System.Drawing.Point(205, 60);
-            this.IntermediateAirportStopTimeTb.Name = "IntermediateAirportStopTimeTb";
-            this.IntermediateAirportStopTimeTb.Size = new System.Drawing.Size(119, 30);
-            this.IntermediateAirportStopTimeTb.TabIndex = 36;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 127);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 21);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Note:";
-            // 
-            // IntermediateAirportNoteTb
-            // 
-            this.IntermediateAirportNoteTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IntermediateAirportNoteTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IntermediateAirportNoteTb.Location = new System.Drawing.Point(67, 122);
-            this.IntermediateAirportNoteTb.Multiline = true;
-            this.IntermediateAirportNoteTb.Name = "IntermediateAirportNoteTb";
-            this.IntermediateAirportNoteTb.Size = new System.Drawing.Size(257, 103);
-            this.IntermediateAirportNoteTb.TabIndex = 38;
-            // 
-            // IntermediateAirportUpdateBtn
-            // 
-            this.IntermediateAirportUpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.IntermediateAirportUpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IntermediateAirportUpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IntermediateAirportUpdateBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IntermediateAirportUpdateBtn.ForeColor = System.Drawing.Color.White;
-            this.IntermediateAirportUpdateBtn.Location = new System.Drawing.Point(179, 231);
-            this.IntermediateAirportUpdateBtn.Name = "IntermediateAirportUpdateBtn";
-            this.IntermediateAirportUpdateBtn.Size = new System.Drawing.Size(145, 40);
-            this.IntermediateAirportUpdateBtn.TabIndex = 40;
-            this.IntermediateAirportUpdateBtn.Text = "UPDATE";
-            this.IntermediateAirportUpdateBtn.UseVisualStyleBackColor = false;
+            this.IntermediateAirportClearBTn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.IntermediateAirportClearBTn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IntermediateAirportClearBTn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IntermediateAirportClearBTn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IntermediateAirportClearBTn.ForeColor = System.Drawing.Color.White;
+            this.IntermediateAirportClearBTn.Location = new System.Drawing.Point(179, 277);
+            this.IntermediateAirportClearBTn.Name = "IntermediateAirportClearBTn";
+            this.IntermediateAirportClearBTn.Size = new System.Drawing.Size(145, 40);
+            this.IntermediateAirportClearBTn.TabIndex = 35;
+            this.IntermediateAirportClearBTn.Text = "CLEAR";
+            this.IntermediateAirportClearBTn.UseVisualStyleBackColor = false;
             // 
             // IntermediateAirportDeleteBtn
             // 
@@ -543,19 +484,19 @@
             this.IntermediateAirportDeleteBtn.Text = "DELETE";
             this.IntermediateAirportDeleteBtn.UseVisualStyleBackColor = false;
             // 
-            // IntermediateAirportClearBTn
+            // IntermediateAirportUpdateBtn
             // 
-            this.IntermediateAirportClearBTn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.IntermediateAirportClearBTn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.IntermediateAirportClearBTn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IntermediateAirportClearBTn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IntermediateAirportClearBTn.ForeColor = System.Drawing.Color.White;
-            this.IntermediateAirportClearBTn.Location = new System.Drawing.Point(179, 277);
-            this.IntermediateAirportClearBTn.Name = "IntermediateAirportClearBTn";
-            this.IntermediateAirportClearBTn.Size = new System.Drawing.Size(145, 40);
-            this.IntermediateAirportClearBTn.TabIndex = 35;
-            this.IntermediateAirportClearBTn.Text = "CLEAR";
-            this.IntermediateAirportClearBTn.UseVisualStyleBackColor = false;
+            this.IntermediateAirportUpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.IntermediateAirportUpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.IntermediateAirportUpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IntermediateAirportUpdateBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IntermediateAirportUpdateBtn.ForeColor = System.Drawing.Color.White;
+            this.IntermediateAirportUpdateBtn.Location = new System.Drawing.Point(179, 231);
+            this.IntermediateAirportUpdateBtn.Name = "IntermediateAirportUpdateBtn";
+            this.IntermediateAirportUpdateBtn.Size = new System.Drawing.Size(145, 40);
+            this.IntermediateAirportUpdateBtn.TabIndex = 40;
+            this.IntermediateAirportUpdateBtn.Text = "UPDATE";
+            this.IntermediateAirportUpdateBtn.UseVisualStyleBackColor = false;
             // 
             // IntermediateAirportAddBtn
             // 
@@ -570,6 +511,64 @@
             this.IntermediateAirportAddBtn.TabIndex = 39;
             this.IntermediateAirportAddBtn.Text = "ADD";
             this.IntermediateAirportAddBtn.UseVisualStyleBackColor = false;
+            // 
+            // IntermediateAirportNoteTb
+            // 
+            this.IntermediateAirportNoteTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IntermediateAirportNoteTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IntermediateAirportNoteTb.Location = new System.Drawing.Point(67, 122);
+            this.IntermediateAirportNoteTb.Multiline = true;
+            this.IntermediateAirportNoteTb.Name = "IntermediateAirportNoteTb";
+            this.IntermediateAirportNoteTb.Size = new System.Drawing.Size(257, 103);
+            this.IntermediateAirportNoteTb.TabIndex = 38;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 127);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 21);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Note:";
+            // 
+            // IntermediateAirportStopTimeTb
+            // 
+            this.IntermediateAirportStopTimeTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IntermediateAirportStopTimeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IntermediateAirportStopTimeTb.Location = new System.Drawing.Point(205, 60);
+            this.IntermediateAirportStopTimeTb.Name = "IntermediateAirportStopTimeTb";
+            this.IntermediateAirportStopTimeTb.Size = new System.Drawing.Size(119, 30);
+            this.IntermediateAirportStopTimeTb.TabIndex = 36;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 65);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(109, 21);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Stop Time: ";
+            // 
+            // IntermediateAiportCodeTb
+            // 
+            this.IntermediateAiportCodeTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IntermediateAiportCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IntermediateAiportCodeTb.Location = new System.Drawing.Point(205, 10);
+            this.IntermediateAiportCodeTb.Name = "IntermediateAiportCodeTb";
+            this.IntermediateAiportCodeTb.Size = new System.Drawing.Size(119, 30);
+            this.IntermediateAiportCodeTb.TabIndex = 28;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 14);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(196, 21);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Intermediate Airport:";
             // 
             // Admin_FlightForm
             // 

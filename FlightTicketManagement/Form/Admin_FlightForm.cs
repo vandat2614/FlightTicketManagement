@@ -78,8 +78,6 @@ namespace FlightTicketManagement
         {
             if (CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (IsChangeCode)
-                MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -94,7 +92,6 @@ namespace FlightTicketManagement
 
         private void ListFlightGv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            IsChangeCode = false;
             DataGridViewRow row = ListFlightGv.Rows[e.RowIndex];
             FlightCodeTb.Text = row.Cells[0].Value.ToString();
             FlightDepatureCbb.Text = row.Cells[1].Value.ToString();
@@ -107,15 +104,8 @@ namespace FlightTicketManagement
             FlightSeat2Tb.Text = row.Cells[8].Value.ToString();
         }
 
-        public bool IsChangeCode = false;
-        private void CodeTb_TextChanged(object sender, EventArgs e)
-        {
-            IsChangeCode = false;
-        }
-
         private void ClearBtn_Click(object sender, EventArgs e)
         {
-            IsChangeCode = false;
             FlightCodeTb.Text = "";
             FlightDepatureCbb.Text = "";
             FlightArrivalCbb.Text = "";
