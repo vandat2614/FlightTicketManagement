@@ -31,19 +31,19 @@ namespace FlightTicketManagement
 
         public bool CheckEmpty()
         {
-            if(CodeTb.Text == "" || PriceTb.Text == "" || StartCbb.Text == "" || DestCbb.Text == "" || Seat1Tb.Text == "" || Seat2Tb.Text == "")
+            if(FlightCodeTb.Text == "" || FlightPriceTb.Text == "" || FlightDepatureCbb.Text == "" || FlightArrivalCbb.Text == "" || FlightSeat1Tb.Text == "" || FlightSeat2Tb.Text == "")
                 return true;
             return false;
         }
 
         public string getDate()
         {
-            return FlightDatePk.Value.ToString().Split(' ')[0];
+            return FlightDepatureDatePk.Value.ToString().Split(' ')[0];
         }
 
         public string getTimeFlight()
         {
-            string[] temp = FlightTimePk.Value.ToString().Split(' ');
+            string[] temp = FlightDepatureTimePk.Value.ToString().Split(' ');
             return string.Concat(temp[1], ' ', temp[2]);
         }
 
@@ -52,12 +52,11 @@ namespace FlightTicketManagement
         {
             if (CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (Flight.Instance.check_flight_code(CodeTb.Text))
+            else if (Flight.Instance.check_flight_code(FlightCodeTb.Text))
                 MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-
-                Flight.Instance.add_flight(CodeTb.Text, StartCbb.Text, DestCbb.Text, getDate(), getTimeFlight(), FlightDurationPk.Text, PriceTb.Text, Seat1Tb.Text, Seat2Tb.Text);
+                Flight.Instance.add_flight(FlightCodeTb.Text, FlightDepatureCbb.Text, FlightArrivalCbb.Text, getDate(), getTimeFlight(), FlightDurationPk.Text, FlightPriceTb.Text, FlightSeat1Tb.Text, FlightSeat2Tb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListFlight();
             }
@@ -65,13 +64,13 @@ namespace FlightTicketManagement
 
         public void LoadListAirport()
         {
-            StartCbb.Items.Clear();
-            DestCbb.Items.Clear();
+            FlightDepatureCbb.Items.Clear();
+            FlightArrivalCbb.Items.Clear();
             List<AirportInfo> result = Airport.Instance.GetListAirport();
             foreach(AirportInfo info in result)
             {
-                StartCbb.Items.Add(info.code);
-                DestCbb.Items.Add(info.code);
+                FlightDepatureCbb.Items.Add(info.code);
+                FlightArrivalCbb.Items.Add(info.code);
             }
         }
 
@@ -86,7 +85,7 @@ namespace FlightTicketManagement
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    Flight.Instance.update_flight(CodeTb.Text, StartCbb.Text, DestCbb.Text, getDate(), getTimeFlight(), FlightDurationPk.Text, PriceTb.Text, Seat1Tb.Text, Seat2Tb.Text);
+                    Flight.Instance.update_flight(FlightCodeTb.Text, FlightDepatureCbb.Text, FlightArrivalCbb.Text, getDate(), getTimeFlight(), FlightDurationPk.Text, FlightPriceTb.Text, FlightSeat1Tb.Text, FlightSeat2Tb.Text);
                     MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadListFlight();
                 }
@@ -97,15 +96,15 @@ namespace FlightTicketManagement
         {
             IsChangeCode = false;
             DataGridViewRow row = ListFlightGv.Rows[e.RowIndex];
-            CodeTb.Text = row.Cells[0].Value.ToString();
-            StartCbb.Text = row.Cells[1].Value.ToString();
-            DestCbb.Text = row.Cells[2].Value.ToString();
-            FlightDatePk.Text = row.Cells[3].Value.ToString();
-            FlightTimePk.Text = row.Cells[4].Value.ToString();
+            FlightCodeTb.Text = row.Cells[0].Value.ToString();
+            FlightDepatureCbb.Text = row.Cells[1].Value.ToString();
+            FlightArrivalCbb.Text = row.Cells[2].Value.ToString();
+            FlightDepatureDatePk.Text = row.Cells[3].Value.ToString();
+            FlightDepatureTimePk.Text = row.Cells[4].Value.ToString();
             FlightDurationPk.Text = row.Cells[5].Value.ToString();
-            PriceTb.Text = row.Cells[6].Value.ToString();
-            Seat1Tb.Text = row.Cells[7].Value.ToString();
-            Seat2Tb.Text = row.Cells[8].Value.ToString();
+            FlightPriceTb.Text = row.Cells[6].Value.ToString();
+            FlightSeat1Tb.Text = row.Cells[7].Value.ToString();
+            FlightSeat2Tb.Text = row.Cells[8].Value.ToString();
         }
 
         public bool IsChangeCode = false;
@@ -117,15 +116,15 @@ namespace FlightTicketManagement
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             IsChangeCode = false;
-            CodeTb.Text = "";
-            StartCbb.Text = "";
-            DestCbb.Text = "";
-            FlightDatePk.Text = ""; 
-            FlightTimePk.Text = "";
+            FlightCodeTb.Text = "";
+            FlightDepatureCbb.Text = "";
+            FlightArrivalCbb.Text = "";
+            FlightDepatureDatePk.Text = ""; 
+            FlightDepatureTimePk.Text = "";
             FlightDurationPk.Text = "";
-            PriceTb.Text = "";
-            Seat1Tb.Text = "";
-            Seat2Tb.Text = "";
+            FlightPriceTb.Text = "";
+            FlightSeat1Tb.Text = "";
+            FlightSeat2Tb.Text = "";
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -133,7 +132,7 @@ namespace FlightTicketManagement
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Flight.Instance.delete_flight(CodeTb.Text);
+                Flight.Instance.delete_flight(FlightCodeTb.Text);
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListFlight();
             }
