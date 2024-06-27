@@ -26,7 +26,6 @@ namespace FlightTicketManagement
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-
             if(CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if(!Account.Instance.CheckAccount(EmailLoginTb.Text, PassLoginTb.Text))
@@ -34,20 +33,13 @@ namespace FlightTicketManagement
             else
             {
                 MessageBox.Show("Login successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                string AccountType = Account.Instance.GetAccountType(EmailLoginTb.Text);
-                if (AccountType == "Admin")
-                    new AdminForm().Show();
                 this.Hide();
+                string AccountType = Account.Instance.GetAccountType(EmailLoginTb.Text);
+                if (AccountType == "admin")
+                    new AdminForm().Show();
             }
 
         }
-
-        /*rivate void LoadRegisterFormBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Register registerForm = new Register();
-            registerForm.ShowDialog();
-        }*/
 
         private void ShowPassCb_CheckedChanged(object sender, EventArgs e)
         {
@@ -63,8 +55,7 @@ namespace FlightTicketManagement
         private void LoadRegisterFormBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RegisterForm registerForm = new RegisterForm();
-            registerForm.ShowDialog();
+            new RegisterForm().ShowDialog();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.RegisterBtn = new System.Windows.Forms.Button();
             this.PassRegisterTb = new System.Windows.Forms.TextBox();
             this.EmailRegisterTb = new System.Windows.Forms.TextBox();
@@ -40,7 +41,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.LoadLoginFormTb = new System.Windows.Forms.Button();
+            this.LoadLoginFormBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -140,7 +141,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.LoadLoginFormTb);
+            this.panel1.Controls.Add(this.LoadLoginFormBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -152,7 +153,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(12, 174);
+            this.label7.Location = new System.Drawing.Point(12, 152);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(306, 27);
             this.label7.TabIndex = 12;
@@ -160,10 +161,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FlightTicketManagement.Properties.Resources.icons8_airplane_take_off_96;
-            this.pictureBox1.Location = new System.Drawing.Point(108, 57);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(122, 24);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
@@ -178,20 +180,20 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Already have an account";
             // 
-            // LoadLoginFormTb
+            // LoadLoginFormBtn
             // 
-            this.LoadLoginFormTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.LoadLoginFormTb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LoadLoginFormTb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoadLoginFormTb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.LoadLoginFormTb.ForeColor = System.Drawing.Color.White;
-            this.LoadLoginFormTb.Location = new System.Drawing.Point(17, 424);
-            this.LoadLoginFormTb.Name = "LoadLoginFormTb";
-            this.LoadLoginFormTb.Size = new System.Drawing.Size(301, 45);
-            this.LoadLoginFormTb.TabIndex = 6;
-            this.LoadLoginFormTb.Text = "SIGN IN";
-            this.LoadLoginFormTb.UseVisualStyleBackColor = false;
-            this.LoadLoginFormTb.Click += new System.EventHandler(this.button1_Click);
+            this.LoadLoginFormBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.LoadLoginFormBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoadLoginFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoadLoginFormBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.LoadLoginFormBtn.ForeColor = System.Drawing.Color.White;
+            this.LoadLoginFormBtn.Location = new System.Drawing.Point(17, 424);
+            this.LoadLoginFormBtn.Name = "LoadLoginFormBtn";
+            this.LoadLoginFormBtn.Size = new System.Drawing.Size(301, 45);
+            this.LoadLoginFormBtn.TabIndex = 5;
+            this.LoadLoginFormBtn.Text = "SIGN IN";
+            this.LoadLoginFormBtn.UseVisualStyleBackColor = false;
+            this.LoadLoginFormBtn.Click += new System.EventHandler(this.LoadLoginFormBtn_Click);
             // 
             // label4
             // 
@@ -256,7 +258,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button LoadLoginFormTb;
+        private System.Windows.Forms.Button LoadLoginFormBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label ExitBtn;
     }

@@ -54,17 +54,16 @@ namespace FlightTicketManagement
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-        }
-
         private void ShowPassCb_CheckedChanged(object sender, EventArgs e)
         {
             PassRegisterTb.PasswordChar = ShowPassCb.Checked ? '\0' : '•';
             ConfPassRegisterTb.PasswordChar = ShowPassCb.Checked ? '\0' : '•';
+        }
+
+        private void LoadLoginFormBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new LoginForm().ShowDialog();
         }
     }
 }

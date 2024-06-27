@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.EmailLoginTb = new System.Windows.Forms.TextBox();
@@ -74,6 +75,7 @@
             this.EmailLoginTb.Name = "EmailLoginTb";
             this.EmailLoginTb.Size = new System.Drawing.Size(278, 30);
             this.EmailLoginTb.TabIndex = 0;
+            this.EmailLoginTb.Text = "dat@gm.com";
             // 
             // PassLoginTb
             // 
@@ -84,6 +86,7 @@
             this.PassLoginTb.PasswordChar = '•';
             this.PassLoginTb.Size = new System.Drawing.Size(278, 30);
             this.PassLoginTb.TabIndex = 1;
+            this.PassLoginTb.Text = "123";
             // 
             // LoginBtn
             // 
@@ -141,8 +144,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FlightTicketManagement.Properties.Resources.icons8_airplane_take_off_96;
-            this.pictureBox1.Location = new System.Drawing.Point(108, 57);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(104, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(96, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
