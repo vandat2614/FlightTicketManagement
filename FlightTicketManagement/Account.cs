@@ -19,65 +19,65 @@ namespace FlightTicketManagement
         }
         private Account() { }
 
-        public bool check_account(string Email, string Password)
+        public bool CheckAccount(string Email, string Password)
         {
             string query = "exec check_account @email , @pass";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { Email, Password });
             return result.Rows.Count == 1;
         }
 
-        public object get_account_type(string email)
+        public string GetAccountType(string Email)
         {
             string query = "exec check_email @email";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { email });
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { Email });
 
-            return result.Rows[0]["type"];
+            return result.Rows[0]["type"].ToString();
         }
 
-        public bool check_email(string Email)
+        public bool CheckEmail(string Email)
         {
             string query = "exec check_email @email";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { Email });
             return result.Rows.Count > 0;
         }
 
-        public bool register_account(string Email, string Password)
+        public bool RegisterAccount(string Email, string Password)
         {
             string query = "exec register_account @email , @pass";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password });
             return result == 1;
         }
 
-        public bool add_account(string Email, string Password, string type, string name, string phone)
+        public bool AddAccount(string Email, string Password, string Type, string Name, string Phone)
         {
             string query = "exec add_account @email , @pass , @type , @name , @phone";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password, type, name, phone });
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password, Type, Name, Phone });
             return result == 1;
         }
 
-        public bool update_account(string NewEmail, string OldEmail, string Password, string name, string type, string phone)
+        public bool UpdateAccount(string NewEmail, string OldEmail, string Password, string Name, string Type, string Phone)
         {
             string query = "exec update_account @newemail , @oldemail , @pass , @name , @type , @phone";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { NewEmail, OldEmail, Password, name, type, phone });
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { NewEmail, OldEmail, Password, Name, Type, Phone });
             return result == 1;
         }
 
-        public bool delete_account(string email)
+        public bool DeleteAcount(string Email)
         {
             string query = "exec delete_account @email";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { email });
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email });
             return result == 1;
         }
 
-        public List<UserInfo> GetListAccount()
+        public List<AccountData> GetListAccount()
         {
-            List<UserInfo> result = new List<UserInfo>();
+            List<AccountData> result = new List<AccountData>();
             string query = "select * from account";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow row in data.Rows)
             {
-                UserInfo user = new UserInfo(row);
+                AccountData user = new AccountData(row);
                 result.Add(user);
             }
 

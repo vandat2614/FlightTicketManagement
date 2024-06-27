@@ -24,7 +24,7 @@ namespace FlightTicketManagement
             if (check == DialogResult.Yes)
             {
                 this.Hide();
-                new Login().ShowDialog();
+                new LoginForm().ShowDialog();
             }
         }
 
@@ -34,7 +34,7 @@ namespace FlightTicketManagement
             if (check == DialogResult.Yes)
             {
                 this.Hide();
-                new Login().ShowDialog();
+                new LoginForm().ShowDialog();
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace FlightTicketManagement
 {
-    partial class Register
+    partial class RegisterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.RegisterBtn = new System.Windows.Forms.Button();
-            this.PassTb = new System.Windows.Forms.TextBox();
-            this.EmailTb = new System.Windows.Forms.TextBox();
+            this.PassRegisterTb = new System.Windows.Forms.TextBox();
+            this.EmailRegisterTb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.PassAgainTb = new System.Windows.Forms.TextBox();
+            this.ConfPassRegisterTb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ShowPassCb = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoadLoginFormTb = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -57,29 +57,29 @@
             this.RegisterBtn.Location = new System.Drawing.Point(375, 360);
             this.RegisterBtn.Name = "RegisterBtn";
             this.RegisterBtn.Size = new System.Drawing.Size(145, 40);
-            this.RegisterBtn.TabIndex = 12;
+            this.RegisterBtn.TabIndex = 4;
             this.RegisterBtn.Text = "SIGN UP";
             this.RegisterBtn.UseVisualStyleBackColor = false;
             this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
             // 
-            // PassTb
+            // PassRegisterTb
             // 
-            this.PassTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PassTb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassTb.Location = new System.Drawing.Point(375, 195);
-            this.PassTb.Name = "PassTb";
-            this.PassTb.PasswordChar = '•';
-            this.PassTb.Size = new System.Drawing.Size(259, 30);
-            this.PassTb.TabIndex = 10;
+            this.PassRegisterTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PassRegisterTb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PassRegisterTb.Location = new System.Drawing.Point(375, 195);
+            this.PassRegisterTb.Name = "PassRegisterTb";
+            this.PassRegisterTb.PasswordChar = '•';
+            this.PassRegisterTb.Size = new System.Drawing.Size(259, 30);
+            this.PassRegisterTb.TabIndex = 1;
             // 
-            // EmailTb
+            // EmailRegisterTb
             // 
-            this.EmailTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmailTb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTb.Location = new System.Drawing.Point(375, 127);
-            this.EmailTb.Name = "EmailTb";
-            this.EmailTb.Size = new System.Drawing.Size(259, 30);
-            this.EmailTb.TabIndex = 9;
+            this.EmailRegisterTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmailRegisterTb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailRegisterTb.Location = new System.Drawing.Point(375, 127);
+            this.EmailRegisterTb.Name = "EmailRegisterTb";
+            this.EmailRegisterTb.Size = new System.Drawing.Size(259, 30);
+            this.EmailRegisterTb.TabIndex = 0;
             // 
             // label2
             // 
@@ -101,15 +101,15 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Email:";
             // 
-            // PassAgainTb
+            // ConfPassRegisterTb
             // 
-            this.PassAgainTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PassAgainTb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassAgainTb.Location = new System.Drawing.Point(375, 260);
-            this.PassAgainTb.Name = "PassAgainTb";
-            this.PassAgainTb.PasswordChar = '•';
-            this.PassAgainTb.Size = new System.Drawing.Size(259, 30);
-            this.PassAgainTb.TabIndex = 15;
+            this.ConfPassRegisterTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ConfPassRegisterTb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConfPassRegisterTb.Location = new System.Drawing.Point(375, 260);
+            this.ConfPassRegisterTb.Name = "ConfPassRegisterTb";
+            this.ConfPassRegisterTb.PasswordChar = '•';
+            this.ConfPassRegisterTb.Size = new System.Drawing.Size(259, 30);
+            this.ConfPassRegisterTb.TabIndex = 2;
             // 
             // label3
             // 
@@ -129,7 +129,7 @@
             this.ShowPassCb.Location = new System.Drawing.Point(375, 311);
             this.ShowPassCb.Name = "ShowPassCb";
             this.ShowPassCb.Size = new System.Drawing.Size(174, 25);
-            this.ShowPassCb.TabIndex = 17;
+            this.ShowPassCb.TabIndex = 3;
             this.ShowPassCb.Text = "Show Password";
             this.ShowPassCb.UseVisualStyleBackColor = true;
             this.ShowPassCb.CheckedChanged += new System.EventHandler(this.ShowPassCb_CheckedChanged);
@@ -140,7 +140,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.LoadLoginFormTb);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -178,20 +178,20 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Already have an account";
             // 
-            // button1
+            // LoadLoginFormTb
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(17, 424);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(301, 45);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "SIGN IN";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.LoadLoginFormTb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.LoadLoginFormTb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoadLoginFormTb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoadLoginFormTb.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.LoadLoginFormTb.ForeColor = System.Drawing.Color.White;
+            this.LoadLoginFormTb.Location = new System.Drawing.Point(17, 424);
+            this.LoadLoginFormTb.Name = "LoadLoginFormTb";
+            this.LoadLoginFormTb.Size = new System.Drawing.Size(301, 45);
+            this.LoadLoginFormTb.TabIndex = 6;
+            this.LoadLoginFormTb.Text = "SIGN IN";
+            this.LoadLoginFormTb.UseVisualStyleBackColor = false;
+            this.LoadLoginFormTb.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -206,6 +206,7 @@
             // ExitBtn
             // 
             this.ExitBtn.AutoSize = true;
+            this.ExitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExitBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExitBtn.Location = new System.Drawing.Point(651, 9);
             this.ExitBtn.Name = "ExitBtn";
@@ -214,7 +215,7 @@
             this.ExitBtn.Text = "X";
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // Register
+            // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -223,18 +224,17 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ShowPassCb);
-            this.Controls.Add(this.PassAgainTb);
+            this.Controls.Add(this.ConfPassRegisterTb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.RegisterBtn);
-            this.Controls.Add(this.PassTb);
-            this.Controls.Add(this.EmailTb);
+            this.Controls.Add(this.PassRegisterTb);
+            this.Controls.Add(this.EmailRegisterTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Register";
+            this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.Register_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -245,18 +245,18 @@
 
         #endregion
         private System.Windows.Forms.Button RegisterBtn;
-        private System.Windows.Forms.TextBox PassTb;
-        private System.Windows.Forms.TextBox EmailTb;
+        private System.Windows.Forms.TextBox PassRegisterTb;
+        private System.Windows.Forms.TextBox EmailRegisterTb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox PassAgainTb;
+        private System.Windows.Forms.TextBox ConfPassRegisterTb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox ShowPassCb;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LoadLoginFormTb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label ExitBtn;
     }

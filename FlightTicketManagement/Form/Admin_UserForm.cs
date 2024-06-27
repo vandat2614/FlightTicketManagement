@@ -24,7 +24,7 @@ namespace FlightTicketManagement
 
         public void LoadListAccount()
         {
-            List<UserInfo> users = Account.Instance.GetListAccount();
+            List<AccountData> users = Account.Instance.GetListAccount();
             ListUserGv.DataSource = users;
         }
 

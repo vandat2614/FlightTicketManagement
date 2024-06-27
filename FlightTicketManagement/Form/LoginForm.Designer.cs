@@ -1,6 +1,6 @@
 ﻿namespace FlightTicketManagement
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.EmailTb = new System.Windows.Forms.TextBox();
-            this.PassTb = new System.Windows.Forms.TextBox();
+            this.EmailLoginTb = new System.Windows.Forms.TextBox();
+            this.PassLoginTb = new System.Windows.Forms.TextBox();
             this.LoginBtn = new System.Windows.Forms.Button();
-            this.RegisterBtn = new System.Windows.Forms.Button();
+            this.LoadRegisterFormBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -66,24 +66,24 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Password:";
             // 
-            // EmailTb
+            // EmailLoginTb
             // 
-            this.EmailTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmailTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailTb.Location = new System.Drawing.Point(379, 174);
-            this.EmailTb.Name = "EmailTb";
-            this.EmailTb.Size = new System.Drawing.Size(278, 30);
-            this.EmailTb.TabIndex = 2;
+            this.EmailLoginTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmailLoginTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailLoginTb.Location = new System.Drawing.Point(379, 174);
+            this.EmailLoginTb.Name = "EmailLoginTb";
+            this.EmailLoginTb.Size = new System.Drawing.Size(278, 30);
+            this.EmailLoginTb.TabIndex = 0;
             // 
-            // PassTb
+            // PassLoginTb
             // 
-            this.PassTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PassTb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassTb.Location = new System.Drawing.Point(379, 252);
-            this.PassTb.Name = "PassTb";
-            this.PassTb.PasswordChar = '•';
-            this.PassTb.Size = new System.Drawing.Size(278, 30);
-            this.PassTb.TabIndex = 3;
+            this.PassLoginTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PassLoginTb.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PassLoginTb.Location = new System.Drawing.Point(379, 252);
+            this.PassLoginTb.Name = "PassLoginTb";
+            this.PassLoginTb.PasswordChar = '•';
+            this.PassLoginTb.Size = new System.Drawing.Size(278, 30);
+            this.PassLoginTb.TabIndex = 1;
             // 
             // LoginBtn
             // 
@@ -95,25 +95,25 @@
             this.LoginBtn.Location = new System.Drawing.Point(379, 338);
             this.LoginBtn.Name = "LoginBtn";
             this.LoginBtn.Size = new System.Drawing.Size(145, 40);
-            this.LoginBtn.TabIndex = 4;
+            this.LoginBtn.TabIndex = 3;
             this.LoginBtn.Text = "LOGIN";
             this.LoginBtn.UseVisualStyleBackColor = false;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
-            // RegisterBtn
+            // LoadRegisterFormBtn
             // 
-            this.RegisterBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.RegisterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegisterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegisterBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.RegisterBtn.ForeColor = System.Drawing.Color.White;
-            this.RegisterBtn.Location = new System.Drawing.Point(17, 424);
-            this.RegisterBtn.Name = "RegisterBtn";
-            this.RegisterBtn.Size = new System.Drawing.Size(301, 45);
-            this.RegisterBtn.TabIndex = 5;
-            this.RegisterBtn.Text = "REGISTER";
-            this.RegisterBtn.UseVisualStyleBackColor = false;
-            this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
+            this.LoadRegisterFormBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.LoadRegisterFormBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoadRegisterFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoadRegisterFormBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.LoadRegisterFormBtn.ForeColor = System.Drawing.Color.White;
+            this.LoadRegisterFormBtn.Location = new System.Drawing.Point(17, 424);
+            this.LoadRegisterFormBtn.Name = "LoadRegisterFormBtn";
+            this.LoadRegisterFormBtn.Size = new System.Drawing.Size(301, 45);
+            this.LoadRegisterFormBtn.TabIndex = 4;
+            this.LoadRegisterFormBtn.Text = "REGISTER";
+            this.LoadRegisterFormBtn.UseVisualStyleBackColor = false;
+            this.LoadRegisterFormBtn.Click += new System.EventHandler(this.LoadRegisterFormBtn_Click);
             // 
             // panel1
             // 
@@ -121,7 +121,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.RegisterBtn);
+            this.panel1.Controls.Add(this.LoadRegisterFormBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -188,7 +188,7 @@
             this.ShowPassCb.Location = new System.Drawing.Point(379, 288);
             this.ShowPassCb.Name = "ShowPassCb";
             this.ShowPassCb.Size = new System.Drawing.Size(174, 25);
-            this.ShowPassCb.TabIndex = 10;
+            this.ShowPassCb.TabIndex = 2;
             this.ShowPassCb.Text = "Show Password";
             this.ShowPassCb.UseVisualStyleBackColor = true;
             this.ShowPassCb.CheckedChanged += new System.EventHandler(this.ShowPassCb_CheckedChanged);
@@ -205,7 +205,7 @@
             this.ExitBtn.Text = "X";
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -217,12 +217,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.PassTb);
-            this.Controls.Add(this.EmailTb);
+            this.Controls.Add(this.PassLoginTb);
+            this.Controls.Add(this.EmailLoginTb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
@@ -237,10 +237,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox EmailTb;
-        private System.Windows.Forms.TextBox PassTb;
+        private System.Windows.Forms.TextBox EmailLoginTb;
+        private System.Windows.Forms.TextBox PassLoginTb;
         private System.Windows.Forms.Button LoginBtn;
-        private System.Windows.Forms.Button RegisterBtn;
+        private System.Windows.Forms.Button LoadRegisterFormBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

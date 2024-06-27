@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace FlightTicketManagement
 {
-    public class UserInfo { 
-        public UserInfo(DataRow row) { 
+    public class AccountData { 
+        public AccountData(DataRow row) { 
             this.email = row["email"].ToString();
             this.pass = row["pass"].ToString();
             this.name = row["name"].ToString();
