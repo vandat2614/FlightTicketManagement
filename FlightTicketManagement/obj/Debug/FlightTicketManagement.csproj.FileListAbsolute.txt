@@ -53,15 +53,11 @@ D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\bin\Debug\FlightTicke
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.AssemblyReference.cache
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.SuggestedBindingRedirects.cache
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.AdminForm.resources
-D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.Airport.resources
-D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.Login.resources
-D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.Register.resources
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.Properties.Resources.resources
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.GenerateResource.cache
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.CoreCompileInputs.cache
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.exe
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.pdb
-D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.AdminDashboard.resources
 D:\Learn\K4\SE\Final\New folder (3)\FlightTicketManagement\bin\Debug\FlightTicketManagement.exe.config
 D:\Learn\K4\SE\Final\New folder (3)\FlightTicketManagement\bin\Debug\FlightTicketManagement.exe
 D:\Learn\K4\SE\Final\New folder (3)\FlightTicketManagement\bin\Debug\FlightTicketManagement.pdb
@@ -216,3 +212,12 @@ D:\Learn\K4\SE\Final\New folder (8)\FlightTicketManagement\obj\Debug\FlightTicke
 D:\Learn\K4\SE\Final\New folder (8)\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAirportForm.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAccountForm.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAirportForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.Admin_DashboardForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.FlightForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAccountForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAirportForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.LoginForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.RegisterForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.SettingForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.IntermediateAirportForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.SelectAirportForm.resources

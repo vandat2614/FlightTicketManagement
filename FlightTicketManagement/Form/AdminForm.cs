@@ -63,7 +63,7 @@ namespace FlightTicketManagement
 
         private void FightBtn_Click(object sender, EventArgs e)
         {
-            LoadForm(new Admin_FlightForm());
+            LoadForm(new FlightForm());
 
         }
 

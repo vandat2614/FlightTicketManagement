@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FlightTicketManagement
@@ -45,6 +46,20 @@ namespace FlightTicketManagement
             string query = "exec check_airport @code";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { code });
             return result.Rows.Count > 0;
+        }
+
+        public string GetAirportName(string code)
+        {
+            string query = "exec check_airport @code";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { code });
+            return result.Rows[0]["name"].ToString();
+        }
+
+        public string GetAirportCode(string name)
+        {
+            string query = "exec check_airport @code";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { name });
+            return result.Rows[0]["code"].ToString();
         }
 
         public List<AirportData> GetListAirport()

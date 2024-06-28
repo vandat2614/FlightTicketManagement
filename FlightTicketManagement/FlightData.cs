@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace FlightTicketManagement
 {
-    public class FlightInfo
+    public class FlightData
     {
-        public FlightInfo(DataRow row)
+        public FlightData(DataRow row)
         {
             this.code = row["code"].ToString();
-            this.start = row["start"].ToString();
-            this.dest = row["dest"].ToString();
+            this.depature = Airport.Instance.GetAirportName(row["depature"].ToString());
+            this.arrival = Airport.Instance.GetAirportName(row["arrival"].ToString());
             this.date = row["date"].ToString() ;
             this.time = row["time"].ToString() ;
             this.duration = row["duration"].ToString() ;
@@ -22,8 +22,8 @@ namespace FlightTicketManagement
             this.seat2=row["seat2"].ToString();
         }
         public string code { get; set; }
-        public string start { get; set; }
-        public string dest { get; set; }
+        public string depature { get; set; }
+        public string arrival { get; set; }
         public string date { get; set; }
         public string time { get; set; }
         public string duration { get; set; }
