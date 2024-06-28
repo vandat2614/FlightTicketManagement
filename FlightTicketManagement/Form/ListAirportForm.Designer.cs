@@ -30,26 +30,26 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AirportCodeTb = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.AirportStatusCbb = new System.Windows.Forms.ComboBox();
+            this.AirportCityCbb = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AirportNoteTb = new System.Windows.Forms.TextBox();
             this.ClearInfoBtn = new System.Windows.Forms.Button();
             this.DeleteAirportBtn = new System.Windows.Forms.Button();
             this.UpdateAirportBtn = new System.Windows.Forms.Button();
             this.AddAirportBtn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AirportCodeTb = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.AirportNameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ListAirportGv = new System.Windows.Forms.DataGridView();
+            this.ListAirportData = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.AirportNoteTb = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.AirportCityCbb = new System.Windows.Forms.ComboBox();
-            this.AirportStatusCbb = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListAirportGv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListAirportData)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,29 +69,82 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.AirportNameTb);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(152, 324);
+            this.panel1.Location = new System.Drawing.Point(174, 394);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(830, 281);
             this.panel1.TabIndex = 0;
             // 
-            // AirportCodeTb
+            // AirportStatusCbb
             // 
-            this.AirportCodeTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AirportCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AirportCodeTb.Location = new System.Drawing.Point(112, 15);
-            this.AirportCodeTb.Name = "AirportCodeTb";
-            this.AirportCodeTb.Size = new System.Drawing.Size(247, 30);
-            this.AirportCodeTb.TabIndex = 6;
+            this.AirportStatusCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AirportStatusCbb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AirportStatusCbb.FormattingEnabled = true;
+            this.AirportStatusCbb.Items.AddRange(new object[] {
+            "Active",
+            "Stop"});
+            this.AirportStatusCbb.Location = new System.Drawing.Point(112, 185);
+            this.AirportStatusCbb.Name = "AirportStatusCbb";
+            this.AirportStatusCbb.Size = new System.Drawing.Size(247, 30);
+            this.AirportStatusCbb.TabIndex = 25;
             // 
-            // label3
+            // AirportCityCbb
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 21);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Code:";
+            this.AirportCityCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AirportCityCbb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AirportCityCbb.FormattingEnabled = true;
+            this.AirportCityCbb.Items.AddRange(new object[] {
+            "Hà Nội",
+            "Hồ Chí Minh (Thành phố Hồ Chí Minh)",
+            "Đà Nẵng",
+            "Hải Phòng",
+            "Biên Hòa",
+            "Nha Trang",
+            "Buôn Ma Thuột",
+            "Huế",
+            "Long Xuyên",
+            "Thái Nguyên",
+            "Bắc Giang",
+            "Thanh Hóa",
+            "Vinh",
+            "Nam Định",
+            "Quy Nhơn",
+            "Vũng Tàu",
+            "Tam Kỳ",
+            "Phan Thiết",
+            "Đồng Hới",
+            "Sóc Trăng",
+            "Pleiku",
+            "Bạc Liêu",
+            "Thủ Dầu Một",
+            "Cà Mau",
+            "Hưng Yên",
+            "Buôn Hồ",
+            "Đông Hà",
+            "Thanh Hóa"});
+            this.AirportCityCbb.Location = new System.Drawing.Point(112, 130);
+            this.AirportCityCbb.Name = "AirportCityCbb";
+            this.AirportCityCbb.Size = new System.Drawing.Size(247, 30);
+            this.AirportCityCbb.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(30, 189);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 21);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Status:";
+            // 
+            // AirportNoteTb
+            // 
+            this.AirportNoteTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AirportNoteTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AirportNoteTb.Location = new System.Drawing.Point(393, 15);
+            this.AirportNoteTb.Multiline = true;
+            this.AirportNoteTb.Name = "AirportNoteTb";
+            this.AirportNoteTb.Size = new System.Drawing.Size(409, 195);
+            this.AirportNoteTb.TabIndex = 20;
             // 
             // ClearInfoBtn
             // 
@@ -153,6 +206,34 @@
             this.AddAirportBtn.UseVisualStyleBackColor = false;
             this.AddAirportBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(755, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 21);
+            this.label4.TabIndex = 19;
+            // 
+            // AirportCodeTb
+            // 
+            this.AirportCodeTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AirportCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AirportCodeTb.Location = new System.Drawing.Point(112, 15);
+            this.AirportCodeTb.Name = "AirportCodeTb";
+            this.AirportCodeTb.Size = new System.Drawing.Size(247, 30);
+            this.AirportCodeTb.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 21);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Code:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -185,19 +266,21 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.ListAirportGv);
+            this.panel2.Controls.Add(this.ListAirportData);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Location = new System.Drawing.Point(152, 12);
+            this.panel2.Location = new System.Drawing.Point(174, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(830, 306);
+            this.panel2.Size = new System.Drawing.Size(830, 352);
             this.panel2.TabIndex = 1;
             // 
-            // ListAirportGv
+            // ListAirportData
             // 
-            this.ListAirportGv.AllowUserToAddRows = false;
-            this.ListAirportGv.AllowUserToDeleteRows = false;
-            this.ListAirportGv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ListAirportGv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListAirportData.AllowUserToAddRows = false;
+            this.ListAirportData.AllowUserToDeleteRows = false;
+            this.ListAirportData.AllowUserToResizeColumns = false;
+            this.ListAirportData.AllowUserToResizeRows = false;
+            this.ListAirportData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ListAirportData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,18 +288,18 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListAirportGv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.ListAirportGv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListAirportGv.EnableHeadersVisualStyles = false;
-            this.ListAirportGv.Location = new System.Drawing.Point(34, 44);
-            this.ListAirportGv.Name = "ListAirportGv";
-            this.ListAirportGv.ReadOnly = true;
-            this.ListAirportGv.RowHeadersVisible = false;
-            this.ListAirportGv.RowHeadersWidth = 51;
-            this.ListAirportGv.RowTemplate.Height = 24;
-            this.ListAirportGv.Size = new System.Drawing.Size(768, 242);
-            this.ListAirportGv.TabIndex = 17;
-            this.ListAirportGv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListAirportGv_CellClick);
+            this.ListAirportData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ListAirportData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListAirportData.EnableHeadersVisualStyles = false;
+            this.ListAirportData.Location = new System.Drawing.Point(34, 44);
+            this.ListAirportData.Name = "ListAirportData";
+            this.ListAirportData.ReadOnly = true;
+            this.ListAirportData.RowHeadersVisible = false;
+            this.ListAirportData.RowHeadersWidth = 51;
+            this.ListAirportData.RowTemplate.Height = 24;
+            this.ListAirportData.Size = new System.Drawing.Size(768, 288);
+            this.ListAirportData.TabIndex = 17;
+            this.ListAirportData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListAirportGv_CellClick);
             // 
             // label7
             // 
@@ -229,92 +312,11 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "List Airports";
             // 
-            // AirportNoteTb
-            // 
-            this.AirportNoteTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AirportNoteTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AirportNoteTb.Location = new System.Drawing.Point(394, 15);
-            this.AirportNoteTb.Multiline = true;
-            this.AirportNoteTb.Name = "AirportNoteTb";
-            this.AirportNoteTb.Size = new System.Drawing.Size(409, 195);
-            this.AirportNoteTb.TabIndex = 20;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(755, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 21);
-            this.label4.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(30, 189);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 21);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Status:";
-            // 
-            // AirportCityCbb
-            // 
-            this.AirportCityCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AirportCityCbb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AirportCityCbb.FormattingEnabled = true;
-            this.AirportCityCbb.Items.AddRange(new object[] {
-            "Hà Nội",
-            "Hồ Chí Minh (Thành phố Hồ Chí Minh)",
-            "Đà Nẵng",
-            "Hải Phòng",
-            "Biên Hòa",
-            "Nha Trang",
-            "Buôn Ma Thuột",
-            "Huế",
-            "Long Xuyên",
-            "Thái Nguyên",
-            "Bắc Giang",
-            "Thanh Hóa",
-            "Vinh",
-            "Nam Định",
-            "Quy Nhơn",
-            "Vũng Tàu",
-            "Tam Kỳ",
-            "Phan Thiết",
-            "Đồng Hới",
-            "Sóc Trăng",
-            "Pleiku",
-            "Bạc Liêu",
-            "Thủ Dầu Một",
-            "Cà Mau",
-            "Hưng Yên",
-            "Buôn Hồ",
-            "Đông Hà",
-            "Thanh Hóa"});
-            this.AirportCityCbb.Location = new System.Drawing.Point(112, 130);
-            this.AirportCityCbb.Name = "AirportCityCbb";
-            this.AirportCityCbb.Size = new System.Drawing.Size(247, 30);
-            this.AirportCityCbb.TabIndex = 24;
-            // 
-            // AirportStatusCbb
-            // 
-            this.AirportStatusCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AirportStatusCbb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AirportStatusCbb.FormattingEnabled = true;
-            this.AirportStatusCbb.Items.AddRange(new object[] {
-            "Active",
-            "Stop"});
-            this.AirportStatusCbb.Location = new System.Drawing.Point(112, 185);
-            this.AirportStatusCbb.Name = "AirportStatusCbb";
-            this.AirportStatusCbb.Size = new System.Drawing.Size(247, 30);
-            this.AirportStatusCbb.TabIndex = 25;
-            // 
             // ListAirportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 633);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -326,7 +328,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListAirportGv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ListAirportData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -343,7 +345,7 @@
         private System.Windows.Forms.Button DeleteAirportBtn;
         private System.Windows.Forms.Button UpdateAirportBtn;
         private System.Windows.Forms.Button AddAirportBtn;
-        private System.Windows.Forms.DataGridView ListAirportGv;
+        private System.Windows.Forms.DataGridView ListAirportData;
         private System.Windows.Forms.TextBox AirportCodeTb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox AirportNoteTb;

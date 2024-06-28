@@ -19,43 +19,43 @@ namespace FlightTicketManagement
         }
         private Airport() { }
 
-        public bool add_airport(string code, string name, string city)
+        public bool AddAirport(string Code, string Name, string City, string Status, string Note)
         {
-            string query = "exec add_airport @code , @name , @city";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code, name, city });
+            string query = "exec add_airport @code , @name , @city , @status , @note";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Code, Name, City, Status, Note });
             return result == 1;
         }
 
-        public bool update_airport(string code, string name, string city)
+        public bool UpdateAirport(string NewCode, string OldCode, string Name, string City, string Status, string Note)
         {
-            string query = "exec update_airport  @code , @name , @city";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code, name, city});
+            string query = "exec update_airport  @newcode , @oldcode , @name , @city , @status , @note";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { NewCode, OldCode, Name, City, Status, Note });
             return result == 1;
         }
 
-        public bool delete_airport(string code)
+        public bool DeleteAirport(string code)
         {
             string query = "exec delete_airport @code";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code });
             return result == 1;
         }
 
-        public bool check_aiport_code(string code)
+        public bool CheckAirport(string code)
         {
             string query = "exec check_airport @code";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { code });
             return result.Rows.Count > 0;
         }
 
-        public List<AirportInfo> GetListAirport()
+        public List<AirportData> GetListAirport()
         {
-            List<AirportInfo> result = new List<AirportInfo>();
+            List<AirportData> result = new List<AirportData>();
             string query = "select * from airport";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow row in data.Rows)
             {
-                AirportInfo airport = new AirportInfo(row);
+                AirportData airport = new AirportData(row);
                 result.Add(airport);
             }
 

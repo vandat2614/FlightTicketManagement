@@ -196,8 +196,6 @@ D:\Learn\K4\SE\Final\New folder (9)\FlightTicketManagement\obj\Debug\FlightTicke
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.Admin_DashboardForm.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.AdminForm.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.Admin_FlightForm.resources
-D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.Admin_UserForm.resources
-D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.Admin_AirportForm.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.LoginForm.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.SettingForm.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.RegisterForm.resources
@@ -216,3 +214,5 @@ D:\Learn\K4\SE\Final\New folder (8)\FlightTicketManagement\obj\Debug\FlightTicke
 D:\Learn\K4\SE\Final\New folder (8)\FlightTicketManagement\obj\Debug\FlightTicketManagement.SettingForm.resources
 D:\Learn\K4\SE\Final\New folder (8)\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAccountForm.resources
 D:\Learn\K4\SE\Final\New folder (8)\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAirportForm.resources
+D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAccountForm.resources
+D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListAirportForm.resources

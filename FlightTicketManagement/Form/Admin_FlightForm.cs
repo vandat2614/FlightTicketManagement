@@ -66,8 +66,8 @@ namespace FlightTicketManagement
         {
             FlightDepatureCbb.Items.Clear();
             FlightArrivalCbb.Items.Clear();
-            List<AirportInfo> result = Airport.Instance.GetListAirport();
-            foreach(AirportInfo info in result)
+            List<AirportData> result = Airport.Instance.GetListAirport();
+            foreach(AirportData info in result)
             {
                 FlightDepatureCbb.Items.Add(info.code);
                 FlightArrivalCbb.Items.Add(info.code);
