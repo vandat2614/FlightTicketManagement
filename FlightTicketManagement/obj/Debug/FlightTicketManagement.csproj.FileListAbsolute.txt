@@ -42,7 +42,6 @@ D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\bin\Debug\FlightTicketMan
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\bin\Debug\FlightTicketManagement.pdb
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.AssemblyReference.cache
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.SuggestedBindingRedirects.cache
-D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.Register.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.Properties.Resources.resources
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.GenerateResource.cache
 D:\Learn\K4\SE\Final\New folder\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.CoreCompileInputs.cache

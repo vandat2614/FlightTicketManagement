@@ -38,11 +38,11 @@ namespace FlightTicketManagement
         {
             if(CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(Account.Instance.check_email(EmailTb.Text))
+            else if(Account.Instance.CheckEmail(EmailTb.Text))
                 MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                Account.Instance.add_account(EmailTb.Text, PassTb.Text, RoleCbb.Text, NameTb.Text, PhoneTb.Text);
+                Account.Instance.AddAccount(EmailTb.Text, PassTb.Text, RoleCbb.Text, NameTb.Text, PhoneTb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAccount();
             }
@@ -64,14 +64,14 @@ namespace FlightTicketManagement
         {
             if(CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(old_email != null && EmailTb.Text != old_email && Account.Instance.check_email(EmailTb.Text))
+            else if(old_email != null && EmailTb.Text != old_email && Account.Instance.CheckEmail(EmailTb.Text))
                 MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(result == DialogResult.Yes)
                 {
-                    Account.Instance.update_account(EmailTb.Text, old_email, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
+                    Account.Instance.UpdateAccount(EmailTb.Text, old_email, PassTb.Text, NameTb.Text, RoleCbb.Text, PhoneTb.Text);
                     MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     old_email = null;
                     LoadListAccount() ;
@@ -97,7 +97,7 @@ namespace FlightTicketManagement
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                Account.Instance.delete_account(EmailTb.Text);
+                Account.Instance.DeleteAcount(EmailTb.Text);
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAccount();
             }
