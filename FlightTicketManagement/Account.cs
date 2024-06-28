@@ -31,7 +31,7 @@ namespace FlightTicketManagement
             string query = "exec check_email @email";
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { Email });
 
-            return result.Rows[0]["type"].ToString();
+            return result.Rows[0]["type"].ToString().ToLower();
         }
 
         public bool CheckEmail(string Email)
@@ -41,17 +41,10 @@ namespace FlightTicketManagement
             return result.Rows.Count > 0;
         }
 
-        public bool RegisterAccount(string Email, string Password)
+        public bool RegisterAccount(string Email, string Password, string Type = "customer", string Name = "", string Phone = "")
         {
-            string query = "exec register_account @email , @pass";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password });
-            return result == 1;
-        }
-
-        public bool AddAccount(string Email, string Password, string Type, string Name, string Phone)
-        {
-            string query = "exec add_account @email , @pass , @type , @name , @phone";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password, Type, Name, Phone });
+            string query = "exec register_account @email , @pass , @type , @name , @phone";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { Email, Password , Type, Name, Phone});
             return result == 1;
         }
 
@@ -71,17 +64,17 @@ namespace FlightTicketManagement
 
         public List<AccountData> GetListAccount()
         {
-            List<AccountData> result = new List<AccountData>();
+            List<AccountData> ListAccount = new List<AccountData>();
             string query = "select * from account";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             foreach (DataRow row in data.Rows)
             {
                 AccountData user = new AccountData(row);
-                result.Add(user);
+                ListAccount.Add(user);
             }
 
-            return result;
+            return ListAccount;
         }
     }
 }

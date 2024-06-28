@@ -64,11 +64,11 @@
     <Compile Include="Form\Admin_FlightForm.Designer.cs">
       <DependentUpon>Admin_FlightForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Admin_UserForm.cs">
+    <Compile Include="Form\ListAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Admin_UserForm.Designer.cs">
-      <DependentUpon>Admin_UserForm.cs</DependentUpon>
+    <Compile Include="Form\ListAccountForm.Designer.cs">
+      <DependentUpon>ListAccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Admin_DashboardForm.cs">
       <SubType>Form</SubType>
@@ -76,11 +76,11 @@
     <Compile Include="Form\Admin_DashboardForm.Designer.cs">
       <DependentUpon>Admin_DashboardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\Admin_AirportForm.cs">
+    <Compile Include="Form\ListAirportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Admin_AirportForm.Designer.cs">
-      <DependentUpon>Admin_AirportForm.cs</DependentUpon>
+    <Compile Include="Form\ListAirportForm.Designer.cs">
+      <DependentUpon>ListAirportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\RegisterForm.cs">
       <SubType>Form</SubType>
@@ -114,11 +114,11 @@
     <EmbeddedResource Include="Form\Admin_FlightForm.resx">
       <DependentUpon>Admin_FlightForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Admin_UserForm.resx">
-      <DependentUpon>Admin_UserForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\ListAccountForm.resx">
+      <DependentUpon>ListAccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\Admin_AirportForm.resx">
-      <DependentUpon>Admin_AirportForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form\ListAirportForm.resx">
+      <DependentUpon>ListAirportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

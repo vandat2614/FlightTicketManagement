@@ -53,12 +53,12 @@ namespace FlightTicketManagement
 
         private void AirportBtn_Click_1(object sender, EventArgs e)
         {
-            LoadForm(new Admin_AirportForm());
+            LoadForm(new ListAirportForm());
         }
 
         private void AccountBtn_Click(object sender, EventArgs e)
         {
-            LoadForm(new Admin_UserForm());
+            LoadForm(new ListAccountForm());
         }
 
         private void FightBtn_Click(object sender, EventArgs e)
