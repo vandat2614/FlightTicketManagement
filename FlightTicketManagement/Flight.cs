@@ -34,10 +34,10 @@ namespace FlightTicketManagement
             return result == 1;
         }
 
-        public bool UpdateFlight(string code, string start, string dest, string date, string time, string duration, string price, string seat1, string seat2)
+        public bool UpdateFlight(string newcode, string oldcode, string date, string time, string duration, string price, string seat1, string seat2)
         {
-            string query = "exec update_flight  @code , @start , @dest , @date , @time , @duration , @price , @seat1 , @seat2";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code, start, dest, date, time, duration, price, seat1, seat2 });
+            string query = "exec update_flight  @newcode , @oldcode , @date , @time , @duration , @price , @seat1 , @seat2";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { newcode, oldcode, date, time, duration, price, seat1, seat2 });
             return result == 1;
         }
 
@@ -46,6 +46,20 @@ namespace FlightTicketManagement
             string query = "exec delete_flight @code";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { code });
             return result == 1;
+        }
+
+        public List<string> GetDepatureArrivalCode(string code)
+        {
+            string query = "exec check_flight @code";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { code });
+            return new List<string> { result.Rows[0]["depature"].ToString(), result.Rows[0]["arrival"].ToString() };
+        }
+
+        public string GetAirportCodeByID(string code)
+        {
+            string query = "exec get_intermediate_info @code";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { code });
+            return result.Rows[0]["airport_code"].ToString();
         }
 
         public List<FlightData> GetListFlightt()
@@ -61,6 +75,28 @@ namespace FlightTicketManagement
             }
 
             return result;
+        }
+
+        public List<IntermediateAirportData> GetListIntermediateAirport(string FlightCode)
+        {
+            List<IntermediateAirportData> result = new List<IntermediateAirportData>();
+            string query = "exec get_list_intermediate  @flight_code";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] {FlightCode});
+
+            foreach (DataRow row in data.Rows)
+            {
+                IntermediateAirportData temp = new IntermediateAirportData(row);
+                result.Add(temp);
+            }
+
+            return result;
+        }
+
+        public bool AddIntermediateAirport(string flightcode, string airportcode, string duration, string note="")
+        {
+            string query = "exec add_intermediate_airport @flight_code , @airport_code , @duration , @note";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { flightcode, airportcode, duration, note});
+            return result == 1;
         }
     }
 }

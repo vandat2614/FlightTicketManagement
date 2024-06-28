@@ -33,9 +33,10 @@
             this.ListFlightData = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.FlightDurationTb = new System.Windows.Forms.TextBox();
             this.ArrivalFlightBtn = new System.Windows.Forms.Button();
             this.DepatureFlightBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoadIntermediateForm = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.FlightDepatureTimePk = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.DeleteFlightBtn = new System.Windows.Forms.Button();
             this.UpdateFlightBtn = new System.Windows.Forms.Button();
             this.AddFlightBtn = new System.Windows.Forms.Button();
-            this.FlightDurationTb = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ListFlightData)).BeginInit();
             this.panel1.SuspendLayout();
@@ -74,6 +74,8 @@
             // 
             this.ListFlightData.AllowUserToAddRows = false;
             this.ListFlightData.AllowUserToDeleteRows = false;
+            this.ListFlightData.AllowUserToResizeColumns = false;
+            this.ListFlightData.AllowUserToResizeRows = false;
             this.ListFlightData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListFlightData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -113,7 +115,7 @@
             this.panel1.Controls.Add(this.FlightDurationTb);
             this.panel1.Controls.Add(this.ArrivalFlightBtn);
             this.panel1.Controls.Add(this.DepatureFlightBtn);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.LoadIntermediateForm);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.FlightDepatureTimePk);
             this.panel1.Controls.Add(this.label8);
@@ -136,6 +138,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(904, 296);
             this.panel1.TabIndex = 3;
+            // 
+            // FlightDurationTb
+            // 
+            this.FlightDurationTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.FlightDurationTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FlightDurationTb.Location = new System.Drawing.Point(654, 158);
+            this.FlightDurationTb.Name = "FlightDurationTb";
+            this.FlightDurationTb.Size = new System.Drawing.Size(231, 30);
+            this.FlightDurationTb.TabIndex = 38;
             // 
             // ArrivalFlightBtn
             // 
@@ -167,19 +178,20 @@
             this.DepatureFlightBtn.UseVisualStyleBackColor = false;
             this.DepatureFlightBtn.Click += new System.EventHandler(this.DepatureFlightBtn_Click);
             // 
-            // button1
+            // LoadIntermediateForm
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(740, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 40);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Intermediate";
-            this.button1.UseVisualStyleBackColor = false;
+            this.LoadIntermediateForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.LoadIntermediateForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LoadIntermediateForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoadIntermediateForm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadIntermediateForm.ForeColor = System.Drawing.Color.White;
+            this.LoadIntermediateForm.Location = new System.Drawing.Point(692, 222);
+            this.LoadIntermediateForm.Name = "LoadIntermediateForm";
+            this.LoadIntermediateForm.Size = new System.Drawing.Size(193, 40);
+            this.LoadIntermediateForm.TabIndex = 35;
+            this.LoadIntermediateForm.Text = "Intermediate";
+            this.LoadIntermediateForm.UseVisualStyleBackColor = false;
+            this.LoadIntermediateForm.Click += new System.EventHandler(this.LoadIntermediateForm_Click);
             // 
             // label9
             // 
@@ -363,6 +375,7 @@
             this.UpdateFlightBtn.TabIndex = 12;
             this.UpdateFlightBtn.Text = "UPDATE";
             this.UpdateFlightBtn.UseVisualStyleBackColor = false;
+            this.UpdateFlightBtn.Click += new System.EventHandler(this.UpdateFlightBtn_Click);
             // 
             // AddFlightBtn
             // 
@@ -378,15 +391,6 @@
             this.AddFlightBtn.Text = "ADD";
             this.AddFlightBtn.UseVisualStyleBackColor = false;
             this.AddFlightBtn.Click += new System.EventHandler(this.AddFlightBtn_Click);
-            // 
-            // FlightDurationTb
-            // 
-            this.FlightDurationTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.FlightDurationTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FlightDurationTb.Location = new System.Drawing.Point(654, 158);
-            this.FlightDurationTb.Name = "FlightDurationTb";
-            this.FlightDurationTb.Size = new System.Drawing.Size(231, 30);
-            this.FlightDurationTb.TabIndex = 38;
             // 
             // FlightForm
             // 
@@ -433,7 +437,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker FlightDepatureTimePk;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LoadIntermediateForm;
         private System.Windows.Forms.Button ArrivalFlightBtn;
         private System.Windows.Forms.Button DepatureFlightBtn;
         private System.Windows.Forms.TextBox FlightDurationTb;
