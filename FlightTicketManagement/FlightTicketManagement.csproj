@@ -130,6 +130,7 @@
     <Compile Include="Form\TicketForm.Designer.cs">
       <DependentUpon>TicketForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuerySQL\Ticket.cs" />
     <EmbeddedResource Include="Form\Admin_DashboardForm.resx">
       <DependentUpon>Admin_DashboardForm.cs</DependentUpon>
     </EmbeddedResource>

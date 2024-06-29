@@ -77,5 +77,18 @@ namespace FlightTicketManagement
             return result;
         }
 
+        public List<string> GetListAirportName()
+        {
+            List<AirportData> ListAirport = Airport.Instance.GetListAirport();
+            List<string> ListAirportName = new List<string> { };
+            for (int i = ListAirport.Count-1; i>=0; i--)
+            {
+                AirportData airport = ListAirport[i];
+                ListAirportName.Add(airport.name);
+            }
+
+            return ListAirportName;
+        }
+
     }
 }

@@ -38,8 +38,9 @@
             this.ListAirportBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.MainPanel = new System.Windows.Forms.Panel();
+            this.TicketBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -83,6 +84,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.panel2.Controls.Add(this.TicketBtn);
             this.panel2.Controls.Add(this.SettingBtn);
             this.panel2.Controls.Add(this.ListAccountBtn);
             this.panel2.Controls.Add(this.ListFlightBtn);
@@ -184,15 +186,6 @@
             this.label7.Text = "Admin\'s portal";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // MainPanel
-            // 
-            this.MainPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.MainPanel.Location = new System.Drawing.Point(269, 45);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1200, 700);
-            this.MainPanel.TabIndex = 3;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FlightTicketManagement.Properties.Resources.icons8_airplane_take_off_96;
@@ -203,6 +196,30 @@
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.MainPanel.Location = new System.Drawing.Point(269, 45);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1200, 700);
+            this.MainPanel.TabIndex = 3;
+            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            // 
+            // TicketBtn
+            // 
+            this.TicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.TicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.TicketBtn.ForeColor = System.Drawing.Color.White;
+            this.TicketBtn.Location = new System.Drawing.Point(12, 591);
+            this.TicketBtn.Name = "TicketBtn";
+            this.TicketBtn.Size = new System.Drawing.Size(248, 45);
+            this.TicketBtn.TabIndex = 19;
+            this.TicketBtn.Text = "Ticket";
+            this.TicketBtn.UseVisualStyleBackColor = false;
+            this.TicketBtn.Click += new System.EventHandler(this.TicketBtn_Click);
             // 
             // AdminForm
             // 
@@ -237,5 +254,6 @@
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button ListAccountBtn;
         private System.Windows.Forms.Button SettingBtn;
+        private System.Windows.Forms.Button TicketBtn;
     }
 }

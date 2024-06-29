@@ -94,7 +94,7 @@
             this.AirportCityCbb.FormattingEnabled = true;
             this.AirportCityCbb.Items.AddRange(new object[] {
             "Hà Nội",
-            "Hồ Chí Minh (Thành phố Hồ Chí Minh)",
+            "Hồ Chí Minh",
             "Đà Nẵng",
             "Hải Phòng",
             "Biên Hòa",

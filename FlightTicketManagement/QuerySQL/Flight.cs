@@ -70,6 +70,22 @@ namespace FlightTicketManagement
             return result;
         }
 
+        public List<FlightData> SearchFlight(string depature, string arrival, string date)
+        {
+            List<FlightData> result = new List<FlightData>();
+            string query = "select * from flight";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                FlightData flight = new FlightData(row);
+                if (flight.depature.ToLower() != depature.ToLower() || flight.arrival.ToLower() != arrival.ToLower() || flight.date.ToLower() != date.ToLower())
+                    continue;
+                result.Add(flight);
+            }
+
+            return result;
+        }
 
     }
 }
