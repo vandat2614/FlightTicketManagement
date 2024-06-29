@@ -59,7 +59,9 @@ namespace FlightTicketManagement
         private void TicketForm_Load(object sender, EventArgs e)
         {
             LoadListAirportName();
-            TicketTypeCbb.SelectedIndex = 1;
+            TicketTypeCbb.SelectedIndex = -1;
+            FlightDepatureCbb.SelectedIndex = -1;
+            FlightArrivalCbb.SelectedIndex = -1;
         }
 
         public int FlightPrice = -1;
@@ -69,7 +71,6 @@ namespace FlightTicketManagement
             DataGridViewRow row = ListFlightData.Rows[e.RowIndex];
             FlightCodeTb.Text = row.Cells[0].Value.ToString();
             FlightPrice = int.Parse(row.Cells[6].Value.ToString());
-            UpdatePrice();
         }
 
         public void UpdatePrice()
@@ -86,8 +87,7 @@ namespace FlightTicketManagement
             UpdatePrice();  
         }
 
-        private void AddTicketBtn_Click(object sender, EventArgs e)
-        {
+        public void AddTicket(string ticket_type) {
             bool check()
             {
                 if (FlightCodeTb.Text == "" || CustomerNameTb.Text == "" || CMNDTb.Text == "" || CustomerPhoneTb.Text == "" || TicketTypeCbb.SelectedIndex == -1 || TicketPriceTb.Text == "")
@@ -95,14 +95,34 @@ namespace FlightTicketManagement
                 return false;
             }
 
-            if(check())
+            if (check())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                Ticket.Instance.AddTicket(FlightCodeTb.Text, CustomerNameTb.Text, CMNDTb.Text, CustomerPhoneTb.Text, TicketTypeCbb.Text, TicketPriceTb.Text);
+                Ticket.Instance.AddTicket(FlightCodeTb.Text, CustomerNameTb.Text, CMNDTb.Text, CustomerPhoneTb.Text, TicketTypeCbb.Text, TicketPriceTb.Text, ticket_type);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                ClearInfo();
             }
+        }
+
+        public void ClearInfo()
+        {
+            FlightCodeTb.Text = "";
+            CustomerNameTb.Text = "";
+            CMNDTb.Text = "";
+            CustomerPhoneTb.Text = "";
+            TicketTypeCbb.SelectedIndex = -1;
+            TicketPriceTb.Text = "";
+        }
+
+        private void AddTicketBtn_Click(object sender, EventArgs e)
+        {
+            AddTicket("buy");
+        }
+
+        private void BookTicketBtn_Click(object sender, EventArgs e)
+        {
+            AddTicket("book");
         }
     }
 }

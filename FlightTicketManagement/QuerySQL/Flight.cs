@@ -55,7 +55,7 @@ namespace FlightTicketManagement
             return new List<string> { result.Rows[0]["depature"].ToString(), result.Rows[0]["arrival"].ToString() };
         }
 
-        public List<FlightData> GetListFlightt()
+        public List<FlightData> GetListFlight()
         {
             List<FlightData> result = new List<FlightData>();
             string query = "select * from flight";
@@ -70,6 +70,18 @@ namespace FlightTicketManagement
             return result;
         }
 
+        public List<string> GetListFlightCode()
+        {
+            List<FlightData> ListFlight = Flight.Instance.GetListFlight();
+            List<string> ListFlightName = new List<string> { };
+            for (int i = ListFlight.Count-1; i>=0; i--)
+            {
+                FlightData flight = ListFlight[i];
+                ListFlightName.Add(flight.code);
+            }
+
+            return ListFlightName;
+        }
         public List<FlightData> SearchFlight(string depature, string arrival, string date)
         {
             List<FlightData> result = new List<FlightData>();

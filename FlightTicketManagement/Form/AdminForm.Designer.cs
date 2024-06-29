@@ -32,6 +32,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.TicketBtn = new System.Windows.Forms.Button();
             this.SettingBtn = new System.Windows.Forms.Button();
             this.ListAccountBtn = new System.Windows.Forms.Button();
             this.ListFlightBtn = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.TicketBtn = new System.Windows.Forms.Button();
+            this.ListTicketBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -84,6 +85,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.panel2.Controls.Add(this.ListTicketBtn);
             this.panel2.Controls.Add(this.TicketBtn);
             this.panel2.Controls.Add(this.SettingBtn);
             this.panel2.Controls.Add(this.ListAccountBtn);
@@ -98,6 +100,21 @@
             this.panel2.Size = new System.Drawing.Size(272, 701);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // TicketBtn
+            // 
+            this.TicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.TicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.TicketBtn.ForeColor = System.Drawing.Color.White;
+            this.TicketBtn.Location = new System.Drawing.Point(12, 591);
+            this.TicketBtn.Name = "TicketBtn";
+            this.TicketBtn.Size = new System.Drawing.Size(248, 45);
+            this.TicketBtn.TabIndex = 19;
+            this.TicketBtn.Text = "Ticket";
+            this.TicketBtn.UseVisualStyleBackColor = false;
+            this.TicketBtn.Click += new System.EventHandler(this.TicketBtn_Click);
             // 
             // SettingBtn
             // 
@@ -188,7 +205,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::FlightTicketManagement.Properties.Resources.icons8_airplane_take_off_96;
             this.pictureBox1.Location = new System.Drawing.Point(84, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(96, 96);
@@ -206,20 +222,20 @@
             this.MainPanel.TabIndex = 3;
             this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
             // 
-            // TicketBtn
+            // ListTicketBtn
             // 
-            this.TicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.TicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.TicketBtn.ForeColor = System.Drawing.Color.White;
-            this.TicketBtn.Location = new System.Drawing.Point(12, 591);
-            this.TicketBtn.Name = "TicketBtn";
-            this.TicketBtn.Size = new System.Drawing.Size(248, 45);
-            this.TicketBtn.TabIndex = 19;
-            this.TicketBtn.Text = "Ticket";
-            this.TicketBtn.UseVisualStyleBackColor = false;
-            this.TicketBtn.Click += new System.EventHandler(this.TicketBtn_Click);
+            this.ListTicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.ListTicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ListTicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ListTicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.ListTicketBtn.ForeColor = System.Drawing.Color.White;
+            this.ListTicketBtn.Location = new System.Drawing.Point(15, 210);
+            this.ListTicketBtn.Name = "ListTicketBtn";
+            this.ListTicketBtn.Size = new System.Drawing.Size(248, 45);
+            this.ListTicketBtn.TabIndex = 20;
+            this.ListTicketBtn.Text = "List Ticket";
+            this.ListTicketBtn.UseVisualStyleBackColor = false;
+            this.ListTicketBtn.Click += new System.EventHandler(this.ListTicketBtn_Click);
             // 
             // AdminForm
             // 
@@ -255,5 +271,6 @@
         private System.Windows.Forms.Button ListAccountBtn;
         private System.Windows.Forms.Button SettingBtn;
         private System.Windows.Forms.Button TicketBtn;
+        private System.Windows.Forms.Button ListTicketBtn;
     }
 }

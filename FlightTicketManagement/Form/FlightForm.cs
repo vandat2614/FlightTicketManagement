@@ -19,7 +19,7 @@ namespace FlightTicketManagement
 
         public void LoadListFlight()
         {
-            List<FlightData> ListFlight = Flight.Instance.GetListFlightt();
+            List<FlightData> ListFlight = Flight.Instance.GetListFlight();
             ListFlightData.DataSource = ListFlight;
         }
 

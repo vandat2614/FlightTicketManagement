@@ -107,5 +107,10 @@ namespace FlightTicketManagement
             LoadForm(new TicketForm());
 
         }
+
+        private void ListTicketBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new ListTicketForm());
+        }
     }
 }

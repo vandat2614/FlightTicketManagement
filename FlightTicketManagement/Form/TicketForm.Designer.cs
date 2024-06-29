@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BookTicketBtn = new System.Windows.Forms.Button();
             this.FlightCodeTb = new System.Windows.Forms.TextBox();
             this.TicketPriceTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -38,7 +39,7 @@
             this.CMNDTb = new System.Windows.Forms.TextBox();
             this.TicketTypeCbb = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.AddTicketBtn = new System.Windows.Forms.Button();
+            this.BuyTicketBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,6 +64,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.BookTicketBtn);
             this.panel1.Controls.Add(this.FlightCodeTb);
             this.panel1.Controls.Add(this.TicketPriceTb);
             this.panel1.Controls.Add(this.label7);
@@ -71,7 +73,7 @@
             this.panel1.Controls.Add(this.CMNDTb);
             this.panel1.Controls.Add(this.TicketTypeCbb);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.AddTicketBtn);
+            this.panel1.Controls.Add(this.BuyTicketBtn);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -79,8 +81,23 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(147, 422);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 233);
+            this.panel1.Size = new System.Drawing.Size(860, 229);
             this.panel1.TabIndex = 1;
+            // 
+            // BookTicketBtn
+            // 
+            this.BookTicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.BookTicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BookTicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BookTicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BookTicketBtn.ForeColor = System.Drawing.Color.White;
+            this.BookTicketBtn.Location = new System.Drawing.Point(691, 179);
+            this.BookTicketBtn.Name = "BookTicketBtn";
+            this.BookTicketBtn.Size = new System.Drawing.Size(145, 40);
+            this.BookTicketBtn.TabIndex = 44;
+            this.BookTicketBtn.Text = "BOOK";
+            this.BookTicketBtn.UseVisualStyleBackColor = false;
+            this.BookTicketBtn.Click += new System.EventHandler(this.BookTicketBtn_Click);
             // 
             // FlightCodeTb
             // 
@@ -88,6 +105,7 @@
             this.FlightCodeTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FlightCodeTb.Location = new System.Drawing.Point(140, 16);
             this.FlightCodeTb.Name = "FlightCodeTb";
+            this.FlightCodeTb.ReadOnly = true;
             this.FlightCodeTb.Size = new System.Drawing.Size(247, 30);
             this.FlightCodeTb.TabIndex = 43;
             // 
@@ -97,6 +115,7 @@
             this.TicketPriceTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TicketPriceTb.Location = new System.Drawing.Point(589, 128);
             this.TicketPriceTb.Name = "TicketPriceTb";
+            this.TicketPriceTb.ReadOnly = true;
             this.TicketPriceTb.Size = new System.Drawing.Size(247, 30);
             this.TicketPriceTb.TabIndex = 42;
             // 
@@ -158,24 +177,24 @@
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(10, 133);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 21);
+            this.label6.Size = new System.Drawing.Size(98, 21);
             this.label6.TabIndex = 22;
-            this.label6.Text = "Ticket Type";
+            this.label6.Text = "Seat Type";
             // 
-            // AddTicketBtn
+            // BuyTicketBtn
             // 
-            this.AddTicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.AddTicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddTicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddTicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddTicketBtn.ForeColor = System.Drawing.Color.White;
-            this.AddTicketBtn.Location = new System.Drawing.Point(691, 181);
-            this.AddTicketBtn.Name = "AddTicketBtn";
-            this.AddTicketBtn.Size = new System.Drawing.Size(145, 40);
-            this.AddTicketBtn.TabIndex = 7;
-            this.AddTicketBtn.Text = "ADD";
-            this.AddTicketBtn.UseVisualStyleBackColor = false;
-            this.AddTicketBtn.Click += new System.EventHandler(this.AddTicketBtn_Click);
+            this.BuyTicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.BuyTicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BuyTicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BuyTicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuyTicketBtn.ForeColor = System.Drawing.Color.White;
+            this.BuyTicketBtn.Location = new System.Drawing.Point(540, 179);
+            this.BuyTicketBtn.Name = "BuyTicketBtn";
+            this.BuyTicketBtn.Size = new System.Drawing.Size(145, 40);
+            this.BuyTicketBtn.TabIndex = 7;
+            this.BuyTicketBtn.Text = "BUY";
+            this.BuyTicketBtn.UseVisualStyleBackColor = false;
+            this.BuyTicketBtn.Click += new System.EventHandler(this.AddTicketBtn_Click);
             // 
             // label4
             // 
@@ -437,7 +456,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox TicketTypeCbb;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button AddTicketBtn;
+        private System.Windows.Forms.Button BuyTicketBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -459,5 +478,6 @@
         private System.Windows.Forms.ComboBox FlightDepatureCbb;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker FlightDatePk;
+        private System.Windows.Forms.Button BookTicketBtn;
     }
 }
