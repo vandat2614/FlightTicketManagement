@@ -112,5 +112,10 @@ namespace FlightTicketManagement
         {
             LoadForm(new ListTicketForm());
         }
+
+        private void RevenueBtn_Click(object sender, EventArgs e)
+        {
+            LoadForm(new RevenueForm());
+        }
     }
 }

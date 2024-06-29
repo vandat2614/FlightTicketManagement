@@ -224,3 +224,4 @@ D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicke
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.StaffForm.resources
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.TicketForm.resources
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.ListTicketForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.RevenueForm.resources

@@ -1,4 +1,5 @@
 ﻿
+using FlightTicketManagement.QuerySQL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -94,6 +95,69 @@ namespace FlightTicketManagement
                 if (flight.depature.ToLower() != depature.ToLower() || flight.arrival.ToLower() != arrival.ToLower() || flight.date.ToLower() != date.ToLower())
                     continue;
                 result.Add(flight);
+            }
+
+            return result;
+        }
+
+        public List<MonthRevenueData> GetRevenueByMonth(string month)
+        {
+            List<MonthRevenueData> result = new List<MonthRevenueData>();
+            string query = "select * from flight";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            int sum = 0;
+            foreach (DataRow row in data.Rows)
+            {
+                if (row["date"].ToString().Split('/')[0] == month)
+                {
+                    string FlightCode = row["code"].ToString();
+                    string DepatureAirportName = Airport.Instance.GetAirportName(row["depature"].ToString());
+                    string ArrivalAirportName = Airport.Instance.GetAirportName(row["arrival"].ToString());
+
+                    List<TicketData> ListTicket = Ticket.Instance.GetListTicket(FlightCode);
+
+                    int Revenue = 0;
+                    foreach (TicketData ticket in ListTicket) Revenue += int.Parse(ticket.price);
+                    string NumTicket = ListTicket.Count.ToString();
+                    string Ratio = "random";
+
+                    result.Add(new MonthRevenueData(FlightCode, DepatureAirportName, ArrivalAirportName, NumTicket, Revenue.ToString(), Ratio));
+
+                    sum+=Revenue;
+                }
+            }
+
+            for(int i = 0; i<result.Count(); i++)
+            {
+                result[i].Ratio = ((1.0 * int.Parse(result[i].Revenue) / sum)).ToString();
+            }
+
+            return result;
+        }
+
+        public List<YearRevenueData> GetRevenueByYear(string year)
+        {
+            List<YearRevenueData> result = new List<YearRevenueData>();
+
+            string query = "select * from flight";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count == 0)
+                return result;
+
+            for (int i = 1; i<=12; i++)
+            {
+                YearRevenueData temp = new YearRevenueData(i);
+                result.Add(temp);
+            }
+
+            foreach (DataRow row in data.Rows)
+            {
+                if (row["date"].ToString().Split('/')[2] == year)
+                {
+                    int month = int.Parse(row["date"].ToString().Split('/')[0]);
+                    result[month-1].Flights += 1;
+
+                }
             }
 
             return result;
