@@ -23,7 +23,7 @@ namespace FlightTicketManagement
 
         public void LoadListAirport()
         {
-            List<IntermediateAirportData> ListData = Flight.Instance.GetListIntermediateAirport(this.FlightCode);
+            List<IntermediateAirportData> ListData = IntermediateAirport.Instance.GetListIntermediateAirport(this.FlightCode);
             ListIntermediateAirportData.DataSource = ListData;
         }
 
@@ -34,6 +34,15 @@ namespace FlightTicketManagement
             SelectForm.ShowDialog();
             SelectedAirportCode = SelectForm.SelectedCode;
             SelectIntermediateAirportBtn.Text = SelectForm.SelectedName;
+        }
+
+        public void ClearInfo()
+        {
+            SelectedAirportCode = null;
+            SelectedId = null;
+            SelectIntermediateAirportBtn.Text = "SELECT";
+            IntermediateAirportStopTimeTb.Text = "";
+            IntermediateAirportNoteTb.Text = "";
         }
 
         public bool CheckEmpty()
@@ -49,9 +58,11 @@ namespace FlightTicketManagement
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                Flight.Instance.AddIntermediateAirport(this.FlightCode, SelectedAirportCode, IntermediateAirportStopTimeTb.Text, IntermediateAirportNoteTb.Text);
+                IntermediateAirport.Instance.AddIntermediateAirport(this.FlightCode, SelectedAirportCode, IntermediateAirportStopTimeTb.Text, IntermediateAirportNoteTb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAirport();
+                ClearInfo();
+                SelectedAirportCode = null;
             }
         }
 
@@ -65,6 +76,7 @@ namespace FlightTicketManagement
             this.Hide();
         }
 
+        public string SelectedId = null;
         private void ListIntermediateAirportData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
@@ -72,7 +84,39 @@ namespace FlightTicketManagement
             SelectIntermediateAirportBtn.Text = row.Cells[1].Value.ToString();
             IntermediateAirportStopTimeTb.Text = row.Cells[2].Value.ToString();
             IntermediateAirportNoteTb.Text = row.Cells[3].Value.ToString();
-            SelectedAirportCode = Flight.Instance.GetAirportCodeByID(row.Cells[0].Value.ToString());
+            SelectedAirportCode = IntermediateAirport.Instance.GetAirportCodeByID(row.Cells[0].Value.ToString());
+            SelectedId = row.Cells[0].Value.ToString();
+
+        }
+
+        private void IntermediateAirportUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if(CheckEmpty())
+                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(result == DialogResult.Yes)
+                {
+                    IntermediateAirport.Instance.UpdateIntermediateAirport(SelectedId, SelectedAirportCode, IntermediateAirportStopTimeTb.Text, IntermediateAirportNoteTb.Text);
+                    MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadListAirport();
+                    ClearInfo();
+                }
+            }
+        }
+
+        private void IntermediateAirportDeleteBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                IntermediateAirport.Instance.DeleteIntermediateAirport(SelectedId);
+                MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadListAirport();
+                ClearInfo();
+            }
         }
     }
 }

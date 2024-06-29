@@ -37,6 +37,8 @@ namespace FlightTicketManagement
                 string AccountType = Account.Instance.GetAccountType(EmailLoginTb.Text);
                 if (AccountType == "admin")
                     new AdminForm().Show();
+                else if(AccountType == "staff")
+                    new StaffForm().Show();
             }
 
         }

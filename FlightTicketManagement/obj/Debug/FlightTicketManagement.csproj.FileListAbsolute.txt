@@ -221,3 +221,5 @@ D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicke
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.SettingForm.resources
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.IntermediateAirportForm.resources
 D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.SelectAirportForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.StaffForm.resources
+D:\Learn\K4\SE\Final\New folder (2)\FlightTicketManagement\obj\Debug\FlightTicketManagement.TicketForm.resources

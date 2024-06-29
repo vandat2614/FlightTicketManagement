@@ -46,12 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="Airport.cs" />
-    <Compile Include="AirportData.cs" />
-    <Compile Include="DataProvider.cs" />
-    <Compile Include="Flight.cs" />
-    <Compile Include="FlightData.cs" />
+    <Compile Include="Form\StaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\StaffForm.Designer.cs">
+      <DependentUpon>StaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuerySQL\Account.cs" />
+    <Compile Include="QuerySQL\Airport.cs" />
+    <Compile Include="QuerySQL\AirportData.cs" />
+    <Compile Include="QuerySQL\DataProvider.cs" />
+    <Compile Include="QuerySQL\Flight.cs" />
+    <Compile Include="QuerySQL\FlightData.cs" />
     <Compile Include="Form\IntermediateAirportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,18 +112,24 @@
     <Compile Include="Form\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IntermediateAirport.cs" />
-    <Compile Include="IntermediateAirportData.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="QuerySQL\IntermediateAirport.cs" />
+    <Compile Include="QuerySQL\IntermediateAirportData.cs" />
+    <Compile Include="QuerySQL\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AccountData.cs" />
+    <Compile Include="QuerySQL\AccountData.cs" />
     <Compile Include="Form\SelectAirportForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\SelectAirportForm.Designer.cs">
       <DependentUpon>SelectAirportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Setting.cs" />
+    <Compile Include="QuerySQL\Setting.cs" />
+    <Compile Include="Form\TicketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\TicketForm.Designer.cs">
+      <DependentUpon>TicketForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form\Admin_DashboardForm.resx">
       <DependentUpon>Admin_DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +157,9 @@
     <EmbeddedResource Include="Form\SettingForm.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\TicketForm.resx">
+      <DependentUpon>TicketForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -157,6 +172,9 @@
     </Compile>
     <EmbeddedResource Include="Form\SelectAirportForm.resx">
       <DependentUpon>SelectAirportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\StaffForm.resx">
+      <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

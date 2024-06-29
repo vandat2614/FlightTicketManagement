@@ -55,13 +55,6 @@ namespace FlightTicketManagement
             return new List<string> { result.Rows[0]["depature"].ToString(), result.Rows[0]["arrival"].ToString() };
         }
 
-        public string GetAirportCodeByID(string code)
-        {
-            string query = "exec get_intermediate_info @code";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { code });
-            return result.Rows[0]["airport_code"].ToString();
-        }
-
         public List<FlightData> GetListFlightt()
         {
             List<FlightData> result = new List<FlightData>();
@@ -77,26 +70,6 @@ namespace FlightTicketManagement
             return result;
         }
 
-        public List<IntermediateAirportData> GetListIntermediateAirport(string FlightCode)
-        {
-            List<IntermediateAirportData> result = new List<IntermediateAirportData>();
-            string query = "exec get_list_intermediate  @flight_code";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] {FlightCode});
 
-            foreach (DataRow row in data.Rows)
-            {
-                IntermediateAirportData temp = new IntermediateAirportData(row);
-                result.Add(temp);
-            }
-
-            return result;
-        }
-
-        public bool AddIntermediateAirport(string flightcode, string airportcode, string duration, string note="")
-        {
-            string query = "exec add_intermediate_airport @flight_code , @airport_code , @duration , @note";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { flightcode, airportcode, duration, note});
-            return result == 1;
-        }
     }
 }

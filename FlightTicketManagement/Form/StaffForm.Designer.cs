@@ -1,6 +1,6 @@
 ﻿namespace FlightTicketManagement
 {
-    partial class AdminForm
+    partial class StaffForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Label();
@@ -38,12 +39,22 @@
             this.ListAirportBtn = new System.Windows.Forms.Button();
             this.LogoutBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.MainPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.MainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.MainPanel.Controls.Add(this.label1);
+            this.MainPanel.Location = new System.Drawing.Point(269, 45);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(1200, 700);
+            this.MainPanel.TabIndex = 6;
             // 
             // panel1
             // 
@@ -51,11 +62,10 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.ExitBtn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(272, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1471, 45);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Size = new System.Drawing.Size(1199, 45);
+            this.panel1.TabIndex = 4;
             // 
             // label4
             // 
@@ -66,7 +76,6 @@
             this.label4.Size = new System.Drawing.Size(307, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Flight Ticket Management System";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // ExitBtn
             // 
@@ -78,7 +87,6 @@
             this.ExitBtn.Size = new System.Drawing.Size(22, 23);
             this.ExitBtn.TabIndex = 12;
             this.ExitBtn.Text = "X";
-            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
             // panel2
             // 
@@ -91,11 +99,10 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 45);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(272, 701);
-            this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.panel2.Size = new System.Drawing.Size(272, 746);
+            this.panel2.TabIndex = 5;
             // 
             // SettingBtn
             // 
@@ -110,7 +117,6 @@
             this.SettingBtn.TabIndex = 19;
             this.SettingBtn.Text = "Setting";
             this.SettingBtn.UseVisualStyleBackColor = false;
-            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
             // 
             // ListAccountBtn
             // 
@@ -125,7 +131,6 @@
             this.ListAccountBtn.TabIndex = 18;
             this.ListAccountBtn.Text = "User Account";
             this.ListAccountBtn.UseVisualStyleBackColor = false;
-            this.ListAccountBtn.Click += new System.EventHandler(this.AccountBtn_Click);
             // 
             // ListFlightBtn
             // 
@@ -140,7 +145,6 @@
             this.ListFlightBtn.TabIndex = 17;
             this.ListFlightBtn.Text = "Add Filght";
             this.ListFlightBtn.UseVisualStyleBackColor = false;
-            this.ListFlightBtn.Click += new System.EventHandler(this.FightBtn_Click);
             // 
             // ListAirportBtn
             // 
@@ -155,7 +159,6 @@
             this.ListAirportBtn.TabIndex = 16;
             this.ListAirportBtn.Text = "Add Airport";
             this.ListAirportBtn.UseVisualStyleBackColor = false;
-            this.ListAirportBtn.Click += new System.EventHandler(this.AirportBtn_Click_1);
             // 
             // LogoutBtn
             // 
@@ -179,19 +182,9 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(47, 115);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 27);
+            this.label7.Size = new System.Drawing.Size(155, 27);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Admin\'s portal";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // MainPanel
-            // 
-            this.MainPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.MainPanel.Location = new System.Drawing.Point(269, 45);
-            this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1200, 700);
-            this.MainPanel.TabIndex = 3;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
+            this.label7.Text = "Staff\'s portal";
             // 
             // pictureBox1
             // 
@@ -202,19 +195,30 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // AdminForm
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(173, 170);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(307, 21);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Flight Ticket Management System";
+            // 
+            // StaffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1471, 746);
             this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "AdminForm";
+            this.Name = "StaffForm";
             this.Text = "Form1";
+            this.MainPanel.ResumeLayout(false);
+            this.MainPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -225,17 +229,19 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label ExitBtn;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ExitBtn;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button SettingBtn;
+        private System.Windows.Forms.Button ListAccountBtn;
+        private System.Windows.Forms.Button ListFlightBtn;
         private System.Windows.Forms.Button ListAirportBtn;
         private System.Windows.Forms.Button LogoutBtn;
-        private System.Windows.Forms.Button ListFlightBtn;
-        private System.Windows.Forms.Panel MainPanel;
-        private System.Windows.Forms.Button ListAccountBtn;
-        private System.Windows.Forms.Button SettingBtn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
