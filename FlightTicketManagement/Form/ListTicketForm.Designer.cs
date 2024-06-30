@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.SearchFlightBtn = new System.Windows.Forms.Button();
@@ -152,14 +152,14 @@
             this.ListTicketData.AllowUserToResizeRows = false;
             this.ListTicketData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListTicketData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListTicketData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ListTicketData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ListTicketData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListTicketData.EnableHeadersVisualStyles = false;
             this.ListTicketData.Location = new System.Drawing.Point(15, 94);
@@ -236,7 +236,7 @@
             this.DeleteTicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteTicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteTicketBtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteTicketBtn.Location = new System.Drawing.Point(819, 136);
+            this.DeleteTicketBtn.Location = new System.Drawing.Point(878, 136);
             this.DeleteTicketBtn.Name = "DeleteTicketBtn";
             this.DeleteTicketBtn.Size = new System.Drawing.Size(145, 40);
             this.DeleteTicketBtn.TabIndex = 51;
@@ -251,7 +251,7 @@
             this.UpdateTicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateTicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateTicketBtn.ForeColor = System.Drawing.Color.White;
-            this.UpdateTicketBtn.Location = new System.Drawing.Point(654, 136);
+            this.UpdateTicketBtn.Location = new System.Drawing.Point(711, 136);
             this.UpdateTicketBtn.Name = "UpdateTicketBtn";
             this.UpdateTicketBtn.Size = new System.Drawing.Size(145, 40);
             this.UpdateTicketBtn.TabIndex = 50;
@@ -290,6 +290,7 @@
             this.SeatTypeCbb.Name = "SeatTypeCbb";
             this.SeatTypeCbb.Size = new System.Drawing.Size(192, 30);
             this.SeatTypeCbb.TabIndex = 41;
+            this.SeatTypeCbb.SelectedIndexChanged += new System.EventHandler(this.SeatTypeCbb_SelectedIndexChanged);
             // 
             // label3
             // 

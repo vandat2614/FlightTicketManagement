@@ -59,9 +59,7 @@ namespace FlightTicketManagement
         private void TicketForm_Load(object sender, EventArgs e)
         {
             LoadListAirportName();
-            TicketTypeCbb.SelectedIndex = -1;
-            FlightDepatureCbb.SelectedIndex = -1;
-            FlightArrivalCbb.SelectedIndex = -1;
+            ClearInfo();
         }
 
         public int FlightPrice = -1;
@@ -113,6 +111,9 @@ namespace FlightTicketManagement
             CustomerPhoneTb.Text = "";
             TicketTypeCbb.SelectedIndex = -1;
             TicketPriceTb.Text = "";
+            FlightDepatureCbb.SelectedIndex = -1;
+            FlightArrivalCbb.SelectedIndex = -1;
+            FlightDatePk.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
         }
 
         private void AddTicketBtn_Click(object sender, EventArgs e)

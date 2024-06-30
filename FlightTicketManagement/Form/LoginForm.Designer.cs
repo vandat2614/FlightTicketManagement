@@ -42,7 +42,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ShowPassCb = new System.Windows.Forms.CheckBox();
             this.ExitBtn = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -176,7 +175,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(374, 57);
+            this.label4.Location = new System.Drawing.Point(380, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 27);
             this.label4.TabIndex = 9;
@@ -207,23 +206,12 @@
             this.ExitBtn.Text = "X";
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(380, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 27);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "SIGN IN";
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(685, 484);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.ShowPassCb);
             this.Controls.Add(this.LoginBtn);
@@ -262,7 +250,6 @@
         private System.Windows.Forms.Label ExitBtn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label6;
     }
 }
 

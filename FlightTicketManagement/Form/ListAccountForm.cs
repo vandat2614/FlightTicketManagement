@@ -27,6 +27,12 @@ namespace FlightTicketManagement
         {
             List<AccountData> ListAccount = Account.Instance.GetListAccount();
             ListAccountData.DataSource = ListAccount;
+
+            ListAccountData.Columns["email"].HeaderText = "Email";
+            ListAccountData.Columns["pass"].HeaderText = "Password";
+            ListAccountData.Columns["type"].HeaderText = "Account Type";
+            ListAccountData.Columns["name"].HeaderText = "User Name";
+            ListAccountData.Columns["phone"].HeaderText = "Phone Number";
         }
 
         public bool CheckEmpty()
@@ -50,10 +56,13 @@ namespace FlightTicketManagement
             AccountNameTb.Text = "";
             AccountTypeCbb.SelectedIndex = -1;
             AccountPhoneTb.Text = "";
+
+            AccountOldEmail = null;
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
+            if (AccountOldEmail == null) return;
             if(CheckEmpty())
                 MessageBox.Show("Email address or password cannot be empty", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if(!IsValidEmail(AccountEmailTb.Text))
@@ -62,32 +71,16 @@ namespace FlightTicketManagement
                 MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                string Notification;
-                if (AccountOldEmail == null)
-                    Notification = "You haven't selected the account to update information, do you want to add this account?";
-                else Notification = "Are you want to update";
-                    
-                DialogResult result = MessageBox.Show(Notification, "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    if (AccountOldEmail == null) {
-                        if(Account.Instance.CheckEmail(AccountEmailTb.Text))
-                            MessageBox.Show("This email is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else {
-                            Account.Instance.RegisterAccount(AccountEmailTb.Text, AccountPassTb.Text, AccountTypeCbb.Text, AccountNameTb.Text, AccountPhoneTb.Text);
-                            MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
+
                         Account.Instance.UpdateAccount(AccountEmailTb.Text, AccountOldEmail, AccountPassTb.Text, AccountNameTb.Text, AccountTypeCbb.Text, AccountPhoneTb.Text);
                         MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    ClearInfo();
+                    LoadListAccount();
                 }
-                AccountOldEmail = null;
-                ClearInfo();
-                LoadListAccount();
+
             }
         }
 
@@ -112,11 +105,11 @@ namespace FlightTicketManagement
         private void ClearInfoBtn_Click(object sender, EventArgs e)
         {
             ClearInfo();
-            AccountOldEmail = null;
         }
 
         private void DeleteAccountBtn_Click(object sender, EventArgs e)
         {
+            if (AccountOldEmail == null) return;
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
@@ -124,21 +117,20 @@ namespace FlightTicketManagement
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAccount();
                 ClearInfo();
-                AccountOldEmail = null;
             }
         }
 
         public string AccountOldEmail = null;
         private void ListAccountData_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0)
-                return;
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
             DataGridViewRow row = ListAccountData.Rows[e.RowIndex];
             AccountEmailTb.Text = row.Cells[0].Value.ToString();
             AccountPassTb.Text = row.Cells[1].Value.ToString();
             AccountTypeCbb.Text = row.Cells[2].Value.ToString();
             AccountNameTb.Text = row.Cells[3].Value.ToString();
             AccountPhoneTb.Text = row.Cells[4].Value.ToString();
+
             AccountOldEmail = AccountEmailTb.Text;
         }
     }

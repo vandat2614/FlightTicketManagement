@@ -46,6 +46,7 @@ namespace FlightTicketManagement
         }
 
         public string SelectedTicketCode = null;
+        public int FlightPrice = -1;
         private void ListTicketData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex < 0 || e.ColumnIndex < 0) return;
@@ -58,10 +59,18 @@ namespace FlightTicketManagement
             SeatTypeCbb.SelectedIndex = int.Parse(row.Cells[5].Value.ToString())-1;
             TicketPriceTb.Text = row.Cells[6].Value.ToString();
 
+            FlightPrice = int.Parse(TicketPriceTb.Text);
+            if (SeatTypeCbb.Text == "1")
+            {
+                double tmp = FlightPrice;
+                FlightPrice = Convert.ToInt32(tmp / 1.05);
+            }
+
             if (row.Cells[7].Value.ToString() == "buy")
                 TicketTypeCbb.SelectedIndex = 0;
             else
                 TicketTypeCbb.SelectedIndex = 1;
+
         }
 
         private void DeleteTicketBtn_Click(object sender, EventArgs e)
@@ -78,14 +87,27 @@ namespace FlightTicketManagement
 
         private void UpdateTicketBtn_Click(object sender, EventArgs e)
         {
+            if (SelectedTicketCode == null) return;
             DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if(result == DialogResult.Yes)
             {
                 Ticket.Instance.UpdateTicket(SelectedTicketCode, CustomerNameTb.Text, CMNDTb.Text, CustomerPhoneTb.Text, SeatTypeCbb.Text, TicketPriceTb.Text, TicketTypeCbb.Text); 
                 MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListTicket(Ticket.Instance.GetListTicket(FlightCodeCbb.Text));
-
             }
+        }
+        public void UpdatePrice()
+        {
+            if (FlightPrice == -1) return;
+
+            if (SeatTypeCbb.SelectedIndex == 0) 
+                TicketPriceTb.Text = (FlightPrice * 1.05).ToString();
+            else TicketPriceTb.Text = FlightPrice.ToString();
+        }
+
+        private void SeatTypeCbb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdatePrice();
         }
     }
 }

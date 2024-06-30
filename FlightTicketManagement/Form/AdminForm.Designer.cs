@@ -32,8 +32,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ListTicketBtn = new System.Windows.Forms.Button();
-            this.TicketBtn = new System.Windows.Forms.Button();
+            this.RevenueBtn = new System.Windows.Forms.Button();
             this.SettingBtn = new System.Windows.Forms.Button();
             this.ListAccountBtn = new System.Windows.Forms.Button();
             this.ListFlightBtn = new System.Windows.Forms.Button();
@@ -42,7 +41,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.RevenueBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,7 +56,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1471, 45);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
@@ -69,7 +66,6 @@
             this.label4.Size = new System.Drawing.Size(307, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Flight Ticket Management System";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // ExitBtn
             // 
@@ -87,8 +83,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
             this.panel2.Controls.Add(this.RevenueBtn);
-            this.panel2.Controls.Add(this.ListTicketBtn);
-            this.panel2.Controls.Add(this.TicketBtn);
             this.panel2.Controls.Add(this.SettingBtn);
             this.panel2.Controls.Add(this.ListAccountBtn);
             this.panel2.Controls.Add(this.ListFlightBtn);
@@ -101,37 +95,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(272, 701);
             this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // ListTicketBtn
+            // RevenueBtn
             // 
-            this.ListTicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.ListTicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ListTicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ListTicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.ListTicketBtn.ForeColor = System.Drawing.Color.White;
-            this.ListTicketBtn.Location = new System.Drawing.Point(15, 210);
-            this.ListTicketBtn.Name = "ListTicketBtn";
-            this.ListTicketBtn.Size = new System.Drawing.Size(248, 45);
-            this.ListTicketBtn.TabIndex = 20;
-            this.ListTicketBtn.Text = "List Ticket";
-            this.ListTicketBtn.UseVisualStyleBackColor = false;
-            this.ListTicketBtn.Click += new System.EventHandler(this.ListTicketBtn_Click);
-            // 
-            // TicketBtn
-            // 
-            this.TicketBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.TicketBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TicketBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TicketBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.TicketBtn.ForeColor = System.Drawing.Color.White;
-            this.TicketBtn.Location = new System.Drawing.Point(12, 591);
-            this.TicketBtn.Name = "TicketBtn";
-            this.TicketBtn.Size = new System.Drawing.Size(248, 45);
-            this.TicketBtn.TabIndex = 19;
-            this.TicketBtn.Text = "Ticket";
-            this.TicketBtn.UseVisualStyleBackColor = false;
-            this.TicketBtn.Click += new System.EventHandler(this.TicketBtn_Click);
+            this.RevenueBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            this.RevenueBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RevenueBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RevenueBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.RevenueBtn.ForeColor = System.Drawing.Color.White;
+            this.RevenueBtn.Location = new System.Drawing.Point(12, 417);
+            this.RevenueBtn.Name = "RevenueBtn";
+            this.RevenueBtn.Size = new System.Drawing.Size(248, 45);
+            this.RevenueBtn.TabIndex = 21;
+            this.RevenueBtn.Text = "Revenue";
+            this.RevenueBtn.UseVisualStyleBackColor = false;
+            this.RevenueBtn.Click += new System.EventHandler(this.RevenueBtn_Click);
             // 
             // SettingBtn
             // 
@@ -140,7 +118,7 @@
             this.SettingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.SettingBtn.ForeColor = System.Drawing.Color.White;
-            this.SettingBtn.Location = new System.Drawing.Point(12, 465);
+            this.SettingBtn.Location = new System.Drawing.Point(12, 494);
             this.SettingBtn.Name = "SettingBtn";
             this.SettingBtn.Size = new System.Drawing.Size(248, 45);
             this.SettingBtn.TabIndex = 19;
@@ -155,7 +133,7 @@
             this.ListAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ListAccountBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.ListAccountBtn.ForeColor = System.Drawing.Color.White;
-            this.ListAccountBtn.Location = new System.Drawing.Point(12, 276);
+            this.ListAccountBtn.Location = new System.Drawing.Point(12, 204);
             this.ListAccountBtn.Name = "ListAccountBtn";
             this.ListAccountBtn.Size = new System.Drawing.Size(248, 45);
             this.ListAccountBtn.TabIndex = 18;
@@ -170,7 +148,7 @@
             this.ListFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ListFlightBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.ListFlightBtn.ForeColor = System.Drawing.Color.White;
-            this.ListFlightBtn.Location = new System.Drawing.Point(12, 343);
+            this.ListFlightBtn.Location = new System.Drawing.Point(12, 270);
             this.ListFlightBtn.Name = "ListFlightBtn";
             this.ListFlightBtn.Size = new System.Drawing.Size(248, 45);
             this.ListFlightBtn.TabIndex = 17;
@@ -185,7 +163,7 @@
             this.ListAirportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ListAirportBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.ListAirportBtn.ForeColor = System.Drawing.Color.White;
-            this.ListAirportBtn.Location = new System.Drawing.Point(12, 404);
+            this.ListAirportBtn.Location = new System.Drawing.Point(12, 343);
             this.ListAirportBtn.Name = "ListAirportBtn";
             this.ListAirportBtn.Size = new System.Drawing.Size(248, 45);
             this.ListAirportBtn.TabIndex = 16;
@@ -200,7 +178,7 @@
             this.LogoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogoutBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.LogoutBtn.ForeColor = System.Drawing.Color.White;
-            this.LogoutBtn.Location = new System.Drawing.Point(12, 526);
+            this.LogoutBtn.Location = new System.Drawing.Point(12, 571);
             this.LogoutBtn.Name = "LogoutBtn";
             this.LogoutBtn.Size = new System.Drawing.Size(248, 45);
             this.LogoutBtn.TabIndex = 15;
@@ -213,12 +191,11 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(47, 115);
+            this.label7.Location = new System.Drawing.Point(54, 129);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 27);
             this.label7.TabIndex = 14;
             this.label7.Text = "Admin\'s portal";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // pictureBox1
             // 
@@ -228,7 +205,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MainPanel
             // 
@@ -237,22 +213,6 @@
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1200, 700);
             this.MainPanel.TabIndex = 3;
-            this.MainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MainPanel_Paint);
-            // 
-            // RevenueBtn
-            // 
-            this.RevenueBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            this.RevenueBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RevenueBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RevenueBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.RevenueBtn.ForeColor = System.Drawing.Color.White;
-            this.RevenueBtn.Location = new System.Drawing.Point(16, 145);
-            this.RevenueBtn.Name = "RevenueBtn";
-            this.RevenueBtn.Size = new System.Drawing.Size(248, 45);
-            this.RevenueBtn.TabIndex = 21;
-            this.RevenueBtn.Text = "Revenue";
-            this.RevenueBtn.UseVisualStyleBackColor = false;
-            this.RevenueBtn.Click += new System.EventHandler(this.RevenueBtn_Click);
             // 
             // AdminForm
             // 
@@ -287,8 +247,6 @@
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Button ListAccountBtn;
         private System.Windows.Forms.Button SettingBtn;
-        private System.Windows.Forms.Button TicketBtn;
-        private System.Windows.Forms.Button ListTicketBtn;
         private System.Windows.Forms.Button RevenueBtn;
     }
 }

@@ -25,6 +25,12 @@ namespace FlightTicketManagement
         {
             List<IntermediateAirportData> ListData = IntermediateAirport.Instance.GetListIntermediateAirport(this.FlightCode);
             ListIntermediateAirportData.DataSource = ListData;
+
+            ListIntermediateAirportData.Columns["code"].HeaderText = "Flight Code";
+            ListIntermediateAirportData.Columns["name"].HeaderText = "Airport";
+            ListIntermediateAirportData.Columns["duration"].HeaderText = "Duration";
+            ListIntermediateAirportData.Columns["note"].HeaderText = "Note";
+
         }
 
         public string SelectedAirportCode = null;
@@ -45,6 +51,19 @@ namespace FlightTicketManagement
             IntermediateAirportNoteTb.Text = "";
         }
 
+        public bool CheckFloatField(string str)
+        {
+            bool IsFloat(string input)
+            {
+                float result;
+                return float.TryParse(input, out result);
+            }
+
+            if (!IsFloat(str) || float.Parse(str) <= 0)
+                return false;
+            return true;
+        }
+
         public bool CheckEmpty()
         {
             if (SelectIntermediateAirportBtn.Text.ToLower() == "select" || IntermediateAirportStopTimeTb.Text == "")
@@ -56,19 +75,21 @@ namespace FlightTicketManagement
         {
             if(CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(!CheckFloatField(IntermediateAirportStopTimeTb.Text))
+                MessageBox.Show("The duration must be a positive number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 IntermediateAirport.Instance.AddIntermediateAirport(this.FlightCode, SelectedAirportCode, IntermediateAirportStopTimeTb.Text, IntermediateAirportNoteTb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAirport();
                 ClearInfo();
-                SelectedAirportCode = null;
             }
         }
 
         private void IntermediateAirportForm_Load(object sender, EventArgs e)
         {
             LoadListAirport();
+            ClearInfo();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -91,8 +112,11 @@ namespace FlightTicketManagement
 
         private void IntermediateAirportUpdateBtn_Click(object sender, EventArgs e)
         {
+            if (SelectedId == null) return;
             if(CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (!CheckFloatField(IntermediateAirportStopTimeTb.Text))
+                MessageBox.Show("The duration must be a positive number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -109,6 +133,7 @@ namespace FlightTicketManagement
 
         private void IntermediateAirportDeleteBtn_Click(object sender, EventArgs e)
         {
+            if (SelectedId == null) return;
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {

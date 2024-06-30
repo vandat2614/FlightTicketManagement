@@ -31,12 +31,21 @@ namespace FlightTicketManagement
             AirportCityCbb.SelectedIndex = -1;
             AirportStatusCbb.SelectedIndex = -1;
             AirportNoteTb.Text = "";
+
+            OldAiportCode = null;
         }
 
         public void LoadListAirport()
         {
             List<AirportData> airports = Airport.Instance.GetListAirport();
             ListAirportData.DataSource = airports;
+
+            ListAirportData.Columns["code"].HeaderText = "Airport Code";
+            ListAirportData.Columns["name"].HeaderText = "Name";
+            ListAirportData.Columns["city"].HeaderText = "City";
+            ListAirportData.Columns["status"].HeaderText = "Status";
+            ListAirportData.Columns["note"].HeaderText = "Note";
+
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
@@ -44,53 +53,31 @@ namespace FlightTicketManagement
             if (CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (Airport.Instance.CheckAirport(AirportCodeTb.Text))
-                    MessageBox.Show("This airport code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This airport code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 Airport.Instance.AddAirport(AirportCodeTb.Text, AirportNameTb.Text, AirportCityCbb.Text, AirportStatusCbb.Text, AirportNoteTb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAirport();
-                OldAiportCode = null;
+                ClearInfo();
             }
 
         }
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
+            if (OldAiportCode == null) return;
             if (CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (OldAiportCode != null && OldAiportCode != AirportCodeTb.Text && Airport.Instance.CheckAirport(AirportCodeTb.Text))
+            else if (OldAiportCode != AirportCodeTb.Text && Airport.Instance.CheckAirport(AirportCodeTb.Text))
                 MessageBox.Show("This airport code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                string Notification;
-                if (OldAiportCode == null)
-                    Notification = "You haven't selected the airport to update information, do you want to add this airport?";
-                else Notification = "Are you want to update";
-
-                DialogResult result = MessageBox.Show(Notification, "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    if (OldAiportCode == null)
-                    {
-                        if (Airport.Instance.CheckAirport(AirportCodeTb.Text))
-                            MessageBox.Show("This airport code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else
-                        {
-                            Airport.Instance.AddAirport(AirportCodeTb.Text, AirportNameTb.Text, AirportCityCbb.Text, AirportStatusCbb.Text, AirportNoteTb.Text);
-                            MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                        Airport.Instance.UpdateAirport(AirportCodeTb.Text, OldAiportCode, AirportNameTb.Text, AirportCityCbb.Text, AirportStatusCbb.Text, AirportNoteTb.Text);
-                        MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                OldAiportCode = null;
-                LoadListAirport();
+                DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                Airport.Instance.UpdateAirport(AirportCodeTb.Text, OldAiportCode, AirportNameTb.Text, AirportCityCbb.Text, AirportStatusCbb.Text, AirportNoteTb.Text);
+                MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearInfo();
+                LoadListAirport();
             }
         }
 
@@ -115,18 +102,18 @@ namespace FlightTicketManagement
         private void ClearBtn_Click(object sender, EventArgs e)
         {
             ClearInfo();
-            OldAiportCode = null;
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
+            if (OldAiportCode == null) return;
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 Airport.Instance.DeleteAirport(AirportCodeTb.Text);
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListAirport();
-                OldAiportCode = null;
+                ClearInfo();
             }
         }
     }

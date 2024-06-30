@@ -33,25 +33,37 @@ namespace FlightTicketManagement
             load_setting();
         }
 
-        public bool check_empty()
+        public bool CheckSetting()
         {
-            if (MinFlightDurationTb.Text == "" || MaxIntermediateAirportTb.Text == "" || IntermediateMinTimeStopTb.Text == "" || IntermediateMaxTimeStopTb.Text == "" || LatestTimeBookTicketTb.Text == "" || TicketCancelTimeTb.Text == "")
-                return true;
-            return false;
-        }
-        public bool IsInteger(string input)
-        {
-            int result;
-            return int.TryParse(input, out result);
-        }
+            bool IsInteger(string input)
+            {
+                int result;
+                return int.TryParse(input, out result);
+            }
 
+            if (!IsInteger(MinFlightDurationTb.Text) || int.Parse(MinFlightDurationTb.Text) <= 0) return false;
+            if (!IsInteger(MaxIntermediateAirportTb.Text) || int.Parse(MaxIntermediateAirportTb.Text) <= 0) return false;
+            if (!IsInteger(IntermediateMinTimeStopTb.Text) || int.Parse(IntermediateMinTimeStopTb.Text) <= 0) return false;
+            if (!IsInteger(IntermediateMaxTimeStopTb.Text) || int.Parse(IntermediateMaxTimeStopTb.Text) <= 0) return false;
+            if (!IsInteger(LatestTimeBookTicketTb.Text) || int.Parse(LatestTimeBookTicketTb.Text) <= 0) return false;
+            if (!IsInteger(TicketCancelTimeTb.Text) || int.Parse(TicketCancelTimeTb.Text) <= 0) return false;
+
+            return true;
+        }
 
         private void UpdateSettingBtn_Click(object sender, EventArgs e)
         {
+            bool check_empty()
+            {
+                if (MinFlightDurationTb.Text == "" || MaxIntermediateAirportTb.Text == "" || IntermediateMinTimeStopTb.Text == "" || IntermediateMaxTimeStopTb.Text == "" || LatestTimeBookTicketTb.Text == "" || TicketCancelTimeTb.Text == "")
+                    return true;
+                return false;
+            }
+
             if (check_empty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (!IsInteger(MinFlightDurationTb.Text) || !IsInteger(MaxIntermediateAirportTb.Text) || !IsInteger(IntermediateMinTimeStopTb.Text) || !IsInteger(IntermediateMaxTimeStopTb.Text) || !IsInteger(LatestTimeBookTicketTb.Text) || !IsInteger(TicketCancelTimeTb.Text))
-                MessageBox.Show("All fields must be in numeric format", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(!CheckSetting())
+                MessageBox.Show("All fields must be in numeric format and positive.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

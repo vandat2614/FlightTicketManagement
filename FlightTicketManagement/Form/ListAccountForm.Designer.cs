@@ -69,9 +69,9 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.AccountEmailTb);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 31);
+            this.panel1.Location = new System.Drawing.Point(2, 94);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 399);
+            this.panel1.Size = new System.Drawing.Size(379, 399);
             this.panel1.TabIndex = 2;
             // 
             // AddAccountBtn
@@ -239,9 +239,9 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.ListAccountData);
-            this.panel2.Location = new System.Drawing.Point(424, 31);
+            this.panel2.Location = new System.Drawing.Point(408, 31);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(754, 592);
+            this.panel2.Size = new System.Drawing.Size(790, 592);
             this.panel2.TabIndex = 3;
             // 
             // label7
@@ -249,7 +249,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(29, 25);
+            this.label7.Location = new System.Drawing.Point(19, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(153, 27);
             this.label7.TabIndex = 16;
@@ -273,17 +273,17 @@
             this.ListAccountData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.ListAccountData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListAccountData.EnableHeadersVisualStyles = false;
-            this.ListAccountData.Location = new System.Drawing.Point(34, 63);
+            this.ListAccountData.Location = new System.Drawing.Point(14, 63);
             this.ListAccountData.Name = "ListAccountData";
             this.ListAccountData.ReadOnly = true;
             this.ListAccountData.RowHeadersVisible = false;
             this.ListAccountData.RowHeadersWidth = 51;
             this.ListAccountData.RowTemplate.Height = 24;
-            this.ListAccountData.Size = new System.Drawing.Size(694, 490);
+            this.ListAccountData.Size = new System.Drawing.Size(757, 490);
             this.ListAccountData.TabIndex = 0;
             this.ListAccountData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ListAccountData_CellClick_1);
             // 
-            // Admin_UserForm
+            // ListAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -291,7 +291,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Admin_UserForm";
+            this.Name = "ListAccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AdminUsers_Load);

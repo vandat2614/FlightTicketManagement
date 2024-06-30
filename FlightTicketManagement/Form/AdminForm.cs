@@ -17,7 +17,6 @@ namespace FlightTicketManagement
             InitializeComponent();
         }
 
-
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             DialogResult check = MessageBox.Show("Are you sure you want to Sign out?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -70,47 +69,6 @@ namespace FlightTicketManagement
         private void SettingBtn_Click(object sender, EventArgs e)
         {
             LoadForm(new SettingForm());
-        }
-
-        private void MainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TicketBtn_Click(object sender, EventArgs e)
-        {
-            LoadForm(new TicketForm());
-
-        }
-
-        private void ListTicketBtn_Click(object sender, EventArgs e)
-        {
-            LoadForm(new ListTicketForm());
         }
 
         private void RevenueBtn_Click(object sender, EventArgs e)

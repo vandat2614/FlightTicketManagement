@@ -140,10 +140,10 @@
     <Compile Include="QuerySQL\Ticket.cs" />
     <Compile Include="QuerySQL\TicketData.cs" />
     <Compile Include="QuerySQL\YearRevenueData.cs" />
-    <Compile Include="RevenueForm.cs">
+    <Compile Include="Form\RevenueForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RevenueForm.Designer.cs">
+    <Compile Include="Form\RevenueForm.Designer.cs">
       <DependentUpon>RevenueForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form\Admin_DashboardForm.resx">
@@ -195,7 +195,7 @@
     <EmbeddedResource Include="Form\StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RevenueForm.resx">
+    <EmbeddedResource Include="Form\RevenueForm.resx">
       <DependentUpon>RevenueForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

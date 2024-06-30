@@ -23,18 +23,21 @@ namespace FlightTicketManagement
             ListFlightData.DataSource = ListFlight;
         }
 
-
         public void ClearInfo()
         {
             FlightCodeTb.Text = "";
             DepatureFlightBtn.Text = "Selected";
             ArrivalFlightBtn.Text = "Selected";
-            FlightDepatureDatePk.Text = "";
-            FlightDepatureTimePk.Text = "";
+            FlightDepatureDatePk.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            FlightDepatureTimePk.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 0, 0);
             FlightDurationTb.Text = "";
             FlightPriceTb.Text = "";
             FlightSeat1Tb.Text = "";
             FlightSeat2Tb.Text = "";
+
+            OldFlightCode = null;
+            SelectedDepatureCode = null;
+            SelectedArrivalCode = null;
         }
 
         public bool CheckEmpty()
@@ -55,18 +58,50 @@ namespace FlightTicketManagement
             return string.Concat(temp[1], ' ', temp[2]);
         }
 
+        public bool CheckNumericField(string str)
+        {
+            bool IsInteger(string input)
+            {
+                int result;
+                return int.TryParse(input, out result);
+            }
+
+            if (!IsInteger(str) || int.Parse(str) <= 0)
+                return false;
+            return true;
+        }
+
+        public bool CheckFloatField(string str)
+        {
+            bool IsFloat(string input)
+            {
+                float result;
+                return float.TryParse(input, out result);
+            }
+
+            if (!IsFloat(str) || float.Parse(str) <= 0)
+                return false;
+            return true;
+        }
+
         private void AddFlightBtn_Click(object sender, EventArgs e)
         {
             if (CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (Flight.Instance.CheckFlightCode(FlightCodeTb.Text))
                 MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if(!CheckNumericField(FlightPriceTb.Text))
+                MessageBox.Show("The ticket price must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (!CheckNumericField(FlightSeat1Tb.Text) || !CheckNumericField(FlightSeat2Tb.Text))
+                MessageBox.Show("The number of seats must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (!CheckFloatField(FlightDurationTb.Text))
+                MessageBox.Show("The flight duration must be a positive number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
                 Flight.Instance.AddFlight(FlightCodeTb.Text, SelectedDepatureCode, SelectedArrivalCode, GetFlightDate(), GetFlightTime(), FlightDurationTb.Text, FlightPriceTb.Text, FlightSeat1Tb.Text, FlightSeat2Tb.Text);
                 MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListFlight();
-                OldFlightCode = null;
+                ClearInfo();
             }
 
         }
@@ -86,23 +121,24 @@ namespace FlightTicketManagement
         private void ClearInfoBtn_Click(object sender, EventArgs e)
         {
             ClearInfo();
-            OldFlightCode = null;
         }
 
         private void Admin_FlightForm_Load(object sender, EventArgs e)
         {
             LoadListFlight();
+            ClearInfo();
         }
 
         private void DeleteFlightBtn_Click(object sender, EventArgs e)
         {
+            if (OldFlightCode == null) return;
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 Flight.Instance.DeleteFlight(FlightCodeTb.Text);
                 MessageBox.Show("Deleted successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListFlight();
-                OldFlightCode = null;
+                ClearInfo();
             }
         }
 
@@ -129,45 +165,28 @@ namespace FlightTicketManagement
 
         private void UpdateFlightBtn_Click(object sender, EventArgs e)
         {
+            if (OldFlightCode == null) return;
             if (CheckEmpty())
                 MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (OldFlightCode != null && OldFlightCode != FlightCodeTb.Text && Flight.Instance.CheckFlightCode(FlightCodeTb.Text))
+            else if (OldFlightCode != FlightCodeTb.Text && Flight.Instance.CheckFlightCode(FlightCodeTb.Text))
                 MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                string Notification;
-                if (OldFlightCode == null)
-                    Notification = "You haven't selected the flight to update information, do you want to add this flight?";
-                else Notification = "Are you want to update";
-
-                DialogResult result = MessageBox.Show(Notification, "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
                 if (result == DialogResult.Yes)
                 {
-                    if (OldFlightCode == null)
-                    {
-                        if (Flight.Instance.CheckFlightCode(FlightCodeTb.Text))
-                            MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        else
-                        {
-                            Flight.Instance.AddFlight(FlightCodeTb.Text, SelectedDepatureCode, SelectedArrivalCode, GetFlightDate(), GetFlightTime(), FlightDurationTb.Text, FlightPriceTb.Text, FlightSeat1Tb.Text, FlightSeat2Tb.Text);
-                            MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                        Flight.Instance.UpdateFlight( FlightCodeTb.Text, OldFlightCode, GetFlightDate(), GetFlightTime(), FlightDurationTb.Text, FlightPriceTb.Text, FlightSeat1Tb.Text, FlightSeat2Tb.Text);
-                        MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    Flight.Instance.UpdateFlight(FlightCodeTb.Text, OldFlightCode, GetFlightDate(), GetFlightTime(), FlightDurationTb.Text, FlightPriceTb.Text, FlightSeat1Tb.Text, FlightSeat2Tb.Text);
+                    MessageBox.Show("Added successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadListFlight();
+                    ClearInfo();
                 }
-                OldFlightCode = null;
-                LoadListFlight();
-                ClearInfo();
             }
         }
 
         private void LoadIntermediateForm_Click(object sender, EventArgs e)
         {
+            if (OldFlightCode == null) return;
             IntermediateAirportForm IntermediateForm = new IntermediateAirportForm(FlightCodeTb.Text);
             IntermediateForm.ShowDialog();
         }
