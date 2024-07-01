@@ -62,6 +62,20 @@ namespace FlightTicketManagement
             return result.Rows[0]["code"].ToString();
         }
 
+        public bool IsUsed(string airportcode)
+        {
+            List<FlightData> result = new List<FlightData>();
+            string query = "select * from flight";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow row in data.Rows)
+            {
+                if (row["depature"].ToString() == airportcode || row["arrival"].ToString() == airportcode)
+                    return true;
+            }
+            return false;
+        }
+        
         public List<AirportData> GetListAirport()
         {
             List<AirportData> result = new List<AirportData>();

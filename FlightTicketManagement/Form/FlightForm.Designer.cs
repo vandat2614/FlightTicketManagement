@@ -136,14 +136,14 @@
             this.panel1.Controls.Add(this.AddFlightBtn);
             this.panel1.Location = new System.Drawing.Point(130, 392);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(904, 296);
+            this.panel1.Size = new System.Drawing.Size(1058, 296);
             this.panel1.TabIndex = 3;
             // 
             // FlightDurationTb
             // 
             this.FlightDurationTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FlightDurationTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FlightDurationTb.Location = new System.Drawing.Point(654, 158);
+            this.FlightDurationTb.Location = new System.Drawing.Point(778, 160);
             this.FlightDurationTb.Name = "FlightDurationTb";
             this.FlightDurationTb.Size = new System.Drawing.Size(231, 30);
             this.FlightDurationTb.TabIndex = 38;
@@ -155,7 +155,7 @@
             this.ArrivalFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ArrivalFlightBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ArrivalFlightBtn.ForeColor = System.Drawing.Color.White;
-            this.ArrivalFlightBtn.Location = new System.Drawing.Point(589, 60);
+            this.ArrivalFlightBtn.Location = new System.Drawing.Point(713, 62);
             this.ArrivalFlightBtn.Name = "ArrivalFlightBtn";
             this.ArrivalFlightBtn.Size = new System.Drawing.Size(296, 33);
             this.ArrivalFlightBtn.TabIndex = 37;
@@ -197,7 +197,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(478, 163);
+            this.label9.Location = new System.Drawing.Point(577, 165);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(179, 21);
             this.label9.TabIndex = 30;
@@ -259,7 +259,7 @@
             // 
             this.FlightSeat2Tb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FlightSeat2Tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FlightSeat2Tb.Location = new System.Drawing.Point(589, 104);
+            this.FlightSeat2Tb.Location = new System.Drawing.Point(713, 113);
             this.FlightSeat2Tb.Name = "FlightSeat2Tb";
             this.FlightSeat2Tb.Size = new System.Drawing.Size(296, 30);
             this.FlightSeat2Tb.TabIndex = 24;
@@ -268,7 +268,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(478, 109);
+            this.label4.Location = new System.Drawing.Point(577, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 21);
             this.label4.TabIndex = 23;
@@ -297,7 +297,7 @@
             // 
             this.FlightPriceTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FlightPriceTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FlightPriceTb.Location = new System.Drawing.Point(589, 20);
+            this.FlightPriceTb.Location = new System.Drawing.Point(713, 22);
             this.FlightPriceTb.Name = "FlightPriceTb";
             this.FlightPriceTb.Size = new System.Drawing.Size(296, 30);
             this.FlightPriceTb.TabIndex = 20;
@@ -306,7 +306,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(478, 23);
+            this.label3.Location = new System.Drawing.Point(577, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 21);
             this.label3.TabIndex = 19;
@@ -316,7 +316,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(478, 65);
+            this.label2.Location = new System.Drawing.Point(577, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 21);
             this.label2.TabIndex = 17;

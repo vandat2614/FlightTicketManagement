@@ -18,10 +18,9 @@ namespace FlightTicketManagement
             InitializeComponent();
         }
 
-        public void LoadRevenueByMonth(string month)
+        public void LoadRevenueByMonth(string month, string year = "")
         {
-            if (SelectMonthCbb.SelectedIndex <= 0 && SelectYearCbb.SelectedIndex <= 0) return;
-            List<MonthRevenueData> ListRevenue = Flight.Instance.GetRevenueByMonth(month);
+            List<MonthRevenueData> ListRevenue = Flight.Instance.GetRevenueByMonth(month, year);
             ListRevenueForm.DataSource = ListRevenue;
         }
 
@@ -29,7 +28,6 @@ namespace FlightTicketManagement
         {
             if (SelectMonthCbb.SelectedIndex <= 0 && SelectYearCbb.SelectedIndex <= 0) return;
             List<YearRevenueData> ListRevenue = Flight.Instance.GetRevenueByYear(year);
-            MessageBox.Show(ListRevenue.Count.ToString());
             ListRevenueForm.DataSource = ListRevenue;
         }
 
@@ -37,16 +35,26 @@ namespace FlightTicketManagement
         {
         }
 
+        public void LoadChange()
+        {
+            if (SelectMonthCbb.SelectedIndex <= 0 && SelectYearCbb.SelectedIndex <= 0)
+                ListRevenueForm.Rows.Clear();
+            else if (SelectMonthCbb.SelectedIndex <= 0 && SelectYearCbb.SelectedIndex > 0)
+                LoadRevenueByYear(SelectYearCbb.Text);
+            else if (SelectMonthCbb.SelectedIndex > 0 && SelectYearCbb.SelectedIndex <= 0)
+                LoadRevenueByMonth(SelectMonthCbb.Text);
+            else LoadRevenueByMonth(SelectMonthCbb.Text, SelectYearCbb.Text);
+
+        }
+
         private void SelectMonthCbb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (SelectMonthCbb.SelectedIndex <= 0) return;
-            LoadRevenueByMonth(SelectMonthCbb.Text);
+            LoadChange();
         }
 
         private void SelectYearCbb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (SelectYearCbb.SelectedIndex <= 0) return;
-            LoadRevenueByYear(SelectYearCbb.Text);
+            LoadChange();
         }
     }
 }

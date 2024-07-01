@@ -21,6 +21,22 @@ namespace FlightTicketManagement
         {
             List<FlightData> ListFlight = Flight.Instance.GetListFlight();
             ListFlightData.DataSource = ListFlight;
+
+            ListFlightData.Columns["code"].HeaderText = "Flight Code";
+            ListFlightData.Columns["depature"].HeaderText = "Depature";
+            ListFlightData.Columns["arrival"].HeaderText = "Arrival";
+            ListFlightData.Columns["date"].HeaderText = "Flight Date";
+            ListFlightData.Columns["time"].HeaderText = "Time";
+            ListFlightData.Columns["duration"].HeaderText = "Duration";
+
+            ListFlightData.Columns["price"].HeaderText = "Price";
+            ListFlightData.Columns["seat1"].HeaderText = "Seat1";
+            ListFlightData.Columns["seat2"].HeaderText = "Seat2";
+
+            ListFlightData.Columns["emptyseat"].HeaderText = "Empty Seat";
+            ListFlightData.Columns["orderseat"].HeaderText = "Order";
+            ListFlightData.Columns["buyseat"].HeaderText = "Buy";
+
         }
 
         public void ClearInfo()
@@ -85,13 +101,13 @@ namespace FlightTicketManagement
 
             if (!IsInteger(seat1) || int.Parse(seat1) <= 0)
             {
-                MessageBox.Show("The ticket price must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The number of seats must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
             if (!IsInteger(seat1) || int.Parse(seat1) <= 0)
             {
-                MessageBox.Show("The ticket price must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The number of seats must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

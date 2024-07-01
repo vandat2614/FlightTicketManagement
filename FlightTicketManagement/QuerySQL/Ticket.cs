@@ -54,5 +54,6 @@ namespace FlightTicketManagement.QuerySQL
             return result;
         }
 
+
     }
 }

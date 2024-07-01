@@ -31,7 +31,32 @@ namespace FlightTicketManagement
 
         public void LoadListFlight(List<FlightData> ListFlight)
         {
+            for(int i=0;i<ListFlight.Count;i++)
+            {
+                FlightData flight = ListFlight[i];
+                if (flight.emptyseat == "0")
+                {
+                    ListFlight.RemoveAt(i);
+                    i--;
+                }
+            }
+
             ListFlightData.DataSource = ListFlight;
+
+            ListFlightData.Columns["code"].HeaderText = "Flight Code";
+            ListFlightData.Columns["depature"].HeaderText = "Depature";
+            ListFlightData.Columns["arrival"].HeaderText = "Arrival";
+            ListFlightData.Columns["date"].HeaderText = "Flight Date";
+            ListFlightData.Columns["time"].HeaderText = "Time";
+            ListFlightData.Columns["duration"].HeaderText = "Duration";
+
+            ListFlightData.Columns["price"].HeaderText = "Price";
+            ListFlightData.Columns["seat1"].HeaderText = "Seat1";
+            ListFlightData.Columns["seat2"].HeaderText = "Seat2";
+
+            ListFlightData.Columns["emptyseat"].HeaderText = "Empty Seat";
+            ListFlightData.Columns["orderseat"].HeaderText = "Order";
+            ListFlightData.Columns["buyseat"].HeaderText = "Buy";
         }
 
         private void SearchFlightBtn_Click(object sender, EventArgs e)
@@ -63,12 +88,15 @@ namespace FlightTicketManagement
         }
 
         public int FlightPrice = -1;
+        string FlightDate = null;
         private void ListFlightData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex < 0 || e.ColumnIndex < 0) return;
             DataGridViewRow row = ListFlightData.Rows[e.RowIndex];
             FlightCodeTb.Text = row.Cells[0].Value.ToString();
             FlightPrice = int.Parse(row.Cells[6].Value.ToString());
+            FlightDate = row.Cells[3].Value.ToString();
+            TicketTypeCbb.Enabled = true;
         }
 
         public void UpdatePrice()
@@ -86,6 +114,12 @@ namespace FlightTicketManagement
         }
 
         public void AddTicket(string ticket_type) {
+            if (FlightCodeTb.Text == "") return;
+            if (!CheckDate()){
+                MessageBox.Show("Too late to book/buy tickets", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             bool check()
             {
                 if (FlightCodeTb.Text == "" || CustomerNameTb.Text == "" || CMNDTb.Text == "" || CustomerPhoneTb.Text == "" || TicketTypeCbb.SelectedIndex == -1 || TicketPriceTb.Text == "")
@@ -114,6 +148,28 @@ namespace FlightTicketManagement
             FlightDepatureCbb.SelectedIndex = -1;
             FlightArrivalCbb.SelectedIndex = -1;
             FlightDatePk.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+
+            FlightPrice = -1;
+            TicketTypeCbb.Enabled = false;
+            FlightDate = null;
+        }
+
+        public bool CheckDate()
+        {
+            DateTime currentDate = DateTime.Today;
+            DateTime dateCheck = DateTime.Parse(FlightDate);
+
+            string today = currentDate.ToString().Split(' ')[0];
+            string flightdate = dateCheck.ToString().Split(' ')[0];
+
+            DateTime Dtoday = DateTime.ParseExact(today, "M/d/yyyy", null);
+            DateTime Dflightdate = DateTime.ParseExact(flightdate, "M/d/yyyy", null);
+
+            int diff = Math.Abs((Dtoday - Dflightdate).Days);
+
+            if (DateTime.Compare(Dtoday, Dflightdate) >= 0 || diff < Setting.Instance.GetLastTimeBookTicket())
+                return false;
+            return true;
         }
 
         private void AddTicketBtn_Click(object sender, EventArgs e)

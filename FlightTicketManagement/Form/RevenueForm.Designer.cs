@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ListRevenueForm = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.SelectMonthCbb = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SelectYearCbb = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.SelectMonthCbb = new System.Windows.Forms.ComboBox();
+            this.ListRevenueForm = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ListRevenueForm)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListRevenueForm)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -52,33 +52,6 @@
             this.panel2.Size = new System.Drawing.Size(1176, 629);
             this.panel2.TabIndex = 3;
             // 
-            // ListRevenueForm
-            // 
-            this.ListRevenueForm.AllowUserToAddRows = false;
-            this.ListRevenueForm.AllowUserToDeleteRows = false;
-            this.ListRevenueForm.AllowUserToResizeColumns = false;
-            this.ListRevenueForm.AllowUserToResizeRows = false;
-            this.ListRevenueForm.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ListRevenueForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListRevenueForm.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.ListRevenueForm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListRevenueForm.EnableHeadersVisualStyles = false;
-            this.ListRevenueForm.Location = new System.Drawing.Point(30, 94);
-            this.ListRevenueForm.Name = "ListRevenueForm";
-            this.ListRevenueForm.ReadOnly = true;
-            this.ListRevenueForm.RowHeadersVisible = false;
-            this.ListRevenueForm.RowHeadersWidth = 51;
-            this.ListRevenueForm.RowTemplate.Height = 24;
-            this.ListRevenueForm.Size = new System.Drawing.Size(1124, 392);
-            this.ListRevenueForm.TabIndex = 17;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label1);
@@ -87,8 +60,36 @@
             this.panel3.Controls.Add(this.SelectMonthCbb);
             this.panel3.Location = new System.Drawing.Point(30, 22);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1124, 51);
+            this.panel3.Size = new System.Drawing.Size(615, 51);
             this.panel3.TabIndex = 52;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(316, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 21);
+            this.label1.TabIndex = 48;
+            this.label1.Text = "Year";
+            // 
+            // SelectYearCbb
+            // 
+            this.SelectYearCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SelectYearCbb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelectYearCbb.FormattingEnabled = true;
+            this.SelectYearCbb.Items.AddRange(new object[] {
+            "None",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024"});
+            this.SelectYearCbb.Location = new System.Drawing.Point(389, 13);
+            this.SelectYearCbb.Name = "SelectYearCbb";
+            this.SelectYearCbb.Size = new System.Drawing.Size(180, 30);
+            this.SelectYearCbb.TabIndex = 49;
+            this.SelectYearCbb.SelectedIndexChanged += new System.EventHandler(this.SelectYearCbb_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -125,6 +126,33 @@
             this.SelectMonthCbb.TabIndex = 47;
             this.SelectMonthCbb.SelectedIndexChanged += new System.EventHandler(this.SelectMonthCbb_SelectedIndexChanged);
             // 
+            // ListRevenueForm
+            // 
+            this.ListRevenueForm.AllowUserToAddRows = false;
+            this.ListRevenueForm.AllowUserToDeleteRows = false;
+            this.ListRevenueForm.AllowUserToResizeColumns = false;
+            this.ListRevenueForm.AllowUserToResizeRows = false;
+            this.ListRevenueForm.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ListRevenueForm.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ListRevenueForm.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ListRevenueForm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ListRevenueForm.EnableHeadersVisualStyles = false;
+            this.ListRevenueForm.Location = new System.Drawing.Point(30, 94);
+            this.ListRevenueForm.Name = "ListRevenueForm";
+            this.ListRevenueForm.ReadOnly = true;
+            this.ListRevenueForm.RowHeadersVisible = false;
+            this.ListRevenueForm.RowHeadersWidth = 51;
+            this.ListRevenueForm.RowTemplate.Height = 24;
+            this.ListRevenueForm.Size = new System.Drawing.Size(1124, 392);
+            this.ListRevenueForm.TabIndex = 17;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -134,34 +162,6 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(0, 27);
             this.label7.TabIndex = 51;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(860, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 21);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "Year";
-            // 
-            // SelectYearCbb
-            // 
-            this.SelectYearCbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SelectYearCbb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectYearCbb.FormattingEnabled = true;
-            this.SelectYearCbb.Items.AddRange(new object[] {
-            "None",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024"});
-            this.SelectYearCbb.Location = new System.Drawing.Point(917, 13);
-            this.SelectYearCbb.Name = "SelectYearCbb";
-            this.SelectYearCbb.Size = new System.Drawing.Size(180, 30);
-            this.SelectYearCbb.TabIndex = 49;
-            this.SelectYearCbb.SelectedIndexChanged += new System.EventHandler(this.SelectYearCbb_SelectedIndexChanged);
             // 
             // RevenueForm
             // 
@@ -175,9 +175,9 @@
             this.Text = "RevenueForm";
             this.Load += new System.EventHandler(this.RevenueForm_Load);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ListRevenueForm)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ListRevenueForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

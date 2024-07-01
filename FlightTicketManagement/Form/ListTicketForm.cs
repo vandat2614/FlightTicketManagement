@@ -36,6 +36,7 @@ namespace FlightTicketManagement
         public void LoadListTicket(List<TicketData> ListTicket)
         {
             ListTicketData.DataSource = ListTicket;
+
         }
         
         private void SearchFlightBtn_Click(object sender, EventArgs e)

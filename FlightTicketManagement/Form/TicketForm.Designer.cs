@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.BookTicketBtn = new System.Windows.Forms.Button();
             this.FlightCodeTb = new System.Windows.Forms.TextBox();
@@ -263,16 +263,16 @@
             this.panel3.Controls.Add(this.FlightArrivalCbb);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.FlightDepatureCbb);
-            this.panel3.Location = new System.Drawing.Point(49, 15);
+            this.panel3.Location = new System.Drawing.Point(26, 15);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1065, 51);
+            this.panel3.Size = new System.Drawing.Size(1111, 51);
             this.panel3.TabIndex = 49;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(641, 14);
+            this.label8.Location = new System.Drawing.Point(672, 10);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 21);
             this.label8.TabIndex = 50;
@@ -283,7 +283,7 @@
             this.FlightDatePk.CustomFormat = "yyyy-MM-dd";
             this.FlightDatePk.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FlightDatePk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FlightDatePk.Location = new System.Drawing.Point(707, 10);
+            this.FlightDatePk.Location = new System.Drawing.Point(745, 8);
             this.FlightDatePk.Name = "FlightDatePk";
             this.FlightDatePk.Size = new System.Drawing.Size(161, 28);
             this.FlightDatePk.TabIndex = 49;
@@ -296,7 +296,7 @@
             this.SearchFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SearchFlightBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchFlightBtn.ForeColor = System.Drawing.Color.White;
-            this.SearchFlightBtn.Location = new System.Drawing.Point(900, 3);
+            this.SearchFlightBtn.Location = new System.Drawing.Point(943, 5);
             this.SearchFlightBtn.Name = "SearchFlightBtn";
             this.SearchFlightBtn.Size = new System.Drawing.Size(145, 40);
             this.SearchFlightBtn.TabIndex = 44;
@@ -308,7 +308,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(339, 14);
+            this.label10.Location = new System.Drawing.Point(332, 14);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 21);
             this.label10.TabIndex = 44;
@@ -348,7 +348,7 @@
             "Buôn Hồ",
             "Đông Hà",
             "Thanh Hóa"});
-            this.FlightArrivalCbb.Location = new System.Drawing.Point(415, 10);
+            this.FlightArrivalCbb.Location = new System.Drawing.Point(423, 10);
             this.FlightArrivalCbb.Name = "FlightArrivalCbb";
             this.FlightArrivalCbb.Size = new System.Drawing.Size(180, 30);
             this.FlightArrivalCbb.TabIndex = 48;
@@ -357,7 +357,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 14);
+            this.label9.Location = new System.Drawing.Point(3, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 21);
             this.label9.TabIndex = 46;
@@ -397,7 +397,7 @@
             "Buôn Hồ",
             "Đông Hà",
             "Thanh Hóa"});
-            this.FlightDepatureCbb.Location = new System.Drawing.Point(116, 10);
+            this.FlightDepatureCbb.Location = new System.Drawing.Point(123, 10);
             this.FlightDepatureCbb.Name = "FlightDepatureCbb";
             this.FlightDepatureCbb.Size = new System.Drawing.Size(180, 30);
             this.FlightDepatureCbb.TabIndex = 47;
@@ -410,14 +410,14 @@
             this.ListFlightData.AllowUserToResizeRows = false;
             this.ListFlightData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.ListFlightData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ListFlightData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(99)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ListFlightData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ListFlightData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ListFlightData.EnableHeadersVisualStyles = false;
             this.ListFlightData.Location = new System.Drawing.Point(49, 82);

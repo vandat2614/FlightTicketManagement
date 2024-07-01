@@ -3,6 +3,7 @@ using FlightTicketManagement.QuerySQL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,6 +72,7 @@ namespace FlightTicketManagement
             return result;
         }
 
+
         public List<string> GetListFlightCode()
         {
             List<FlightData> ListFlight = Flight.Instance.GetListFlight();
@@ -100,7 +102,7 @@ namespace FlightTicketManagement
             return result;
         }
 
-        public List<MonthRevenueData> GetRevenueByMonth(string month)
+        public List<MonthRevenueData> GetRevenueByMonth(string month, string year = "")
         {
             List<MonthRevenueData> result = new List<MonthRevenueData>();
             string query = "select * from flight";
@@ -108,7 +110,7 @@ namespace FlightTicketManagement
             int sum = 0;
             foreach (DataRow row in data.Rows)
             {
-                if (row["date"].ToString().Split('/')[0] == month)
+                if (row["date"].ToString().Split('/')[0] == month && (year == "" || row["date"].ToString().Split('/')[2] == year))
                 {
                     string FlightCode = row["code"].ToString();
                     string DepatureAirportName = Airport.Instance.GetAirportName(row["depature"].ToString());
@@ -160,6 +162,19 @@ namespace FlightTicketManagement
                 }
             }
 
+
+            int total = 0;
+            for(int i = 1; i<=12; i++)
+            {
+                List<MonthRevenueData> MonthRevenue = Flight.Instance.GetRevenueByMonth(i.ToString(), year);
+                int sum = 0;
+                for (int j = 0; j<MonthRevenue.Count(); j++)
+                    sum+=int.Parse(MonthRevenue[j].Revenue);
+                total += sum;
+                result[i-1].Revenue = sum;
+            }
+            for (int i = 1; i<=12; i++)
+                result[i-1].Ratio = (float)result[i-1].Revenue / total;
             return result;
         }
 

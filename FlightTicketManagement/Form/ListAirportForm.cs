@@ -107,6 +107,11 @@ namespace FlightTicketManagement
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (OldAiportCode == null) return;
+            if (Airport.Instance.IsUsed(OldAiportCode))
+            {
+                MessageBox.Show("Unable to delete this airport", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             DialogResult result = MessageBox.Show("Are you sure you want to delete", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
