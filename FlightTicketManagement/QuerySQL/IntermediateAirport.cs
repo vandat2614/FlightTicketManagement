@@ -32,6 +32,10 @@ namespace FlightTicketManagement
             return result;
         }
 
+        public int GetNumIntermediateAirport(string FlightCode) {
+            return GetListIntermediateAirport(FlightCode).Count;
+        }
+
         public bool AddIntermediateAirport(string flightcode, string airportcode, string duration, string note = "")
         {
             string query = "exec add_intermediate_airport @flight_code , @airport_code , @duration , @note";

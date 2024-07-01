@@ -43,10 +43,79 @@ namespace FlightTicketManagement
         public bool CheckEmpty()
         {
             if (FlightCodeTb.Text == "" || FlightPriceTb.Text == "" || DepatureFlightBtn.Text == "Selected" || ArrivalFlightBtn.Text == "Selected" || FlightSeat1Tb.Text == "" || FlightSeat2Tb.Text == "" || FlightDurationTb.Text == "")
-                return true;
-            return false;
+            {
+                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
 
+        public bool CheckFlightCode()
+        {
+            if (Flight.Instance.CheckFlightCode(FlightCodeTb.Text))
+            {
+                MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+        public bool IsInteger(string input)
+        {
+            int result;
+            return int.TryParse(input, out result);
+        }
+
+        public bool CheckTicketPrice()
+        {
+            string str = FlightPriceTb.Text;
+
+            if (!IsInteger(str) || int.Parse(str) <= 0)
+            {
+                MessageBox.Show("The ticket price must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+
+        }
+
+        public bool CheckNumSeat()
+        {
+            string seat1 = FlightSeat1Tb.Text;
+            string seat2 = FlightSeat2Tb.Text;
+
+            if (!IsInteger(seat1) || int.Parse(seat1) <= 0)
+            {
+                MessageBox.Show("The ticket price must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (!IsInteger(seat1) || int.Parse(seat1) <= 0)
+            {
+                MessageBox.Show("The ticket price must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool CheckFlightDuration()
+        {
+            string str = FlightDurationTb.Text;
+            if(!IsInteger(str) || int.Parse(str) <= 0) { 
+                MessageBox.Show("The flight duration must be a positive number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            int min = Setting.Instance.GetMinFlightDuration();
+            if(int.Parse(str) < min)
+            {
+                MessageBox.Show("The flight duration must be at least " + min.ToString() +  " minutes.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+
+        }
+        
         public string GetFlightDate()
         {
             return FlightDepatureDatePk.Value.ToString().Split(' ')[0];
@@ -56,19 +125,6 @@ namespace FlightTicketManagement
         {
             string[] temp = FlightDepatureTimePk.Value.ToString().Split(' ');
             return string.Concat(temp[1], ' ', temp[2]);
-        }
-
-        public bool CheckNumericField(string str)
-        {
-            bool IsInteger(string input)
-            {
-                int result;
-                return int.TryParse(input, out result);
-            }
-
-            if (!IsInteger(str) || int.Parse(str) <= 0)
-                return false;
-            return true;
         }
 
         public bool CheckFloatField(string str)
@@ -86,16 +142,8 @@ namespace FlightTicketManagement
 
         private void AddFlightBtn_Click(object sender, EventArgs e)
         {
-            if (CheckEmpty())
-                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (Flight.Instance.CheckFlightCode(FlightCodeTb.Text))
-                MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(!CheckNumericField(FlightPriceTb.Text))
-                MessageBox.Show("The ticket price must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (!CheckNumericField(FlightSeat1Tb.Text) || !CheckNumericField(FlightSeat2Tb.Text))
-                MessageBox.Show("The number of seats must be a positive integer.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (!CheckFloatField(FlightDurationTb.Text))
-                MessageBox.Show("The flight duration must be a positive number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!CheckEmpty() || !CheckFlightCode() || !CheckTicketPrice() || !CheckNumSeat() || !CheckFlightDuration())
+                return;
             else
             {
                 Flight.Instance.AddFlight(FlightCodeTb.Text, SelectedDepatureCode, SelectedArrivalCode, GetFlightDate(), GetFlightTime(), FlightDurationTb.Text, FlightPriceTb.Text, FlightSeat1Tb.Text, FlightSeat2Tb.Text);
@@ -166,14 +214,13 @@ namespace FlightTicketManagement
         private void UpdateFlightBtn_Click(object sender, EventArgs e)
         {
             if (OldFlightCode == null) return;
-            if (CheckEmpty())
-                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (OldFlightCode != FlightCodeTb.Text && Flight.Instance.CheckFlightCode(FlightCodeTb.Text))
-                MessageBox.Show("This flight code is already taken", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!CheckEmpty() || !CheckTicketPrice() || !CheckNumSeat() || !CheckFlightDuration())
+                return;
+            else if (OldFlightCode != FlightCodeTb.Text && !CheckFlightCode())
+                return;
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                
                 if (result == DialogResult.Yes)
                 {
                     Flight.Instance.UpdateFlight(FlightCodeTb.Text, OldFlightCode, GetFlightDate(), GetFlightTime(), FlightDurationTb.Text, FlightPriceTb.Text, FlightSeat1Tb.Text, FlightSeat2Tb.Text);

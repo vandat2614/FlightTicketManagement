@@ -39,6 +39,8 @@ namespace FlightTicketManagement
             SelectAirportForm SelectForm = new SelectAirportForm();
             SelectForm.ShowDialog();
             SelectedAirportCode = SelectForm.SelectedCode;
+            if (SelectedAirportCode == null)
+                SelectIntermediateAirportBtn.Text = "SELECT";
             SelectIntermediateAirportBtn.Text = SelectForm.SelectedName;
         }
 
@@ -50,33 +52,55 @@ namespace FlightTicketManagement
             IntermediateAirportStopTimeTb.Text = "";
             IntermediateAirportNoteTb.Text = "";
         }
-
-        public bool CheckFloatField(string str)
+        public bool CheckEmpty()
         {
-            bool IsFloat(string input)
-            {
-                float result;
-                return float.TryParse(input, out result);
-            }
-
-            if (!IsFloat(str) || float.Parse(str) <= 0)
+            if (SelectIntermediateAirportBtn.Text.ToLower() == "select" || IntermediateAirportStopTimeTb.Text == "") { 
+                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
             return true;
         }
 
-        public bool CheckEmpty()
+        public bool CheckDuration()
         {
-            if (SelectIntermediateAirportBtn.Text.ToLower() == "select" || IntermediateAirportStopTimeTb.Text == "")
-                return true;
-            return false;
+            string str = IntermediateAirportStopTimeTb.Text;
+            bool IsInt(string input)
+            {
+                int result;
+                return int.TryParse(input, out result);
+            }
+
+            if(!IsInt(str) || int.Parse(str) < 0)
+            {
+                MessageBox.Show("The duration must be a positive number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            int min = Setting.Instance.GetMinStopTime();
+            int max = Setting.Instance.GetMaxStopTime();
+            int time = int.Parse(str);
+            if(!(min <= time && time <= max))
+            {
+                MessageBox.Show("The layover time at airports must be from " + min.ToString() + " to " + max.ToString() + " minutes.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        public bool CheckNumIntermediateAirport()
+        {
+            int num = IntermediateAirport.Instance.GetNumIntermediateAirport(this.FlightCode);
+            int max = Setting.Instance.GetMaxIntermediateAirport();
+            if (num >= max) {
+                MessageBox.Show("The maximum number of intermediate airports is " + max.ToString(), "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
 
         private void AddFlightBtn_Click(object sender, EventArgs e)
         {
-            if(CheckEmpty())
-                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if(!CheckFloatField(IntermediateAirportStopTimeTb.Text))
-                MessageBox.Show("The duration must be a positive number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!CheckEmpty() || !CheckDuration() || !CheckNumIntermediateAirport())
+                return;
             else
             {
                 IntermediateAirport.Instance.AddIntermediateAirport(this.FlightCode, SelectedAirportCode, IntermediateAirportStopTimeTb.Text, IntermediateAirportNoteTb.Text);
@@ -113,14 +137,12 @@ namespace FlightTicketManagement
         private void IntermediateAirportUpdateBtn_Click(object sender, EventArgs e)
         {
             if (SelectedId == null) return;
-            if(CheckEmpty())
-                MessageBox.Show("All fields are required to be filled.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            else if (!CheckFloatField(IntermediateAirportStopTimeTb.Text))
-                MessageBox.Show("The duration must be a positive number.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (!CheckEmpty() || !CheckDuration() || !CheckNumIntermediateAirport())
+                return;
             else
             {
                 DialogResult result = MessageBox.Show("Are you want to update", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if(result == DialogResult.Yes)
+                if (result == DialogResult.Yes)
                 {
                     IntermediateAirport.Instance.UpdateIntermediateAirport(SelectedId, SelectedAirportCode, IntermediateAirportStopTimeTb.Text, IntermediateAirportNoteTb.Text);
                     MessageBox.Show("Updated successfully!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
