@@ -134,7 +134,7 @@
             this.panel1.Controls.Add(this.DeleteFlightBtn);
             this.panel1.Controls.Add(this.UpdateFlightBtn);
             this.panel1.Controls.Add(this.AddFlightBtn);
-            this.panel1.Location = new System.Drawing.Point(130, 392);
+            this.panel1.Location = new System.Drawing.Point(90, 392);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1058, 296);
             this.panel1.TabIndex = 3;

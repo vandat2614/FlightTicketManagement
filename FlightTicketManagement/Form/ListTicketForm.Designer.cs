@@ -388,6 +388,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListTicketForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListTicketForm";
             this.Load += new System.EventHandler(this.ListTicketForm_Load);
             this.panel2.ResumeLayout(false);

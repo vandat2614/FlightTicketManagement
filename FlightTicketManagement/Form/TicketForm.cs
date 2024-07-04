@@ -152,6 +152,7 @@ namespace FlightTicketManagement
             FlightPrice = -1;
             TicketTypeCbb.Enabled = false;
             FlightDate = null;
+
         }
 
         public bool CheckDate()

@@ -96,8 +96,7 @@
             this.AccountTypeCbb.FormattingEnabled = true;
             this.AccountTypeCbb.Items.AddRange(new object[] {
             "Admin",
-            "Staff",
-            "Customer"});
+            "Staff"});
             this.AccountTypeCbb.Location = new System.Drawing.Point(109, 153);
             this.AccountTypeCbb.Name = "AccountTypeCbb";
             this.AccountTypeCbb.Size = new System.Drawing.Size(247, 30);

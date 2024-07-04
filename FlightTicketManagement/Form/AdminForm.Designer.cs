@@ -93,7 +93,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 45);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(272, 701);
+            this.panel2.Size = new System.Drawing.Size(271, 701);
             this.panel2.TabIndex = 2;
             // 
             // RevenueBtn
@@ -209,9 +209,10 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.MainPanel.Location = new System.Drawing.Point(269, 45);
+            this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Location = new System.Drawing.Point(271, 45);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1200, 700);
+            this.MainPanel.Size = new System.Drawing.Size(1200, 701);
             this.MainPanel.TabIndex = 3;
             // 
             // AdminForm
@@ -224,6 +225,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

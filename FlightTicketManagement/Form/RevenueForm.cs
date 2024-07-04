@@ -38,7 +38,7 @@ namespace FlightTicketManagement
         public void LoadChange()
         {
             if (SelectMonthCbb.SelectedIndex <= 0 && SelectYearCbb.SelectedIndex <= 0)
-                ListRevenueForm.Rows.Clear();
+                LoadRevenueByMonth("13");
             else if (SelectMonthCbb.SelectedIndex <= 0 && SelectYearCbb.SelectedIndex > 0)
                 LoadRevenueByYear(SelectYearCbb.Text);
             else if (SelectMonthCbb.SelectedIndex > 0 && SelectYearCbb.SelectedIndex <= 0)
